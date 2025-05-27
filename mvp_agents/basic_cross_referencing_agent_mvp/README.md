@@ -21,3 +21,10 @@ In future iterations beyond the MVP, this agent (or more advanced correlational 
 -   Generate hypotheses with confidence scores.
 -   Handle actual A2A protocol communication.
 -   Potentially learn which correlations are more significant.
+
+## Running the MVP Agent (Standalone Test)
+The Python script `basic_cross_referencing_agent_mvp.py` includes a standalone test block. This test block will create dummy files and directories (`../../PDN_MVP/narrative/` and `../../PDN_MVP/geospatial/`) to simulate the necessary environment. You can run it directly:
+```bash
+python basic_cross_referencing_agent_mvp.py
+```
+This will print example outputs based on simulated inputs and the dummy files it creates.
