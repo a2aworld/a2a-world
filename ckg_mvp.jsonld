@@ -1,5 +1,4 @@
-```json
-{
+
   "@context": {
     "mvp": "http://a2a.world/ontology/mvp#",
     "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
@@ -7,183 +6,63 @@
     "xsd": "http://www.w3.org/2001/XMLSchema#",
     "hasName": "rdfs:label",
     "hasDescription": "rdfs:comment",
-    "locatedAtKML": {
-      "@id": "mvp:locatedAtKML",
-      "@type": "@id"
-    },
-    "imageFile": {
-      "@id": "mvp:imageFile",
-      "@type": "@id"
-    },
-    "textFile": {
-      "@id": "mvp:textFile",
-      "@type": "@id"
-    },
-    "depictsSymbol": {
-      "@id": "mvp:depictsSymbol",
-      "@type": "@id"
-    },
-    "mentionsGeoFeature": {
-      "@id": "mvp:mentionsGeoFeature",
-      "@type": "@id"
-    },
-    "describesSymbolInNarrative": {
-      "@id": "mvp:describesSymbolInNarrative",
-      "@type": "@id"
-    },
-    "visualRepresentationOfGeoFeature": {
-      "@id": "mvp:visualRepresentationOfGeoFeature",
-      "@type": "@id"
-    },
-    "mentionsCharacter": {
-      "@id": "mvp:mentionsCharacter",
-      "@type": "@id"
-    },
-    "associatedSite": {
-      "@id": "mvp:associatedSite",
-      "@type": "@id"
-    },
-    "describesEvent": {
-      "@id": "mvp:describesEvent",
-      "@type": "@id"
-    }
+    "locatedAtKML": {"@id": "mvp:locatedAtKML", "@type": "@id"},
+    "imageFile": {"@id": "mvp:imageFile", "@type": "@id"},
+    "textFile": {"@id": "mvp:textFile", "@type": "@id"},
+    "associatedWithVisual": {"@id": "mvp:associatedWithVisual", "@type": "@id"},
+    "depictsSymbol": {"@id": "mvp:depictsSymbol", "@type": "@id"},
+    "mentionsFeature": {"@id": "mvp:mentionsFeature", "@type": "@id"},
+    "describesEvent": {"@id": "mvp:describesEvent", "@type": "@id"},
+    "mentionsSymbol": {"@id": "mvp:mentionsSymbol", "@type": "@id"}
   },
   "@graph": [
     {
-      "@id": "mvp:HamsaHandGeoFeature",
+      "@id": "mvp:SunStonePeak",
       "@type": "mvp:GeospatialFeature",
-      "hasName": "Hamsa Hand Formation",
-      "hasDescription": "A natural rock formation resembling a hand with an eye in its palm, located within the eye of the Hamsa swan feature in the A2A World storybook.",
-      "locatedAtKML": "PDN_MVP/geospatial/hamsa_hand_formation.kml"
+      "hasName": "The Sun Stone Peak",
+      "hasDescription": "A prominent mountain peak significant at solstice sunrise. (Corresponds to FMS Entry G1)",
+      "locatedAtKML": "PDN_MVP/geospatial/sun_stone_peak.kml",
+      "associatedWithVisual": "mvp:SolsticeSunriseImage"
     },
     {
-      "@id": "mvp:HamsaHandImage",
+      "@id": "mvp:RiverOfReflection",
+      "@type": "mvp:GeospatialFeature",
+      "hasName": "The River of Reflection",
+      "hasDescription": "A stretch of river thematically linked to Sun Stone Peak. (Corresponds to FMS Entry G2)",
+      "locatedAtKML": "PDN_MVP/geospatial/river_of_reflection.kml",
+      "associatedWithVisual": "mvp:RiverSerpentGlyphImage"
+    },
+    {
+      "@id": "mvp:SolsticeSunriseImage",
       "@type": "mvp:VisualElement",
-      "hasName": "Image of Hamsa Hand Formation",
-      "imageFile": "PDN_MVP/visual/hamsa_hand_formation.jpg",
-      "depictsSymbol": "mvp:HamsaHandSymbol",
-      "visualRepresentationOfGeoFeature": "mvp:HamsaHandGeoFeature"
+      "hasName": "Solstice Sunrise at Sun Stone Peak (V1)",
+      "imageFile": "PDN_MVP/visual/sunstone_sunrise.jpg"
     },
     {
-      "@id": "mvp:HamsaHandSymbol",
+      "@id": "mvp:RiverSerpentGlyphImage",
+      "@type": "mvp:VisualElement",
+      "hasName": "River Serpent Glyph (V2)",
+      "imageFile": "PDN_MVP/visual/river_serpent_glyph.png",
+      "depictsSymbol": "mvp:SkySerpentSymbol"
+    },
+    {
+      "@id": "mvp:SkySerpentSymbol",
       "@type": "mvp:Symbol",
-      "hasName": "Hamsa Hand",
-      "hasDescription": "A potent symbol of protection and insight."
+      "hasName": "Sky Serpent"
     },
     {
-      "@id": "mvp:HamsaEyeNarrative",
+      "@id": "mvp:SkySerpentGiftNarrative",
       "@type": "mvp:NarrativeElement",
-      "hasName": "The Hamsa's Eye Narrative",
-      "textFile": "PDN_MVP/narrative/hamsa_eye_narrative.txt",
-      "mentionsGeoFeature": "mvp:HamsaHandGeoFeature",
-      "describesSymbolInNarrative": "mvp:HamsaHandSymbol"
+      "hasName": "The Sky Serpent's Gift (N1)",
+      "textFile": "PDN_MVP/narrative/sky_serpent_gift.txt",
+      "mentionsFeature": ["mvp:SunStonePeak", "mvp:RiverOfReflection"],
+      "describesEvent": "mvp:SolsticeGiftEvent",
+      "mentionsSymbol": "mvp:SkySerpentSymbol"
     },
     {
-      "@id": "mvp:PrometheusEagleGeoFeature",
-      "@type": "mvp:GeospatialFeature",
-      "hasName": "Prometheus's Eagle Formation",
-      "hasDescription": "A geological formation whose shape resembles an eagle, associated with the myth of Prometheus.",
-      "locatedAtKML": "PDN_MVP/geospatial/prometheus_sites.kml"
-    },
-    {
-      "@id": "mvp:PrometheusFireTheftGeoFeature",
-      "@type": "mvp:GeospatialFeature",
-      "hasName": "Prometheus Stealing Fire Site",
-      "hasDescription": "A feature or area in the geospatial storybook representing Prometheus stealing fire and placing it in a fennel stalk.",
-      "locatedAtKML": "PDN_MVP/geospatial/prometheus_sites.kml"
-    },
-    {
-      "@id": "mvp:ZeusFireTheftGeoFeature",
-      "@type": "mvp:GeospatialFeature",
-      "hasName": "Zeus Taking Fire Site",
-      "hasDescription": "A feature or area representing Zeus taking fire from mankind.",
-      "locatedAtKML": "PDN_MVP/geospatial/prometheus_sites.kml"
-    },
-    {
-      "@id": "mvp:PrometheusOfferingGeoFeature",
-      "@type": "mvp:GeospatialFeature",
-      "hasName": "Prometheus's Offering Site",
-      "hasDescription": "A feature or area representing Prometheus tricking Zeus with the offering of bones and fat.",
-      "locatedAtKML": "PDN_MVP/geospatial/prometheus_sites.kml"
-    },
-    {
-      "@id": "mvp:PrometheusEagleImage",
-      "@type": "mvp:VisualElement",
-      "hasName": "Image of Prometheus's Eagle",
-      "imageFile": "PDN_MVP/visual/V_EagleFace.jpg",
-      "visualRepresentationOfGeoFeature": "mvp:PrometheusEagleGeoFeature",
-      "depictsSymbol": "mvp:PrometheusEagleSymbol"
-    },
-    {
-      "@id": "mvp:PrometheusFireTheftImage",
-      "@type": "mvp:VisualElement",
-      "hasName": "Image of Prometheus Stealing Fire",
-      "imageFile": "PDN_MVP/visual/V_PrometheusFireTheft.jpg",
-      "visualRepresentationOfGeoFeature": "mvp:PrometheusFireTheftGeoFeature"
-    },
-    {
-      "@id": "mvp:ZeusFireTheftImage",
-      "@type": "mvp:VisualElement",
-      "hasName": "Image of Zeus Taking Fire",
-      "imageFile": "PDN_MVP/visual/V_ZeusFireTheft.jpg",
-      "visualRepresentationOfGeoFeature": "mvp:ZeusFireTheftGeoFeature"
-    },
-    {
-      "@id": "mvp:PrometheusOfferingImage",
-      "@type": "mvp:VisualElement",
-      "hasName": "Image of Prometheus's Offering Trick",
-      "imageFile": "PDN_MVP/visual/V_OfferingTrick.jpg",
-      "visualRepresentationOfGeoFeature": "mvp:PrometheusOfferingGeoFeature"
-    },
-    {
-      "@id": "mvp:PrometheusCharacter",
-      "@type": "mvp:MythologicalCharacter",
-      "hasName": "Prometheus"
-    },
-    {
-      "@id": "mvp:ZeusCharacter",
-      "@type": "mvp:MythologicalCharacter",
-      "hasName": "Zeus"
-    },
-    {
-      "@id": "mvp:PrometheusEagleSymbol",
-      "@type": "mvp:Symbol",
-      "hasName": "Prometheus's Eagle",
-      "hasDescription": "The eagle that tormented Prometheus."
-    },
-    {
-      "@id": "mvp:PrometheusCycleNarrative",
-      "@type": "mvp:NarrativeElement",
-      "hasName": "Prometheus Cycle Narrative",
-      "textFile": "PDN_MVP/narrative/prometheus_cycle_narrative.txt",
-      "mentionsCharacter": [
-        "mvp:PrometheusCharacter",
-        "mvp:ZeusCharacter",
-        "mvp:PrometheusEagleSymbol"
-      ],
-      "mentionsGeoFeature": [
-        "mvp:PrometheusEagleGeoFeature",
-        "mvp:PrometheusFireTheftGeoFeature",
-        "mvp:ZeusFireTheftGeoFeature",
-        "mvp:PrometheusOfferingGeoFeature"
-      ],
-      "describesEvent": "mvp:PrometheusPunishmentEvent"
-    },
-    {
-      "@id": "mvp:PrometheusPunishmentEvent",
-      "@type": "mvp:MythologicalEvent",
-      "hasName": "Prometheus's Torment and Trickery",
-      "hasDescription": "The daily torment of Prometheus by the eagle as punishment for stealing fire, and his trickery of Zeus with the offering.",
-      "associatedSite": [
-        "mvp:PrometheusEagleGeoFeature",
-        "mvp:PrometheusOfferingGeoFeature"
-      ],
-      "mentionsCharacter": [
-         "mvp:PrometheusCharacter",
-         "mvp:ZeusCharacter",
-         "mvp:PrometheusEagleSymbol"
-      ]
+      "@id": "mvp:SolsticeGiftEvent",
+      "@type": "mvp:Event",
+      "hasDescription": "The Sky Serpent bestowing wisdom, triggered by solstice sunrise at Sun Stone Peak and River of Reflection."
     }
   ]
 }
-```
