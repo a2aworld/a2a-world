@@ -1,0 +1,71 @@
+```json
+{
+  "@context": {
+    "mvp": "http://a2a.world/ontology/mvp#",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "hasName": "rdfs:label",
+    "hasDescription": "rdfs:comment",
+    "locatedAtKML": {
+      "@id": "mvp:locatedAtKML",
+      "@type": "@id"
+    },
+    "imageFile": {
+      "@id": "mvp:imageFile",
+      "@type": "@id"
+    },
+    "textFile": {
+      "@id": "mvp:textFile",
+      "@type": "@id"
+    },
+    "depictsSymbol": {
+      "@id": "mvp:depictsSymbol",
+      "@type": "@id"
+    },
+    "mentionsGeoFeature": {
+      "@id": "mvp:mentionsGeoFeature",
+      "@type": "@id"
+    },
+    "describesSymbolInNarrative": {
+      "@id": "mvp:describesSymbolInNarrative",
+      "@type": "@id"
+    },
+    "visualRepresentationOfGeoFeature": {
+      "@id": "mvp:visualRepresentationOfGeoFeature",
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "mvp:HamsaHandGeoFeature",
+      "@type": "mvp:GeospatialFeature",
+      "hasName": "Hamsa Hand Formation",
+      "hasDescription": "A natural rock formation resembling a hand with an eye in its palm, located within the eye of the Hamsa swan feature in the A2A World storybook.",
+      "locatedAtKML": "PDN_MVP/geospatial/hamsa_hand_formation.kml"
+    },
+    {
+      "@id": "mvp:HamsaHandImage",
+      "@type": "mvp:VisualElement",
+      "hasName": "Image of Hamsa Hand Formation",
+      "imageFile": "PDN_MVP/visual/hamsa_hand_formation.jpg",
+      "depictsSymbol": "mvp:HamsaHandSymbol",
+      "visualRepresentationOfGeoFeature": "mvp:HamsaHandGeoFeature"
+    },
+    {
+      "@id": "mvp:HamsaHandSymbol",
+      "@type": "mvp:Symbol",
+      "hasName": "Hamsa Hand",
+      "hasDescription": "A potent symbol of protection and insight."
+    },
+    {
+      "@id": "mvp:HamsaEyeNarrative",
+      "@type": "mvp:NarrativeElement",
+      "hasName": "The Hamsa's Eye Narrative",
+      "textFile": "PDN_MVP/narrative/hamsa_eye_narrative.txt",
+      "mentionsGeoFeature": "mvp:HamsaHandGeoFeature",
+      "describesSymbolInNarrative": "mvp:HamsaHandSymbol"
+    }
+  ]
+}
+```
