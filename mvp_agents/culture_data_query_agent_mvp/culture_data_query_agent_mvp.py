@@ -1,7 +1,7 @@
 import json
 import os
 
-# MVP_BASE_URI = "http://a2a.world/ontology/mvp#" # Not used as element_name is expected to be full @id
+# MVP_BASE_URI = "http://a2aworld.ai/ontology/mvp#" # Not used as element_name is expected to be full @id
 
 def handle_culture_data_query_task(task_id, request_type, element_name, ckg_filepath):
     """
