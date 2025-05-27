@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+    <name>Prometheus Myth Sites</name>
+    <Placemark>
+      <name>Prometheus's Eagle Formation</name>
+      <description>A geological formation whose shape resembles an eagle, associated with the myth of Prometheus.</description>
+      <Point>
+        <coordinates>56.490448,41.030367,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Prometheus Stealing Fire Site</name>
+      <description>A feature or area in the geospatial storybook representing Prometheus stealing fire and placing it in a fennel stalk.</description>
+      <Point>
+        <coordinates>56.053972,41.307033,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Zeus Taking Fire Site</name>
+      <description>A feature or area representing Zeus taking fire from mankind.</description>
+      <Point>
+        <coordinates>56.172132,40.932904,0</coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Prometheus's Offering Site</name>
+      <description>A feature or area representing Prometheus tricking Zeus with the offering of bones and fat.</description>
+      <Point>
+        <coordinates>55.506553,40.566994,0</coordinates>
+      </Point>
+    </Placemark>
+  </Document>
+</kml>
