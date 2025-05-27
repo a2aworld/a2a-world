@@ -8,7 +8,7 @@ This document outlines the specifications for the Minimum Viable Product (MVP) o
 
 This MVP Data Subset, nicknamed the "Mini-Storybook," represents a small, tightly interconnected collection of hypothetical geospatial, visual, and narrative elements. It is designed to provide a concrete basis for testing the core functionalities of the A2A World MVP, including agent interactions, data queries, and basic hypothesis generation.
 
-These elements are intended as placeholders. For the actual MVP implementation, they should be refined and replaced with specific, real-world data extracted from the "Om Kundalini: A Galactic Fairy Tale" storybook and the "Heaven on Earth As Above, So Below.kml" file, as provided and curated by the project visionary. The goal here is to illustrate the *types* of data and the *nature of connections* the MVP will handle.
+These elements are intended as placeholders. For the actual MVP implementation, they should be refined and replaced with specific, real-world data extracted from Om Kundalini's "Geospatial Storybook of Human Heritage" and the "Heaven on Earth As Above, So Below.kml" file, as provided and curated by the project visionary. The goal here is to illustrate the *types* of data and the *nature of connections* the MVP will handle.
 
 ### 1.2. Geospatial Elements (Derived from KML concepts)
 
