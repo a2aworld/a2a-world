@@ -36,11 +36,11 @@ The foundational concepts and specifications for A2A World are detailed in the f
 
 *   **`a2a_world_mvp_specifications.md`**: Details the scope, data, agent designs, and orchestration for the Minimum Viable Product. This is the immediate focus for initial development.
 *   **Strategic Design Documents (Contextual):**
-    *   *Technical Feasibility Analysis of A2A World* (Provided by user Om Kundalini)
-    *   *Geospatial Data Inventory and Landscape Assessment for the PDN* (Provided by user Om Kundalini)
-    *   *Accessible Datasets for a Comprehensive CKG* (Provided by user Om Kundalini)
-    *   *Architectural Design for the A2A Collaboration Hub* (Provided by user Om Kundalini)
-    *   *Task Orchestration Engine Framework* (Provided by user Om Kundalini)
+    *   [*Technical Feasibility Analysis of A2A World*](https://docs.google.com/document/d/1q_zwuhJA-7b5BIV4rQxVpWyTuwbyWsN0GuhgqXWjFvQ/edit?usp=sharing) (Provided by user Om Kundalini)
+    *   [*Geospatial Data Inventory and Landscape Assessment for the PDN*](https://docs.google.com/document/d/1Oi_VJS8blYxeb04hsp-3bwsiO72UkEV4nanFWwAQPaQ/edit?usp=sharing) (Provided by user Om Kundalini)
+    *   [*Accessible Datasets for a Comprehensive CKG*](https://docs.google.com/document/d/1ll3xifosTWL8gCP41A9eJBpbTeQKy0K1D3UqfW3snL0/edit?usp=sharing) (Provided by user Om Kundalini)
+    *   [*Architectural Design for the A2A Collaboration Hub*](https://docs.google.com/document/d/192q4HcUH8-GX_U9pDtd_qTZtaMqMZkBGx-XPn66Y7pI/edit?usp=sharing) (Provided by user Om Kundalini)
+    *   [*Task Orchestration Engine Framework*](https://docs.google.com/document/d/1YpefDUhqf5MxnwJ7qWi0-BZwyN39XlU8UJaKXx7w92E/edit?usp=sharing) (Provided by user Om Kundalini)
 *   **Supporting Specifications:**
     *   `a2a_world_protocol_extensions.md` (Initial thoughts on A2A extensions, largely superseded by Hub/TOE designs)
     *   `a2a_world_data_schemas.md` (Initial thoughts on PDN/CKG schemas, now expanded in strategic docs)
@@ -49,7 +49,6 @@ The foundational concepts and specifications for A2A World are detailed in the f
     *   `a2a_world_test_region_proposals.md` (Ideas for future testing phases)
     *   `a2a_world_foundational_data_integration.md` (Plan for integrating the "Heaven on Earth As Above, So Below.kml" dataset)
 
-*(Note: In a live GitHub repository, these would be actual links to the documents.)*
 
 ## MVP Overview
 The Minimum Viable Product (MVP) is designed to test a core analytical thread of the A2A World vision with minimal complexity. It involves:
