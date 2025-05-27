@@ -20,3 +20,10 @@ In future iterations beyond the MVP, this agent would:
 -   Execute complex semantic queries (e.g., SPARQL if the CKG is RDF-based).
 -   Handle actual A2A protocol communication.
 -   Potentially perform NLP tasks to extract information from textual sources within the CKG.
+
+## Running the MVP Agent (Standalone Test)
+The Python script `culture_data_query_agent_mvp.py` includes a standalone test block. You can run it directly to see example outputs based on the `ckg_mvp.jsonld` file:
+```bash
+python culture_data_query_agent_mvp.py
+```
+This requires `ckg_mvp.jsonld` to be present at `../../ckg_mvp.jsonld` (i.e., in the repository root) relative to the script.
