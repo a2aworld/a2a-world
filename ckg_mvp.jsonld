@@ -34,6 +34,18 @@
     "visualRepresentationOfGeoFeature": {
       "@id": "mvp:visualRepresentationOfGeoFeature",
       "@type": "@id"
+    },
+    "mentionsCharacter": {
+      "@id": "mvp:mentionsCharacter",
+      "@type": "@id"
+    },
+    "associatedSite": {
+      "@id": "mvp:associatedSite",
+      "@type": "@id"
+    },
+    "describesEvent": {
+      "@id": "mvp:describesEvent",
+      "@type": "@id"
     }
   },
   "@graph": [
@@ -65,6 +77,112 @@
       "textFile": "PDN_MVP/narrative/hamsa_eye_narrative.txt",
       "mentionsGeoFeature": "mvp:HamsaHandGeoFeature",
       "describesSymbolInNarrative": "mvp:HamsaHandSymbol"
+    },
+    {
+      "@id": "mvp:PrometheusEagleGeoFeature",
+      "@type": "mvp:GeospatialFeature",
+      "hasName": "Prometheus's Eagle Formation",
+      "hasDescription": "A geological formation whose shape resembles an eagle, associated with the myth of Prometheus.",
+      "locatedAtKML": "PDN_MVP/geospatial/prometheus_sites.kml"
+    },
+    {
+      "@id": "mvp:PrometheusFireTheftGeoFeature",
+      "@type": "mvp:GeospatialFeature",
+      "hasName": "Prometheus Stealing Fire Site",
+      "hasDescription": "A feature or area in the geospatial storybook representing Prometheus stealing fire and placing it in a fennel stalk.",
+      "locatedAtKML": "PDN_MVP/geospatial/prometheus_sites.kml"
+    },
+    {
+      "@id": "mvp:ZeusFireTheftGeoFeature",
+      "@type": "mvp:GeospatialFeature",
+      "hasName": "Zeus Taking Fire Site",
+      "hasDescription": "A feature or area representing Zeus taking fire from mankind.",
+      "locatedAtKML": "PDN_MVP/geospatial/prometheus_sites.kml"
+    },
+    {
+      "@id": "mvp:PrometheusOfferingGeoFeature",
+      "@type": "mvp:GeospatialFeature",
+      "hasName": "Prometheus's Offering Site",
+      "hasDescription": "A feature or area representing Prometheus tricking Zeus with the offering of bones and fat.",
+      "locatedAtKML": "PDN_MVP/geospatial/prometheus_sites.kml"
+    },
+    {
+      "@id": "mvp:PrometheusEagleImage",
+      "@type": "mvp:VisualElement",
+      "hasName": "Image of Prometheus's Eagle",
+      "imageFile": "PDN_MVP/visual/V_EagleFace.jpg",
+      "visualRepresentationOfGeoFeature": "mvp:PrometheusEagleGeoFeature",
+      "depictsSymbol": "mvp:PrometheusEagleSymbol"
+    },
+    {
+      "@id": "mvp:PrometheusFireTheftImage",
+      "@type": "mvp:VisualElement",
+      "hasName": "Image of Prometheus Stealing Fire",
+      "imageFile": "PDN_MVP/visual/V_PrometheusFireTheft.jpg",
+      "visualRepresentationOfGeoFeature": "mvp:PrometheusFireTheftGeoFeature"
+    },
+    {
+      "@id": "mvp:ZeusFireTheftImage",
+      "@type": "mvp:VisualElement",
+      "hasName": "Image of Zeus Taking Fire",
+      "imageFile": "PDN_MVP/visual/V_ZeusFireTheft.jpg",
+      "visualRepresentationOfGeoFeature": "mvp:ZeusFireTheftGeoFeature"
+    },
+    {
+      "@id": "mvp:PrometheusOfferingImage",
+      "@type": "mvp:VisualElement",
+      "hasName": "Image of Prometheus's Offering Trick",
+      "imageFile": "PDN_MVP/visual/V_OfferingTrick.jpg",
+      "visualRepresentationOfGeoFeature": "mvp:PrometheusOfferingGeoFeature"
+    },
+    {
+      "@id": "mvp:PrometheusCharacter",
+      "@type": "mvp:MythologicalCharacter",
+      "hasName": "Prometheus"
+    },
+    {
+      "@id": "mvp:ZeusCharacter",
+      "@type": "mvp:MythologicalCharacter",
+      "hasName": "Zeus"
+    },
+    {
+      "@id": "mvp:PrometheusEagleSymbol",
+      "@type": "mvp:Symbol",
+      "hasName": "Prometheus's Eagle",
+      "hasDescription": "The eagle that tormented Prometheus."
+    },
+    {
+      "@id": "mvp:PrometheusCycleNarrative",
+      "@type": "mvp:NarrativeElement",
+      "hasName": "Prometheus Cycle Narrative",
+      "textFile": "PDN_MVP/narrative/prometheus_cycle_narrative.txt",
+      "mentionsCharacter": [
+        "mvp:PrometheusCharacter",
+        "mvp:ZeusCharacter",
+        "mvp:PrometheusEagleSymbol"
+      ],
+      "mentionsGeoFeature": [
+        "mvp:PrometheusEagleGeoFeature",
+        "mvp:PrometheusFireTheftGeoFeature",
+        "mvp:ZeusFireTheftGeoFeature",
+        "mvp:PrometheusOfferingGeoFeature"
+      ],
+      "describesEvent": "mvp:PrometheusPunishmentEvent"
+    },
+    {
+      "@id": "mvp:PrometheusPunishmentEvent",
+      "@type": "mvp:MythologicalEvent",
+      "hasName": "Prometheus's Torment and Trickery",
+      "hasDescription": "The daily torment of Prometheus by the eagle as punishment for stealing fire, and his trickery of Zeus with the offering.",
+      "associatedSite": [
+        "mvp:PrometheusEagleGeoFeature",
+        "mvp:PrometheusOfferingGeoFeature"
+      ],
+      "mentionsCharacter": [
+         "mvp:PrometheusCharacter",
+         "mvp:ZeusCharacter",
+         "mvp:PrometheusEagleSymbol"
+      ]
     }
   ]
 }
