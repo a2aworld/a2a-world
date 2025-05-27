@@ -1,20 +1,22 @@
 # GeoDataQueryAgent-MVP
 
 ## Purpose
-This directory is a placeholder for the **GeoDataQueryAgent-MVP**.
+This directory contains the **GeoDataQueryAgent-MVP**.
 
-The `GeoDataQueryAgent-MVP` is responsible for retrieving predefined geospatial data elements from the Minimum Viable Product's (MVP) simplified Planetary Data Nexus (PDN-MVP). For the MVP, this involves providing the file paths to specific KML or GeoJSON files representing parts of the "Mini-Storybook."
+The `GeoDataQueryAgent-MVP` is responsible for "retrieving" predefined geospatial data elements by providing direct file paths to specific KML files that represent these elements. This simulates interaction with a Foundational Match Service (FMS) for the MVP.
 
 ## MVP Functionality
--   Receives a simulated task from the TOE-MVP specifying a geospatial element name.
--   Constructs the known file path to the corresponding data file within the PDN-MVP.
--   Returns this file path as its result.
+- The agent's core logic is encapsulated in the `handle_geo_data_query_task(task_id: str, element_id: str)` function.
+- It receives a simulated task from the TOE-MVP specifying which geospatial element is needed, using an `element_id` (e.g., "mvp:SunStonePeak") as the key.
+- Based on the `element_id`, it looks up a predefined KML file path from a hardcoded map (`MVP_GEOSPATIAL_ELEMENT_TO_KML_PATH`).
+- Returns its result as a dictionary conforming to the A2A `SubmitTaskResult` structure, containing the `elementId` and its `filePath`, or an error message if not found.
 
 ## Detailed Specification
-For detailed specifications, including its exact simulated A2A interactions and expected inputs/outputs for the MVP, please refer to **Section 3.2 (GeoDataQueryAgent-MVP)** in the main `a2a_world_mvp_specifications.md` document located in the `specifications/` directory of this repository.
+For detailed specifications, including its exact simulated A2A interactions and expected inputs/outputs for the MVP, please refer to **Section 3.2 (GeoDataQueryAgent-MVP)** in the main `a2a_world_mvp_specifications.md` document.
 
-## Future Development
-In future iterations beyond the MVP, this agent would:
--   Interact with a fully implemented Planetary Data Nexus.
--   Perform more complex queries for geospatial data based on various criteria (location, type, resolution, time).
--   Handle actual A2A protocol communication.
+## Running the MVP Agent (Standalone Test)
+The Python script `geo_data_query_agent_mvp.py` includes a standalone test block (`if __name__ == "__main__":`). You can run it directly to see example outputs:
+```bash
+python geo_data_query_agent_mvp.py
+```
+This test block now calls the `handle_geo_data_query_task` function with various sample `task_id`s and `element_id`s (e.g., "mvp:SunStonePeak", "mvp:HamsaHandGeoFeature"). It prints the A2A `SubmitTaskResult` formatted dictionaries for each test case, demonstrating both successful path retrievals and error handling for unknown element IDs.
