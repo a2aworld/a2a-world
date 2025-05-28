@@ -137,7 +137,7 @@ This section defines the simple storage and representation for the MVP's "Mini-S
     ```json
     {
       "@context": {
-        "mvp": "http://a2a.world/ontology/mvp#",
+        "mvp": "http://a2aworld.ai/ontology/mvp#",
         "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
         "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
         "xsd": "http://www.w3.org/2001/XMLSchema#",
