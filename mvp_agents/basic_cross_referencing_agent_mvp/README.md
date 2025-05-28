@@ -12,7 +12,7 @@ The `BasicCrossReferencingAgent-MVP` is responsible for performing a single, pre
 -   Returns this message as its result.
 
 ## Detailed Specification
-For detailed specifications, including its exact simulated A2A interactions and expected inputs/outputs for the MVP, please refer to **Section 3.4 (BasicCrossReferencingAgent-MVP)** in the main `a2a_world_mvp_specifications.md` document located in the `specifications/` directory of this repository.
+For detailed specifications, including its exact simulated A2A interactions and expected inputs/outputs for the MVP, please refer to **Section 3.4 (BasicCrossReferencingAgent-MVP)** in the main `a2a_world_mvp_specifications.md` document.
 
 ## Future Development
 In future iterations beyond the MVP, this agent (or more advanced correlational agents) would:
