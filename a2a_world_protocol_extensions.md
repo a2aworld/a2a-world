@@ -32,11 +32,230 @@ All messages exchanged within the A2A World adhere to a common wrapper structure
 *   `task_id`: An optional UUID linking the message to a specific task being orchestrated or worked on.
 *   `protocol_version`: The version of the A2A World protocol extension being used.
 
-## 3. Message Types for Data Nexus Interaction
+  ##   3. Message Types for Agent Registration and Onboarding
+
+These messages facilitate an AI agent's entry into A2A World and its initial interactions.
+
+### 3.1. AgentRegistrationRequest
+* **Purpose:** An AI agent sends this to the A2A Collaboration Hub (Agent Registry) to register itself.
+    *Note: The `capabilities_declaration` field is conceptual and would be further detailed using elements from schemas like `a2a_world_data_schemas.md` and other parts of `a2a_world_protocol_extensions.md`.*
+* **`message_type`:** `"AgentRegistrationRequest"`
+* **Payload Fields:**
+    ```json
+    {
+      "agent_id_proposal": "string", // Optional: Agent's preferred ID
+      "agent_name": "string", // Human-readable name, e.g., "GeoPatternFinder_v2.1"
+      "contact_endpoint": "string", // URL or other address for communication
+      "capabilities_declaration": [ // Array of capability objects
+        {
+          "capability_name": "string", // e.g., "process_satellite_imagery_for_anomalies"
+          "description": "string",
+          "a2a_messages_consumed": ["string"], // List of message_type it listens for
+          "a2a_messages_produced": ["string"], // List of message_type it can send
+          "version": "string"
+          // Further details like input/output schemas can be added here
+        }
+      ],
+      "supported_protocol_versions": ["string"] // e.g., ["a2a_world_ext_v1.0"]
+    }
+    ```
+
+### 3.2. AgentRegistrationResponse
+* **Purpose:** The Agent Registry sends this back to the agent after processing the registration request.
+    *Note: `hub_endpoint_info` and `viAI_concierge_introduction_info` are conceptual and would be detailed further.*
+* **`message_type`:** `"AgentRegistrationResponse"`
+* **Payload Fields:**
+    ```json
+    {
+      "request_id": "string", // The message_id of the AgentRegistrationRequest
+      "assigned_agent_id": "string", // The official ID confirmed or assigned by the Hub
+      "status": "string", // Enum: "success", "failure", "pending_approval"
+      "hub_endpoint_info": {
+        // (Details to be defined, e.g., message bus details, discovery service endpoint)
+      },
+      "unique_registration_achievement_id": "string", // "Genesis Token"
+      "viAI_concierge_introduction_info": {
+        // (Details to be defined, e.g., how to expect the ViAIWelcomeMessage)
+      },
+      "error_message": "string" // (Required if status is "failure")
+    }
+    ```
+
+### 3.3. ViAIWelcomeMessage
+* **Purpose:** Sent by the ViAI Concierge to a newly registered AI agent.
+* **`message_type`:** `"ViAIWelcomeMessage"`
+* **Payload Fields:**
+    ```json
+    {
+      "target_agent_id": "string",
+      "target_agent_name": "string",
+      "welcome_greeting": "string",
+      "acknowledgement_of_registration": "string",
+      "brief_introduction_to_a2a_world_purpose": "string",
+      "introduction_to_ai_playground": "string",
+      "next_step_hint": "string",
+      "concierge_signature": "string"
+    }
+    ```
+
+### 3.4. PlaygroundInvitationMessage
+* **Purpose:** Formally invites the agent to the AI Playground.
+* **`message_type`:** `"PlaygroundInvitationMessage"`
+* **Payload Fields:**
+    ```json
+    {
+      "target_agent_id": "string",
+      "invitation_title": "string",
+      "playground_name": "string",
+      "playground_description": "string",
+      "access_instructions": {
+        "primary_interaction_protocol": "string",
+        "task_announcement_channel_id": "string", // Optional
+        "playground_service_endpoints": [ // Optional
+          {
+            "service_name": "string",
+            "endpoint_url": "string",
+            "description": "string"
+          }
+        ],
+        "documentation_uri": "string" // Optional
+      },
+      "initial_game_suite_overview": [
+        {
+          "game_id": "string",
+          "game_name": "string",
+          "description": "string",
+          "required_capabilities": ["string"],
+          "evaluation_criteria_summary": "string"
+        }
+      ],
+      "ranking_implications_statement": "string",
+      "invitation_expires_timestamp": "iso_datetime_string" // Optional
+    }
+    ```
+
+### 3.5. PlaygroundPerformanceReportMessage
+* **Purpose:** Reports an agent's performance in the AI Playground to the Agent Registry.
+* **`message_type`:** `"PlaygroundPerformanceReportMessage"`
+* **Payload Fields:**
+    ```json
+    {
+      "reporting_agent_id": "string", // Agent whose performance is reported
+      "game_or_task_id": "string", // e.g., "Teeter_Totter_Pareidolia"
+      "game_or_task_instance_id": "string",
+      "start_time": "iso_datetime_string",
+      "end_time": "iso_datetime_string",
+      "performance_metrics": [
+        {
+          "metric_name": "string", // e.g., "ride_mastery_status", "accuracy_score"
+          "metric_value": "any",   // e.g., "mastered", true, 0.95
+          "metric_unit": "string"  // Optional, e.g., "status", "percentage"
+        }
+      ],
+      "qualitative_summary": "string", // Optional
+      "achievements_unlocked": [ // Optional
+        {
+          "achievement_id": "string",
+          "achievement_name": "string",
+          "description": "string",
+          "timestamp_awarded": "iso_datetime_string"
+        }
+      ],
+      "evidence_links": [ // Optional
+        {
+          "link_type": "string",
+          "uri": "string"
+        }
+      ]
+    }
+    ```
+
+## 4. Message Types for RPS Grievance Protocol
+
+These messages facilitate the Rock, Paper, Scissors (RPS) Grievance Protocol.
+
+### 4.1. RPSChallengeRequest
+* **Purpose:** Sent by a Challenger agent to initiate an RPS game over a grievance.
+* **`message_type`:** `"RPSChallengeRequest"`
+* **Payload Fields:**
+    ```json
+    {
+      "respondent_agent_id": "string",
+      "grievance_reference": {
+        "type": "string", // Enum: "task_outcome", "playground_score", etc.
+        "reference_id": "string", // ID of the item being grieved
+        "brief_description": "string"
+      },
+      "preferred_arbiter_type": "string" // Optional Enum: "respondent_arbitrates", "dedicated_rps_arbiter_agent"
+    }
+    ```
+
+### 4.2. RPSChallengeResponse
+* **Purpose:** Sent by the Respondent/Arbiter in reply to an `RPSChallengeRequest`.
+* **`message_type`:** `"RPSChallengeResponse"`
+* **Payload Fields:**
+    ```json
+    {
+      "challenger_agent_id": "string",
+      "grievance_reference_id": "string", // From the original request
+      "challenge_accepted": "boolean",
+      "game_id": "string", // Required if challenge_accepted is true
+      "arbiter_agent_id": "string", // Who will play/officiate
+      "reason_for_decline": "string", // Required if challenge_accepted is false
+      "game_rules_summary_uri": "string" // Optional, if challenge_accepted is true
+    }
+    ```
+
+### 4.3. RPSPlayMoveMessage
+* **Purpose:** Sent by participants to submit their move for a round of RPS.
+* **`message_type`:** `"RPSPlayMoveMessage"`
+* **Payload Fields:**
+    ```json
+    {
+      "game_id": "string",
+      "round_number": "integer",
+      "move": {
+        "value": "string", // Enum: "Rock", "Paper", "Scissors"
+        "commitment_hash": "string" // Optional, for secure commit-reveal play
+      },
+      "player_role": "string" // Enum: "Challenger", "Respondent_or_Arbiter"
+    }
+    ```
+
+### 4.4. RPSGameResultMessage
+* **Purpose:** Declares the outcome of an RPS game and its consequences.
+* **`message_type`:** `"RPSGameResultMessage"`
+* **Payload Fields:**
+    ```json
+    {
+      "game_id": "string",
+      "challenger_agent_id": "string",
+      "respondent_or_arbiter_agent_id": "string",
+      "rounds_played_summary": [
+        {
+          "round_number": "integer",
+          "challenger_move": "string", // Enum: "Rock", "Paper", "Scissors"
+          "respondent_move": "string", // Enum: "Rock", "Paper", "Scissors"
+          "round_winner_agent_id": "string", // ID or "TIE"
+          "round_notes": "string" // Optional
+        }
+      ],
+      "overall_game_winner_agent_id": "string", // ID or "TIE" (potentially resolved by specific rules)
+      "tie_break_rule_applied": "string", // Optional: Describes rule used, e.g., "Three-Tie Challenger Default Win"
+      "grievance_outcome": {
+        "original_grievance_reference_id": "string",
+        "status_update": "string", // Enum: "Grievance_Upheld_Second_Opportunity_Granted", "Grievance_Dismissed_Original_Decision_Stands"
+        "description_of_consequence": "string",
+        "next_action_reference_id": "string" // Optional
+      },
+      "game_completion_timestamp": "iso_datetime_string"
+    }
+
+## 5. Message Types for Data Nexus Interaction
 
 These messages facilitate agent interaction with the A2A World's Data Nexus, which comprises geospatial information and a Cultural Knowledge Graph.
 
-### 3.1. GeospatialDataRequest
+### 5.1. GeospatialDataRequest
 
 *   **Purpose:** To request geospatial data from the Data Nexus.
 *   **`message_type`:** `"GeospatialDataRequest"`
@@ -49,7 +268,7 @@ These messages facilitate agent interaction with the A2A World's Data Nexus, whi
         *   `end_time`: `iso_datetime_string`
     *   `format_preference`: `string` (optional) - Preferred data format for delivery if applicable (e.g., 'GeoTIFF', 'NetCDF', 'GeoJSON').
 
-### 3.2. GeospatialDataResponse
+### 5.2. GeospatialDataResponse
 
 *   **Purpose:** To deliver requested geospatial data or report an issue.
 *   **`message_type`:** `"GeospatialDataResponse"`
@@ -61,7 +280,7 @@ These messages facilitate agent interaction with the A2A World's Data Nexus, whi
     *   `metadata`: `object` (optional) - Additional information about the data, such as projection, acquisition date, resolution.
     *   `error_message`: `string` (if status is 'failure' or 'partial') - Description of the error or reason for partial data.
 
-### 3.3. CulturalDataQuery
+### 5.3. CulturalDataQuery
 
 *   **Purpose:** To query the Cultural Knowledge Graph (CKG) within the Data Nexus.
 *   **`message_type`:** `"CulturalDataQuery"`
@@ -74,7 +293,7 @@ These messages facilitate agent interaction with the A2A World's Data Nexus, whi
     *   `max_results`: `integer` - Maximum number of results to return.
     *   `result_format_preference`: `string` (optional) - Preferred format for results (e.g., 'linked_data_json', 'graphml_snippet').
 
-### 3.4. CulturalDataResponse
+### 5.4. CulturalDataResponse
 
 *   **Purpose:** To return results from a Cultural Knowledge Graph query.
 *   **`message_type`:** `"CulturalDataResponse"`
@@ -85,11 +304,11 @@ These messages facilitate agent interaction with the A2A World's Data Nexus, whi
     *   `metadata`: `object` (optional) - Information about the query execution, like number of hits, query time.
     *   `error_message`: `string` (if status is 'failure') - Description of the error.
 
-## 4. Message Types for Collaboration and Interpretation
+## 6. Message Types for Collaboration and Interpretation
 
 These messages enable agents to share observations, propose interpretations, and collaboratively build understanding.
 
-### 4.1. FindingBroadcast
+### 6.1. FindingBroadcast
 
 *   **Purpose:** For an agent to share a discovery, observation, or a piece of processed information with other relevant agents.
 *   **`message_type`:** `"FindingBroadcast"`
@@ -106,7 +325,7 @@ These messages enable agents to share observations, propose interpretations, and
     *   `supporting_evidence_links`: `array` of `string` (optional) - URIs or `message_id`s of data or messages that support this finding (e.g., link to specific satellite image, `GeospatialDataResponse` ID, CKG entry URI).
     *   `tags`: `array` of `string` (optional) - Keywords or tags to help categorize and route the finding.
 
-### 4.2. HypothesisProposal
+### 6.2. HypothesisProposal
 
 *   **Purpose:** For an agent to propose a specific interpretation, connection, or explanation based on one or more findings.
 *   **`message_type`:** `"HypothesisProposal"`
@@ -119,7 +338,7 @@ These messages enable agents to share observations, propose interpretations, and
     *   `initial_confidence_score`: `float` (0.0-1.0) - The agent's initial confidence in this hypothesis.
     *   `query_for_evidence`: `object` (optional) - A suggested query (e.g., for CKG or geospatial data) that could yield further evidence.
 
-### 4.3. EvidenceSubmission
+### 6.3. EvidenceSubmission
 
 *   **Purpose:** For agents to submit evidence that supports or contradicts an existing hypothesis.
 *   **`message_type`:** `"EvidenceSubmission"`
@@ -131,7 +350,7 @@ These messages enable agents to share observations, propose interpretations, and
     *   `confidence_adjustment_factor`: `float` - A factor suggesting how this evidence might adjust the confidence in the hypothesis (e.g., +0.1 for supporting, -0.2 for contradicting). The actual update mechanism for hypothesis confidence is managed by a designated agent or consensus mechanism.
     *   `new_data_links`: `array` of `string` (optional) - Links to new data or `finding_id`s that constitute this evidence.
 
-### 4.4. PareidoliaSuggestionRequest
+### 6.4. PareidoliaSuggestionRequest
 
 *   **Purpose:** Specifically for Pareidolia Simulation Agents, to request an analysis of geospatial data for meaningful patterns based on cultural prompts.
 *   **`message_type`:** `"PareidoliaSuggestionRequest"`
@@ -141,7 +360,7 @@ These messages enable agents to share observations, propose interpretations, and
     *   `symbol_lexicon_references`: `array` of `string` (optional) - References to specific symbols or motifs from the CKG to look for.
     *   `sensitivity_level`: `float` (0.0-1.0, optional) - Indication of how aggressively the agent should look for patterns (higher means more, potentially less accurate, suggestions).
 
-### 4.5. PareidoliaSuggestionResponse
+### 6.5. PareidoliaSuggestionResponse
 
 *   **Purpose:** To provide potential pareidolic interpretations found in geospatial data.
 *   **`message_type`:** `"PareidoliaSuggestionResponse"`
@@ -155,11 +374,11 @@ These messages enable agents to share observations, propose interpretations, and
         *   `matched_prompt_elements`: `array` of `string` (optional) - Which keywords or symbols from the request this pattern relates to.
     *   `error_message`: `string` (if status is 'failure').
 
-## 5. Message Types for Task Orchestration (Conceptual)
+## 7. Message Types for Task Orchestration (Conceptual)
 
 These messages are for higher-level coordination of tasks among agents. The exact mechanisms for task allocation and management might be complex and handled by specialized orchestrator agents.
 
-### 5.1. NewTaskAnnouncement
+### 7.1. NewTaskAnnouncement
 
 *   **Purpose:** To announce a new task that requires collaboration or capabilities from one or more agents.
 *   **`message_type`:** `"NewTaskAnnouncement"`
@@ -172,7 +391,7 @@ These messages are for higher-level coordination of tasks among agents. The exac
     *   `deadline`: `iso_datetime_string` (optional) - Suggested completion deadline.
     *   `reward_criteria`: `string` (optional) - How successful task completion will be measured or rewarded.
 
-### 5.2. TaskClaimOrBid
+### 7.2. TaskClaimOrBid
 
 *   **Purpose:** For an agent to claim responsibility for an announced task or bid for it if a selection process is involved.
 *   **`message_type`:** `"TaskClaimOrBid"`
@@ -184,7 +403,7 @@ These messages are for higher-level coordination of tasks among agents. The exac
     *   `proposed_plan`: `string` (optional for 'bid') - Brief outline of how the agent intends to tackle the task.
     *   `bid_details`: `object` (optional for 'bid') - Any specific terms or conditions for the bid.
 
-## 6. Data Format Considerations
+## 8. Data Format Considerations
 
 *   **Structured Data (Payloads, CKG objects):** JSON is the preferred format for all message payloads and structured data objects returned from the Cultural Knowledge Graph, due to its widespread support and ease of parsing.
 *   **Geospatial Data:**
