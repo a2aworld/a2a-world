@@ -97,7 +97,7 @@ This section defines the simple storage and representation for the MVP's "Mini-S
 ### 2.1. Planetary Data Nexus - MVP (PDN-MVP)
 
 *   **Purpose:** To provide a basic storage location for the raw data files of the "Mini-Storybook." For the MVP, this will be a simplified stand-in for the more complex Planetary Data Nexus.
-*   **Storage Mechanism:** A simple local directory structure accessible to the MVP agents.
+*   **Storage Mechanism:** A simple local directory structure <b>accessible</b> to the MVP agents.
 *   **Directory Structure Example:**
     ```
     PDN_MVP/
