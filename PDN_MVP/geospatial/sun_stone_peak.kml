@@ -1,1 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+    <Placemark>
+      <name>Sun Stone Peak</name>
+      <description>A key peak that aligns with the solstice sunrise, believed to be a focal point for ancient solar rituals.</description>
+      <Point>
+        <coordinates>-71.12345,-13.98765,4500</coordinates> <!-- Example: Lon, Lat, Alt. To be supplied by visionary. -->
+      </Point>
+    </Placemark>
+  </Document>
+</kml>
 
