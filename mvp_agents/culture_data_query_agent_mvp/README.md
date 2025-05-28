@@ -12,7 +12,7 @@ The `CultureDataQueryAgent-MVP` is responsible for querying a minimal, predefine
 -   Returns the extracted information as its result.
 
 ## Detailed Specification
-For detailed specifications, including its exact simulated A2A interactions and expected inputs/outputs for the MVP, please refer to **Section 3.3 (CultureDataQueryAgent-MVP)** in the main `a2a_world_mvp_specifications.md` document located in the `specifications/` directory of this repository.
+For detailed specifications, including its exact simulated A2A interactions and expected inputs/outputs for the MVP, please refer to **Section 3.3 (CultureDataQueryAgent-MVP)** in the main `a2a_world_mvp_specifications.md` document.
 
 ## Future Development
 In future iterations beyond the MVP, this agent would:
