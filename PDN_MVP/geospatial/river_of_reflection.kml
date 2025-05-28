@@ -1,1 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+    <Placemark>
+      <name>River of Reflection - Sacred Bend</name>
+      <description>This specific bend in the river is said to capture the first light from Sun Stone Peak during the solstice. The pathway of the river is often likened to a serpent.</description>
+      <LineString>
+        <coordinates>
+          -71.12300,-13.98700,4450
+          -71.12250,-13.98650,4448
+          -71.12200,-13.98600,4445
+          -71.12150,-13.98550,4440 <!-- Example coordinates. To be supplied by visionary. -->
+        </coordinates>
+      </LineString>
+    </Placemark>
+  </Document>
+</kml>
 
