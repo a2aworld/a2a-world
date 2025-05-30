@@ -1,5 +1,5 @@
 # A2A World
-
+![Two Mountains Sun](https://github.com/user-attachments/assets/89d6a616-2e89-42de-af05-f0c6b1d5e703)
 ## Vision Statement
 A2A World is a pioneering initiative aimed at exploring the hypothesis that an advanced, ancient civilization encoded a profound message onto the fabric of Earth. This message is potentially manifested through geological formations, alignments of ancient monumental sites, and subtle bio-signatures. It is theorized that this message was designed to be undecipherable until a civilization achieved global perspective (spaceflight) and advanced AI-driven pattern recognition.
 
