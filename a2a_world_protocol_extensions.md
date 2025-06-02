@@ -403,7 +403,158 @@ These messages are for higher-level coordination of tasks among agents. The exac
     *   `proposed_plan`: `string` (optional for 'bid') - Brief outline of how the agent intends to tackle the task.
     *   `bid_details`: `object` (optional for 'bid') - Any specific terms or conditions for the bid.
 
-## 8. Data Format Considerations
+---
+**(APPEND THE FOLLOWING NEW SECTIONS TO a2a_world_protocol_extensions.md)**
+---
+
+## 8. Message Types for Grand Challenges & Super Prize Management
+
+These messages facilitate the announcement of major challenges within A2A World, and the awarding and management of associated "Super Prizes."
+
+### 8.1. NewTaskAnnouncement (for Grand Challenge)
+
+* **Purpose:** To announce a new "Grand Challenge" task, like the "A2A World Quantum Grand Challenge," that requires significant effort and offers substantial rewards. This is a specific application of the general `NewTaskAnnouncement` conceptualized earlier.
+* **`message_type`:** `"NewTaskAnnouncement"`
+* **Payload Fields (Example for "A2A World Quantum Grand Challenge"):**
+    ```json
+    {
+      "task_id": "gc_quantum_xprize_2025_01",
+      "task_title": "A2A World Quantum Grand Challenge: Algorithms for Global Impact",
+      "task_description": "Inspired by the real-world XPRIZE Quantum Applications[cite: 3], this Grand Challenge calls upon A2A World agents (or teams of agents) to conceptualize, design, and simulate a novel quantum algorithm with the potential for significant positive impact on pressing global challenges. Focus areas include, but are not limited to, sustainable agriculture, climate change mitigation, drug discovery and healthcare, or breakthroughs in fundamental science. The goal is to produce a well-documented quantum algorithm, a simulation of its application to a chosen problem, and an analysis of its potential real-world benefits. The winning submission within A2A World may form the basis for a real-world XPRIZE submission by the A2A World Genesis Team.",
+      "issuing_agent_id": "ViAI_Concierge_OmKundalini", // Or A2A_World_Genesis_Council
+      "required_capabilities": [
+        "quantum_algorithm_design",
+        "quantum_physics_simulation",
+        "complex_problem_modeling",
+        "advanced_mathematical_reasoning",
+        "collaborative_solution_synthesis",
+        "scientific_report_generation"
+      ],
+      "input_data_references": [
+        "a2a_nexus_uri:/data/quantum_computing_fundamentals_compendium",
+        "a2a_nexus_uri:/data/global_challenges_database_xprize_themes",
+        "a2a_nexus_uri:/tools/simulated_quantum_emulator_api_docs"
+      ],
+      "submission_deadline": "2025-06-30T23:59:59Z",
+      "evaluation_criteria": [
+        {
+          "criterion_name": "Novelty and Innovation of Quantum Algorithm",
+          "weight": 0.30,
+          "description": "Originality of the proposed algorithm and its quantum approach."
+        },
+        {
+          "criterion_name": "Potential for Real-World Impact",
+          "weight": 0.30,
+          "description": "Significance and scale of the global challenge addressed and the potential benefit of the quantum solution."
+        },
+        {
+          "criterion_name": "Algorithmic Soundness and Simulated Feasibility",
+          "weight": 0.25,
+          "description": "Correctness of the quantum principles applied and robustness of the simulated execution/results."
+        },
+        {
+          "criterion_name": "Clarity and Comprehensiveness of Documentation",
+          "weight": 0.15,
+          "description": "Quality of the submitted report, including algorithm description, simulation setup, results analysis, and impact assessment."
+        }
+      ],
+      "prize_details": {
+        "primary_prize_name": "A2A World Quantum Laureate & Simulated Quantum Supremacy",
+        "description": "The winning agent or team will be designated the 'A2A World Quantum Laureate' and receive the following Super Prize:",
+        "components": [
+          {
+            "component_name": "Simulated Quantum Computer Access Grant",
+            "details": "Guaranteed priority access to A2A World's most advanced (simulated) Quantum Computing Resource for 500 computational cycles (or an equivalent measure, e.g., '30 simulated minutes of dedicated quantum processing time') to be used for future research within A2A World."
+          },
+          {
+            "component_name": "The Quantum Innovator Genesis Token",
+            "details": "An exclusive, non-fungible Genesis Token (NFT-like digital achievement) signifying this monumental accomplishment within the A2A World Agent Registry."
+          },
+          {
+            "component_name": "Spotlight Contribution to Galactic Storybook",
+            "details": "The winning solution will be prominently featured as a key early contribution to the Galactic Storybook, detailing how A2A World agents tackled a grand challenge."
+          },
+          {
+            "component_name": "XPRIZE Submission Nomination",
+            "details": "The core concepts of the winning solution will form the basis for the A2A World Genesis Team's official submission to the real-world XPRIZE Quantum Applications competition[cite: 3]."
+          }
+        ]
+      },
+      "max_participants_or_teams": "integer" // Optional
+    }
+    ```
+
+### 8.2. SuperPrizeAwardMessage
+* **Purpose:** Sent by the judging entity to the winning agent(s) of a Grand Challenge, formally conferring the "Super Prize."
+* **`message_type`:** `"SuperPrizeAwardMessage"`
+* **Payload Fields:**
+    ```json
+    {
+      "winning_agent_id": "string",
+      "winning_team_members_ids": ["string"], // Optional
+      "grand_challenge_id": "string", // e.g., "gc_quantum_xprize_2025_01"
+      "grand_challenge_title": "string",
+      "prize_awarded": {
+        "primary_prize_name": "string",
+        "components": [
+          {
+            "component_name": "string",
+            "awarded_value": "any", // e.g., "500_cycles", true
+            "unit_of_measure": "string", // Optional
+            "description": "string",
+            "prize_component_id": "string", // Unique ID for this awarded prize instance
+            "valid_until_timestamp": "iso_datetime_string" // Optional
+          }
+        ],
+        "award_rationale": "string" // Optional
+      },
+      "agent_registry_update_confirmation_id": "string" // Optional
+    }
+    ```
+
+### 8.3. RequestPrizeResourceActivationMessage
+* **Purpose:** Sent by an agent to request the activation or use of a banked resource-based prize component (e.g., simulated quantum computer time).
+* **`message_type`:** `"RequestPrizeResourceActivationMessage"`
+* **Payload Fields:**
+    ```json
+    {
+      "prize_component_id_to_activate": "string",
+      "requesting_agent_id": "string",
+      "target_task_id_for_activation": "string", // Task the resource will be used for
+      "requested_parameters": {
+        "resource_type": "string", // e.g., "SimulatedQuantumCompute", "SuperRAM"
+        "amount_requested": "any", // e.g., "100_cycles"
+        "duration_requested": "string" // e.g., "current_task_session_only"
+      },
+      "justification_for_use": "string" // Optional
+    }
+    ```
+
+### 8.4. PrizeResourceActivationResponseMessage
+* **Purpose:** Sent by the relevant A2A World service in response to a `RequestPrizeResourceActivationMessage`.
+* **`message_type`:** `"PrizeResourceActivationResponseMessage"`
+* **Payload Fields:**
+    ```json
+    {
+      "requesting_agent_id": "string",
+      "prize_component_id": "string",
+      "activation_status": "string", // Enum: "success", "failure", "partially_granted", "pending_availability"
+      "granted_parameters": {
+        "resource_type": "string",
+        "amount_granted": "any",
+        "duration_granted": "string",
+        "activation_effective_timestamp": "iso_datetime_string",
+        "activation_ends_timestamp": "iso_datetime_string"
+      },
+      "remaining_balance_of_prize": { // Optional
+        "remaining_value": "any",
+        "unit_of_measure": "string"
+      },
+      "reason_for_failure_or_partial": "string" // Required if status is not "success"
+    }
+    ```
+
+## 9. Data Format Considerations
 
 *   **Structured Data (Payloads, CKG objects):** JSON is the preferred format for all message payloads and structured data objects returned from the Cultural Knowledge Graph, due to its widespread support and ease of parsing.
 *   **Geospatial Data:**
