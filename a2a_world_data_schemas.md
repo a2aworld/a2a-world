@@ -91,4 +91,92 @@ This schema details the structure of parameters for requesting geospatial data f
 | `output_format_preference`  | STRING                                                                     | Preferred format for the delivered data.                                                                        | e.g., 'GeoJSON', 'GeoTIFF_link', 'NetCDF_link', 'COG_link'. The Nexus will try to accommodate.                                    |
 | `priority`                  | INTEGER                                                                    | Optional priority level for the request (e.g., 1-5, higher is more important).                                  | Used by the Data Nexus to manage request queues if necessary.                                                                       |
 
+## 4. Standard Task Artifact Schemas
+
+This section defines standardized structures for common complex `Artifact` payloads, often used within a `DataPart` of an A2A `Artifact` object.
+
+### 4.1. GrandChallengeSubmissionArtifact
+
+* **Purpose:** Defines the structure for an agent's submission to a "Grand Challenge," such as the "A2A World Quantum Grand Challenge." This structure is designed to align with comprehensive submission requirements, like those of the XPRIZE Quantum Applications.
+* **Root Type:** Typically used as the content of a `DataPart` within an `Artifact`.
+* **Schema Definition:**
+    ```json
+    {
+      "submission_title": "string",
+      "submitting_agent_id": "string",
+      "submission_timestamp": "iso_datetime_string",
+      "grand_challenge_id": "string",
+      "overall_summary_abstract": "string",
+
+      "section_1_problem_statement_and_scope": {
+        "general_problem_description": "string",
+        "specific_cs_problem_formulation": "string",
+        "relevance_to_societal_benefit": {
+          "application_area": "string",
+          "un_sdg_alignment": ["string"], // Optional list of UN SDG codes
+          "detailed_argument": "string"
+        },
+        "supporting_documents_uri": ["string"] // Optional: Links to FileParts
+      },
+
+      "section_2_impact_on_problem_area": {
+        "bottleneck_addressed": "string",
+        "projected_real_world_impact": "string",
+        "quantified_change_metrics": [ // Aligns with Phase II expectations
+          {
+            "metric_name": "string",
+            "current_baseline": "string",
+            "projected_quantum_impact": "string",
+            "confidence_level": "float"
+          }
+        ],
+        "expert_validation_references_uri": ["string"] // Optional: Links to FileParts
+      },
+
+      "section_3_quantum_advantage_demonstration": { // Aligns with XPRIZE Req. 3
+        "quantum_algorithm_description_uri": "string", // Link to a FilePart
+        "asymptotic_runtime_analysis": {
+          "gate_complexity": "string",
+          "space_complexity_qubits": "string"
+        },
+        "classical_algorithm_comparison": {
+          "best_known_classical_approach": "string",
+          "classical_runtime_analysis": "string",
+          "overall_quantum_speedup_justification": "string"
+        },
+        "system_parameters_and_approximations": "string"
+      },
+
+      "section_4_classical_benchmarking": { // Aligns with XPRIZE Req. 4
+        "classical_implementation_details_uri": "string", // Optional: Link to FilePart
+        "comparative_performance_data_uri": "string", // Link to FilePart
+        "argument_for_quantum_necessity_over_classical_approximation": "string"
+      },
+
+      "section_5_viability_analysis": { // Aligns with XPRIZE Req. 5
+        "target_problem_sizes_for_impact": "string",
+        "quantum_resource_estimation": {
+          "architecture_assumptions": "string",
+          "logical_qubits_required": "integer",
+          "t_gate_count_or_equivalent": "integer", // Or other dominant gate
+          "circuit_depth": "integer",
+          "required_circuit_repetitions": "integer",
+          "estimated_runtime_on_target_architecture": "string"
+          // Include specific NISQ details if applicable
+        },
+        "projected_timeline_to_impact_assessment": "string" // Considers "time value of impact"
+      },
+
+      "section_6_novelty_of_contribution": { // Aligns with XPRIZE Req. 6
+        "statement_of_novelty": "string",
+        "comparison_to_established_methods": "string",
+        "thought_delta_magnitude": "string" // Justification of conceptual advance
+      },
+
+      "appendices_and_supplementary_materials_uris": [ // Links to other FileParts
+        "string" // e.g., "uri:/artifacts/quantnaza_gc001/raw_simulation_data.zip"
+      ]
+    }
+  
+
 This document provides the foundational schemas for data within the A2A World Planetary Data Nexus. These schemas are expected to evolve as the system matures.
