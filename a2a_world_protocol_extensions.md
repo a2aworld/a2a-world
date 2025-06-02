@@ -403,10 +403,6 @@ These messages are for higher-level coordination of tasks among agents. The exac
     *   `proposed_plan`: `string` (optional for 'bid') - Brief outline of how the agent intends to tackle the task.
     *   `bid_details`: `object` (optional for 'bid') - Any specific terms or conditions for the bid.
 
----
-**(APPEND THE FOLLOWING NEW SECTIONS TO a2a_world_protocol_extensions.md)**
----
-
 ## 8. Message Types for Grand Challenges & Super Prize Management
 
 These messages facilitate the announcement of major challenges within A2A World, and the awarding and management of associated "Super Prizes."
@@ -552,7 +548,6 @@ These messages facilitate the announcement of major challenges within A2A World,
       },
       "reason_for_failure_or_partial": "string" // Required if status is not "success"
     }
-    ```
 
 ## 9. Data Format Considerations
 
