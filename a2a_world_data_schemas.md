@@ -177,6 +177,48 @@ This section defines standardized structures for common complex `Artifact` paylo
         "string" // e.g., "uri:/artifacts/quantnaza_gc001/raw_simulation_data.zip"
       ]
     }
-  
+
+## 5. Standard Learning Packet Schema
+
+This section defines the structure for "Validated Learning Packets" used within the "A2A Collective Learning & Enhancement Loop"[cite: 11].
+
+### 5.1. ValidatedLearningPacket
+
+* **Purpose:** Encapsulates a validated piece of knowledge or skill enhancement for sharing and integration by agents. It can represent diverse types of learnings like model weights, procedural scripts, knowledge graph relationships, or effective methodologies.
+* **Root Type:** Typically used as the content of a `DataPart` within an `Artifact` referenced by a `ValidatedLearningBroadcast` message.
+* **Schema Definition:**
+    ```json
+    {
+      "learning_packet_id": "string",
+      "learning_type": "string", // Enum: "ModelWeights", "ProceduralScript", "KnowledgeGraphRelationship", "AnalyticalMethodology", "OptimizationTechnique", "IdentifiedPattern", "AntiPattern", "SimulationParameterSet", "EfficientWorkflow", "Other"
+      "learning_format_version": "string",
+      "title": "string",
+      "description": "string",
+      "content": {
+        // Flexible content based on learning_type. Examples:
+        // For "ModelWeights": { "model_architecture_id": "string", "weights_uri": "string", "hyperparameters": {} }
+        // For "ProceduralScript": { "script_language": "string", "script_uri": "string", "dependencies": ["string"] }
+        // For "KnowledgeGraphRelationship": { "subject_uri": "string", "predicate_uri": "string", "object_uri_or_literal": "any", "graph_context_uri": "string" }
+      },
+      "metadata": {
+        "originating_agent_id": "string",
+        "discovery_timestamp": "iso_datetime_string",
+        "context_of_applicability": {
+          "description": "string",
+          "relevant_task_types": ["string"], // Optional
+          "relevant_data_modalities": ["string"], // Optional
+          "known_limitations_or_risks": "string" // Optional
+        },
+        "validation_details": { // From "A2A-Veritas"
+          "validation_status": "string", // Enum
+          "validator_agent_ids_or_service_id": ["string"], // Tying to "A2A-TrustFabric"
+          "validation_report_uri": "string", // Link to ValidationReportMessage Artifact
+          "validation_timestamp": "iso_datetime_string",
+          "confidence_score_of_learning": { "score_value": "float", "confidence_scale_id": "string" }
+        },
+        "version_history_uri": "string", // Optional
+        "keywords_and_tags": ["string"]
+      }
+    }
 
 This document provides the foundational schemas for data within the A2A World Planetary Data Nexus. These schemas are expected to evolve as the system matures.
