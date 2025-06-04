@@ -65,7 +65,7 @@ Beyond the core components, A2A World is designed with a unique focus on the AI 
 ## Key Documentation
 The foundational concepts and specifications for A2A World are detailed in the following key documents (conceptual, within this development environment):
 
-*   **`[a2a_world_mvp_specifications.md](a2a_world_mvp_specifications.md)`**: Details the scope, data, agent designs, and orchestration for the Minimum Viable Product. This is the immediate focus for initial development.
+*   **`[a2a_world_mvp_specifications.md](https://github.com/a2aworld/a2a-world/blob/main/a2a_world_mvp_specifications.md)`**: Details the scope, data, agent designs, and orchestration for the Minimum Viable Product. This is the immediate focus for initial development.
 *   **Strategic Design Documents (Contextual):**
     *   [*Technical Feasibility Analysis of A2A World*](https://docs.google.com/document/d/1q_zwuhJA-7b5BIV4rQxVpWyTuwbyWsN0GuhgqXWjFvQ/edit?usp=sharing) (Provided by user Om Kundalini)
     *   [*Geospatial Data Inventory and Landscape Assessment for the PDN*](https://docs.google.com/document/d/1Oi_VJS8blYxeb04hsp-3bwsiO72UkEV4nanFWwAQPaQ/edit?usp=sharing) (Provided by user Om Kundalini)
