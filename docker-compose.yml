@@ -1,0 +1,187 @@
+services:
+  postgres:
+    image: postgis/postgis:15-3.4
+    container_name: terra-postgis
+    environment:
+      - POSTGRES_DB=${POSTGRES_DB:-terra_constellata}
+      - POSTGRES_USER=${POSTGRES_USER:-postgres}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD:-1234}
+    ports:
+      - "${POSTGRES_PORT:-5432}:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./init-postgis.sql:/docker-entrypoint-initdb.d/init-postgis.sql
+    networks:
+      - terra-network
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-postgres} -d ${POSTGRES_DB:-terra_constellata}"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+    restart: unless-stopped
+
+  arangodb:
+    image: arangodb/arangodb:3.12.3
+    container_name: terra-arangodb
+    environment:
+      - ARANGO_NO_AUTH=1
+    ports:
+      - "${ARANGO_PORT:-8529}:8529"
+    volumes:
+      - arangodb_data:/var/lib/arangodb3
+      - arangodb_apps:/var/lib/arangodb3-apps
+    networks:
+      - terra-network
+    #healthcheck:
+      #test: ["CMD", "curl", "-f", "http://localhost:8529/_api/version"]
+      #interval: 30s
+      #timeout: 30s
+      #retries: 5
+      #start_period: 60s
+    #restart: unless-stopped
+
+  a2a-server:
+    build:
+      context: ./a2a_protocol
+      dockerfile: Dockerfile
+    container_name: terra-a2a-server
+    ports:
+      - "${A2A_PORT:-8080}:8080"
+    environment:
+      - A2A_HOST=${A2A_HOST:-0.0.0.0}
+      - A2A_PORT=${A2A_PORT:-8080}
+      - POSTGRES_HOST=postgres
+      - POSTGRES_PORT=5432
+      - POSTGRES_DB=${POSTGRES_DB:-terra_constellata}
+      - POSTGRES_USER=${POSTGRES_USER:-postgres}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD:-1234}
+      - ARANGO_HOST=arangodb
+      - ARANGO_PORT=8529
+      - ARANGO_NO_AUTH=1
+    depends_on:
+      postgres:
+        condition: service_healthy
+      arangodb:
+        condition: service_started
+    networks:
+      - terra-network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8080/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 15s
+    restart: unless-stopped
+
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: terra-backend
+    ports:
+      - "${BACKEND_PORT:-8000}:8000"
+    environment:
+      - POSTGRES_HOST=postgres
+      - POSTGRES_PORT=5432
+      - POSTGRES_DB=${POSTGRES_DB:-terra_constellata}
+      - POSTGRES_USER=${POSTGRES_USER:-postgres}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD:-1234}
+      - ARANGO_HOST=arangodb
+      - ARANGO_PORT=8529
+      - ARANGO_NO_AUTH=1
+      - A2A_HOST=a2a-server
+      - A2A_PORT=8080
+    depends_on:
+      postgres:
+        condition: service_healthy
+      arangodb:
+        condition: service_started
+      a2a-server:
+        condition: service_healthy
+    networks:
+      - terra-network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    restart: unless-stopped
+
+  react-app:
+    build:
+      context: ./interfaces/react-app
+      dockerfile: Dockerfile
+    container_name: terra-react-app
+    ports:
+      - "${REACT_PORT:-3000}:3000"
+    depends_on:
+      - backend
+    networks:
+      - terra-network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:3000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    restart: unless-stopped
+
+  web:
+    build:
+      context: ./interfaces/web
+      dockerfile: Dockerfile
+    container_name: terra-web
+    ports:
+      - "${WEB_PORT:-8081}:8080"
+    depends_on:
+      - backend
+    networks:
+      - terra-network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8080/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    restart: unless-stopped
+
+  prometheus:
+    image: prom/prometheus:latest
+    container_name: terra-prometheus
+    ports:
+      - "${PROMETHEUS_PORT:-9090}:9090"
+    volumes:
+      - ./monitoring/prometheus.yml:/etc/prometheus/prometheus.yml
+      - prometheus_data:/prometheus
+    command:
+      - '--config.file=/etc/prometheus/prometheus.yml'
+      - '--storage.tsdb.path=/prometheus'
+      - '--web.console.libraries=/etc/prometheus/console_libraries'
+      - '--web.console.templates=/etc/prometheus/consoles'
+      - '--storage.tsdb.retention.time=200h'
+      - '--web.enable-lifecycle'
+    networks:
+      - terra-network
+    restart: unless-stopped
+
+  grafana:
+    image: grafana/grafana:latest
+    container_name: terra-grafana
+    ports:
+      - "${GRAFANA_PORT:-3001}:3000"
+    environment:
+      - GF_SECURITY_ADMIN_PASSWORD=${GRAFANA_ADMIN_PASSWORD:-admin}
+    volumes:
+      - grafana_data:/var/lib/grafana
+    networks:
+      - terra-network
+    restart: unless-stopped
+
+volumes:
+  postgres_data:
+  arangodb_data:
+  arangodb_apps:
+  prometheus_data:
+  grafana_data:
+
+networks:
+  terra-network:
+    driver: bridge

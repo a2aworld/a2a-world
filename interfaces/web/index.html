@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lore Weaver - Geomythological Chatbot</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🧙‍♂️ Lore Weaver</h1>
+            <p>Your guide to geomythological storytelling</p>
+        </header>
+
+        <div class="chat-container">
+            <div id="chat-messages" class="chat-messages">
+                <div class="message bot-message">
+                    <div class="message-avatar">🤖</div>
+                    <div class="message-content">
+                        <p>Welcome to Lore Weaver! I'm your guide through the rich tapestry of geomythological narratives. Ask me about mythological entities, geographic features, or cultural concepts, and I'll weave together stories from our vast knowledge base.</p>
+                        <p>What would you like to explore today?</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="chat-input-container">
+                <div class="input-group">
+                    <input
+                        type="text"
+                        id="user-input"
+                        placeholder="Ask about a mythological figure, place, or cultural concept..."
+                        maxlength="500"
+                    >
+                    <button id="send-button" class="send-button">Send</button>
+                </div>
+                <div class="input-options">
+                    <button id="clear-button" class="option-button">Clear Chat</button>
+                    <button id="feedback-button" class="option-button">Provide Feedback</button>
+                    <button id="workflow-status-button" class="option-button" style="display: none;">Check Workflow Status</button>
+                    <button id="cocreation-mode-button" class="option-button">🎨 Co-Creation Mode</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="loading-indicator" class="loading-indicator" style="display: none;">
+            <div class="spinner"></div>
+            <p>Weaving your story...</p>
+        </div>
+
+        <!-- Feedback Modal -->
+        <div id="feedback-modal" class="modal" style="display: none;">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2>Share Your Feedback</h2>
+                <div class="rating-stars">
+                    <span class="star" data-rating="1">⭐</span>
+                    <span class="star" data-rating="2">⭐</span>
+                    <span class="star" data-rating="3">⭐</span>
+                    <span class="star" data-rating="4">⭐</span>
+                    <span class="star" data-rating="5">⭐</span>
+                </div>
+                <textarea id="feedback-text" placeholder="Tell us what you think..."></textarea>
+                <button id="submit-feedback">Submit Feedback</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

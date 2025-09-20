@@ -1,0 +1,43 @@
+--- Python ---
+Virtual Environments
+venv/
+.venv/
+env/
+.env
+
+Compiled Python files
+pycache/
+*.pyc
+*.pyo
+*.pyd
+
+--- Node.js / React ---
+Dependency directories
+node_modules/
+dist/
+build/
+
+Log files
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+--- Docker ---
+Ignore Docker data volumes to avoid committing database files
+postgres_data/
+arangodb_data/
+arangodb_apps/
+prometheus_data/
+grafana_data/
+
+--- IDE / OS Specific ---
+.vscode/
+.idea/
+*.DS_Store
+Thumbs.db
+
+--- Secrets ---
+Ignore all .env files to keep passwords and API keys out of the repository
+.env
+.env.

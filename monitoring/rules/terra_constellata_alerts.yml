@@ -1,0 +1,78 @@
+groups:
+  - name: terra_constellata_alerts
+    rules:
+      # API Health Alerts
+      - alert: HighErrorRate
+        expr: rate(terra_constellata_errors_total[5m]) / rate(terra_constellata_requests_total[5m]) > 0.1
+        for: 5m
+        labels:
+          severity: critical
+        annotations:
+          summary: "High error rate detected"
+          description: "Error rate is {{ $value }}% which is above the 10% threshold"
+
+      - alert: SlowAPIResponse
+        expr: histogram_quantile(0.95, rate(terra_constellata_request_duration_seconds_bucket[5m])) > 5
+        for: 5m
+        labels:
+          severity: warning
+        annotations:
+          summary: "Slow API response time"
+          description: "95th percentile response time is {{ $value }}s"
+
+      # System Resource Alerts
+      - alert: HighMemoryUsage
+        expr: terra_constellata_memory_usage_bytes / 1024 / 1024 / 1024 > 8
+        for: 5m
+        labels:
+          severity: warning
+        annotations:
+          summary: "High memory usage"
+          description: "Memory usage is {{ $value }}GB"
+
+      - alert: HighCPUUsage
+        expr: terra_constellata_cpu_usage_percent > 90
+        for: 5m
+        labels:
+          severity: critical
+        annotations:
+          summary: "High CPU usage"
+          description: "CPU usage is {{ $value }}%"
+
+      # Service Availability Alerts
+      - alert: BackendDown
+        expr: up{job="backend"} == 0
+        for: 1m
+        labels:
+          severity: critical
+        annotations:
+          summary: "Backend service is down"
+          description: "Backend service has been down for more than 1 minute"
+
+      - alert: DatabaseDown
+        expr: up{job="postgres"} == 0
+        for: 1m
+        labels:
+          severity: critical
+        annotations:
+          summary: "Database is down"
+          description: "PostgreSQL database has been down for more than 1 minute"
+
+      # Business Logic Alerts
+      - alert: LowWorkflowCompletionRate
+        expr: rate(terra_constellata_workflows_completed_total{status="failed"}[5m]) / rate(terra_constellata_workflows_started_total[5m]) > 0.2
+        for: 5m
+        labels:
+          severity: warning
+        annotations:
+          summary: "High workflow failure rate"
+          description: "Workflow failure rate is {{ $value }}%"
+
+      - alert: LowUserFeedback
+        expr: rate(terra_constellata_feedback_received_total[1h]) < 1
+        for: 1h
+        labels:
+          severity: info
+        annotations:
+          summary: "Low user feedback rate"
+          description: "Only {{ $value }} feedback entries received in the last hour"
