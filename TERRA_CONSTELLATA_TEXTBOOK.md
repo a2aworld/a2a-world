@@ -388,10 +388,10 @@ refined_analysis = await sentinel_agent.coordinate_analysis(
 
 ### References
 
-- [A2A Protocol Specification](docs/a2a_protocol.md)
-- [Multi-Agent Systems: An Introduction](https://example.com/multi-agent-systems)
-- [Human-AI Collaboration in Research](https://example.com/human-ai-research)
-- [Ethics in AI-Assisted Research](https://example.com/ai-research-ethics)
+- [A2A Protocol Specification](https://a2a-protocol.org/latest/specification/)
+- [Multi-Agent Systems: An Introduction](https://www.ibm.com/think/topics/multiagent-system)
+- [Human-AI Collaboration in Research](https://mitsloan.mit.edu/ideas-made-to-matter/when-humans-and-ai-work-best-together-and-when-each-better-alone)
+- [Ethics in AI-Assisted Research](https://www.unesco.org/en/artificial-intelligence/recommendation-ethics)
 
 ---
 
