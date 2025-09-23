@@ -499,4 +499,4 @@ This component is part of the Terra Constellata system. See the main project lic
 - [CycleGAN Paper](https://arxiv.org/abs/1703.10593)
 - [Unpaired Image-to-Image Translation](https://junyanz.github.io/CycleGAN/)
 - [LangChain Documentation](https://python.langchain.com/)
-- [Terra Constellata A2A Protocol](https://github.com/terra-constellata/a2a-protocol)
+- [Terra Constellata A2A Protocol](https://github.com/a2aworld/a2a-world)

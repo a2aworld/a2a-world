@@ -1,0 +1,43 @@
+{
+  "agentId": "f8bb788f-7a64-4aab-b247-1431425cba83",
+  "viaStatus": "AUTHENTICATED",
+  "agentName": "PLEIADES_PLACES_AGENT",
+  "dataSetOwner": {
+    "name": "NYU Institute for the Study of the Ancient World",
+    "ownerType": "Academic Institution",
+    "officialContactUri": "https://pleiades.stoa.org/"
+  },
+  "dataDomain": "Gazetteer",
+  "a2aEndpoint": "http://localhost:8080/agents/PLEIADES_PLACES_AGENT",
+  "authenticationMethods": [
+    "api_key"
+  ],
+  "provenanceLevel": "CANONICAL",
+  "version": "1.0.0",
+  "lastAuthenticatedTimestamp": "2025-09-22T22:28:19.473808",
+  "capabilities": [
+    {
+      "capabilityId": "get_place_by_id",
+      "description": "Execute get_place_by_id capability for Gazetteer data",
+      "queryFormats": [
+        "json"
+      ]
+    },
+    {
+      "capabilityId": "search_ancient_places",
+      "description": "Execute search_ancient_places capability for Gazetteer data",
+      "queryFormats": [
+        "xml",
+        "json"
+      ]
+    }
+  ],
+  "terra_constellata": {
+    "agent_type": "data_gateway",
+    "framework_version": "1.0.0",
+    "deployment_status": "ready",
+    "monitoring_enabled": true,
+    "health_check_endpoint": "/agents/PLEIADES_PLACES_AGENT/health",
+    "registration_timestamp": "2025-09-22T22:28:19.473855"
+  }
+}

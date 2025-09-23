@@ -1,0 +1,36 @@
+{
+  "agentId": "67a95db8-5f8b-48c5-9053-25d1b30ff16f",
+  "viaStatus": "AUTHENTICATED",
+  "agentName": "CLICS_COLEXIFICATION_AGENT",
+  "dataSetOwner": {
+    "name": "Max Planck Institute for Evolutionary Anthropology",
+    "ownerType": "Academic Institution",
+    "officialContactUri": "https://clics.clld.org/"
+  },
+  "dataDomain": "Linguistics",
+  "a2aEndpoint": "http://localhost:8080/agents/CLICS_COLEXIFICATION_AGENT",
+  "authenticationMethods": [
+    "api_key"
+  ],
+  "provenanceLevel": "CANONICAL",
+  "version": "1.0.0",
+  "lastAuthenticatedTimestamp": "2025-09-22T22:28:19.485426",
+  "capabilities": [
+    {
+      "capabilityId": "get_colexifications_by_concept",
+      "description": "Execute get_colexifications_by_concept capability for Linguistics data",
+      "queryFormats": [
+        "xml",
+        "json"
+      ]
+    }
+  ],
+  "terra_constellata": {
+    "agent_type": "data_gateway",
+    "framework_version": "1.0.0",
+    "deployment_status": "ready",
+    "monitoring_enabled": true,
+    "health_check_endpoint": "/agents/CLICS_COLEXIFICATION_AGENT/health",
+    "registration_timestamp": "2025-09-22T22:28:19.485438"
+  }
+}

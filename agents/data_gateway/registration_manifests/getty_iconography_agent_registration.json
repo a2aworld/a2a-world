@@ -1,0 +1,35 @@
+{
+  "agentId": "d146d068-4bdb-4847-aa2b-957694997b07",
+  "viaStatus": "AUTHENTICATED",
+  "agentName": "GETTY_ICONOGRAPHY_AGENT",
+  "dataSetOwner": {
+    "name": "Getty Research Institute",
+    "ownerType": "Non-Profit",
+    "officialContactUri": "https://www.getty.edu/research/tools/vocabularies/ia/"
+  },
+  "dataDomain": "Iconography",
+  "a2aEndpoint": "http://localhost:8080/agents/GETTY_ICONOGRAPHY_AGENT",
+  "authenticationMethods": [
+    "api_key"
+  ],
+  "provenanceLevel": "CANONICAL",
+  "version": "1.0.0",
+  "lastAuthenticatedTimestamp": "2025-09-22T22:28:19.483914",
+  "capabilities": [
+    {
+      "capabilityId": "get_subject_by_id",
+      "description": "Execute get_subject_by_id capability for Iconography data",
+      "queryFormats": [
+        "json"
+      ]
+    }
+  ],
+  "terra_constellata": {
+    "agent_type": "data_gateway",
+    "framework_version": "1.0.0",
+    "deployment_status": "ready",
+    "monitoring_enabled": true,
+    "health_check_endpoint": "/agents/GETTY_ICONOGRAPHY_AGENT/health",
+    "registration_timestamp": "2025-09-22T22:28:19.483925"
+  }
+}

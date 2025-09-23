@@ -1,6 +1,6 @@
 # 🔌 Terra Constellata API Reference
 
-[![API Version](https://img.shields.io/badge/API%20Version-v2.0-blue.svg)](https://github.com/a2a-world/terra-constellata)
+[![API Version](https://img.shields.io/badge/API%20Version-v2.0-blue.svg)](https://github.com/a2aworld/a2a-world)
 [![OpenAPI](https://img.shields.io/badge/OpenAPI-3.0-green.svg)](https://swagger.io/specification/)
 [![REST](https://img.shields.io/badge/REST-JSON-orange.svg)](https://restfulapi.net/)
 [![GraphQL](https://img.shields.io/badge/GraphQL-API-red.svg)](https://graphql.org/)

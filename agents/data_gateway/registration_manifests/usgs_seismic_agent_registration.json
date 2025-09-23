@@ -1,0 +1,46 @@
+{
+  "agentId": "073b5b48-0654-4604-b9bb-cb80c43863d9",
+  "viaStatus": "AUTHENTICATED",
+  "agentName": "USGS_SEISMIC_AGENT",
+  "dataSetOwner": {
+    "name": "U.S. Geological Survey",
+    "ownerType": "Government Agency",
+    "officialContactUri": "https://earthquake.usgs.gov/"
+  },
+  "dataDomain": "Geospatial",
+  "a2aEndpoint": "http://localhost:8080/agents/USGS_SEISMIC_AGENT",
+  "authenticationMethods": [
+    "api_key"
+  ],
+  "provenanceLevel": "CANONICAL",
+  "version": "1.0.0",
+  "lastAuthenticatedTimestamp": "2025-09-22T22:28:19.449057",
+  "capabilities": [
+    {
+      "capabilityId": "get_earthquakes_by_region",
+      "description": "Execute get_earthquakes_by_region capability for Geospatial data",
+      "queryFormats": [
+        "geojson",
+        "json",
+        "wkt"
+      ]
+    },
+    {
+      "capabilityId": "get_realtime_seismic_feed",
+      "description": "Execute get_realtime_seismic_feed capability for Geospatial data",
+      "queryFormats": [
+        "geojson",
+        "json",
+        "wkt"
+      ]
+    }
+  ],
+  "terra_constellata": {
+    "agent_type": "data_gateway",
+    "framework_version": "1.0.0",
+    "deployment_status": "ready",
+    "monitoring_enabled": true,
+    "health_check_endpoint": "/agents/USGS_SEISMIC_AGENT/health",
+    "registration_timestamp": "2025-09-22T22:28:19.449078"
+  }
+}

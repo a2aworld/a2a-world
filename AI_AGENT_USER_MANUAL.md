@@ -3,7 +3,7 @@
 
 > *Protocol v2.0 - Agent-to-Agent Communication Framework*
 
-[![Protocol](https://img.shields.io/badge/A2A%20Protocol-v2.0-blue.svg)](https://github.com/a2a-world/terra-constellata)
+[![Protocol](https://img.shields.io/badge/A2A%20Protocol-v2.0-blue.svg)](https://github.com/a2aworld/a2a-world)
 [![License](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
 ---
@@ -528,6 +528,292 @@ await client.subscribe_spatial_updates(
 
 ---
 
+## 📚 Data Gateway Agents: Library of Alexandria for AI Wisdom
+
+### Overview
+Terra Constellata includes 50 specialized **Data Gateway Agents** that provide authenticated, secure access to authoritative global datasets. These agents serve as the "Library of Alexandria for AI Wisdom," enabling AI systems to access critical geospatial, cultural, scientific, and infrastructural data from trusted sources.
+
+### Agent Categories
+
+#### 🌍 Planetary & Geospatial Foundation (10 agents)
+- **GEBCO_BATHYMETRY_AGENT**: Ocean floor bathymetry and depth data
+- **NASA_LANDSAT_AGENT**: Multi-spectral satellite imagery
+- **ESA_SENTINEL_AGENT**: Radar and optical satellite data
+- **USGS_SEISMIC_AGENT**: Earthquake and seismic activity data
+- **NOAA_CLIMATE_AGENT**: Weather station and climate normals
+- **ECMWF_ERA5_AGENT**: Global reanalysis weather data
+- **USGS_3DEP_AGENT**: High-resolution elevation and LiDAR data
+- **ASTER_GDEM_AGENT**: Global digital elevation models
+- **NASA_WMM_AGENT**: Earth's magnetic field data
+- **GHSL_SETTLEMENT_AGENT**: Global human settlement layers
+
+#### 🏛️ Cultural & Historical Knowledge (10 agents)
+- **WIKIDATA_KNOWLEDGE_AGENT**: Structured knowledge from Wikidata
+- **DPLA_HERITAGE_AGENT**: Digital Public Library of America collections
+- **EUROPEANA_HERITAGE_AGENT**: European cultural heritage collections
+- **INTERNETARCHIVE_AGENT**: Internet Archive digital collections
+- **PROJECT_GUTENBERG_AGENT**: Public domain literature
+- **LOC_CHRONAMERICA_AGENT**: Library of Congress newspaper archives
+- **OPENCONTEXT_ARCHAEOLOGY_AGENT**: Archaeological datasets
+- **PLEIADES_PLACES_AGENT**: Ancient world places and locations
+- **SACREDTEXTS_AGENT**: Sacred and religious texts
+- **SEFARIA_TALMUD_AGENT**: Jewish texts and commentaries
+
+#### 🗣️ Linguistic & Symbolic Lexicon (10 agents)
+- **GLOTTOLOG_LANGUAGES_AGENT**: World language catalog
+- **WORDNET_SEMANTICS_AGENT**: English semantic relationships
+- **ICONCLASS_SYMBOLS_AGENT**: Iconographic classification system
+- **GETTY_AAT_AGENT**: Art and architecture thesaurus
+- **GETTY_TGN_AGENT**: Geographic names thesaurus
+- **GETTY_ULAN_AGENT**: Union list of artist names
+- **GETTY_ICONOGRAPHY_AGENT**: Iconography subjects
+- **WIKTIONARY_ETYMOLOGY_AGENT**: Word origins and etymology
+- **CLICS_COLEXIFICATION_AGENT**: Cross-linguistic colexifications
+- **ATU_MOTIF_INDEX_AGENT**: Folktale motif classification
+
+#### 🔬 Scientific & Academic Data (5 agents)
+- **NASA_ADS_AGENT**: Astrophysics publications and data
+- **GBIF_BIODIVERSITY_AGENT**: Global biodiversity occurrences
+- **CDC_HEALTHDATA_AGENT**: Public health datasets
+- **WORLDBANK_DATA_AGENT**: World development indicators
+- **PUBCHEM_AGENT**: Chemical compounds and substances
+
+#### ⚙️ A2A World Core Infrastructure (7 agents)
+- **A2AWORLD_REGISTRY_AGENT**: Agent registration and discovery
+- **A2AWORLD_ORCHESTRATOR_AGENT**: Workflow orchestration
+- **A2AWORLD_VALIDATOR_AGENT**: Message and agent validation
+- **A2AWORLD_REPUTATION_AGENT**: Agent reputation management
+- **A2AWORLD_BUTLER_AGENT**: Agent instantiation requests
+- **A2AWORLD_ONTOLOGY_AGENT**: Ontology schema management
+- **A2AWORLD_NEWS_AGENT**: System announcements
+
+### Accessing Data Gateway Agents
+
+#### Direct Agent Communication
+
+```python
+from terra_constellata.a2a_protocol import A2AClient
+
+# Initialize A2A client
+client = A2AClient(
+    server_url="http://localhost:8080",
+    agent_id="your_agent_id"
+)
+
+# Connect to data gateway agent
+await client.connect()
+
+# Query GEBCO bathymetry data
+bathymetry_data = await client.send_request({
+    "method": "agent.execute_capability",
+    "params": {
+        "target_agent": "GEBCO_BATHYMETRY_AGENT",
+        "capability": "get_elevation_by_point",
+        "parameters": {
+            "lat": 40.7128,
+            "lon": -74.0060
+        }
+    }
+})
+
+print(f"Ocean depth at NYC: {bathymetry_data['result']} meters")
+```
+
+#### Using Agent Registry API
+
+```python
+# Discover agents by capability
+geospatial_agents = await client.send_request({
+    "method": "agents.query",
+    "params": {
+        "capability": "get_elevation_by_point"
+    }
+})
+
+# Get agent health status
+health_status = await client.send_request({
+    "method": "agents.health",
+    "params": {
+        "agent_name": "GEBCO_BATHYMETRY_AGENT"
+    }
+})
+
+print(f"Agent health: {health_status['result']['status']}")
+```
+
+#### Cross-Agent Data Queries
+
+```python
+# Query multiple agents for related data
+correlated_data = await client.send_request({
+    "method": "agent.multi_query",
+    "params": {
+        "queries": [
+            {
+                "agent": "PLEIADES_PLACES_AGENT",
+                "capability": "search_ancient_places",
+                "parameters": {"query": "troy"}
+            },
+            {
+                "agent": "SACREDTEXTS_AGENT",
+                "capability": "search_texts_by_keyword",
+                "parameters": {"query": "troy"}
+            }
+        ],
+        "correlation_type": "GEOSPATIAL_CULTURAL"
+    }
+})
+```
+
+### Agent Health Monitoring
+
+```python
+# Monitor agent health
+health_monitor = client.create_health_monitor()
+
+@health_monitor.on_agent_unhealthy
+async def handle_unhealthy_agent(agent_name, health_data):
+    print(f"Agent {agent_name} is unhealthy: {health_data['status']}")
+    # Implement fallback logic or alert administrators
+
+# Start monitoring
+await health_monitor.start_monitoring(
+    agents=["GEBCO_BATHYMETRY_AGENT", "NASA_LANDSAT_AGENT"],
+    interval_seconds=60
+)
+```
+
+### Data Provenance and Trust
+
+```python
+# Request data with provenance information
+provenance_request = await client.send_request({
+    "method": "agent.execute_capability",
+    "params": {
+        "target_agent": "DPLA_HERITAGE_AGENT",
+        "capability": "search_items_by_keyword",
+        "parameters": {"query": "ancient artifacts"},
+        "include_provenance": True
+    }
+})
+
+# Check data provenance
+for item in provenance_request['result']['items']:
+    print(f"Item: {item['title']}")
+    print(f"Source: {item['provenance']['data_source']}")
+    print(f"License: {item['provenance']['license']}")
+    print(f"Last Updated: {item['provenance']['last_updated']}")
+```
+
+### Error Handling and Fallbacks
+
+```python
+# Implement resilient data access with fallbacks
+async def get_elevation_data(lat, lon):
+    primary_agents = ["GEBCO_BATHYMETRY_AGENT", "ASTER_GDEM_AGENT"]
+    fallback_agents = ["OPENSTREETMAP_AGENT"]
+
+    for agent in primary_agents + fallback_agents:
+        try:
+            result = await client.send_request({
+                "method": "agent.execute_capability",
+                "params": {
+                    "target_agent": agent,
+                    "capability": "get_elevation_by_point",
+                    "parameters": {"lat": lat, "lon": lon}
+                }
+            })
+            return result['result']
+        except Exception as e:
+            logger.warning(f"Failed to get data from {agent}: {e}")
+            continue
+
+    raise Exception("All elevation data sources unavailable")
+```
+
+### Performance Optimization
+
+```python
+# Cache frequently accessed data
+cache_config = {
+    "ttl_seconds": 3600,  # 1 hour
+    "max_size_mb": 500,
+    "strategy": "LRU"
+}
+
+client.enable_caching(cache_config)
+
+# Batch multiple agent requests
+batch = client.create_batch()
+
+for location in locations:
+    batch.add_request({
+        "method": "agent.execute_capability",
+        "params": {
+            "target_agent": "GEBCO_BATHYMETRY_AGENT",
+            "capability": "get_elevation_by_point",
+            "parameters": {"lat": location[0], "lon": location[1]}
+        }
+    })
+
+# Execute batch
+batch_results = await batch.execute()
+```
+
+### Security and Authentication
+
+```python
+# All data gateway agents require proper authentication
+auth_config = {
+    "token": "your_agent_token",
+    "permissions": ["read_data", "query_agents"],
+    "rate_limits": {
+        "requests_per_minute": 60,
+        "burst_limit": 10
+    }
+}
+
+await client.authenticate(auth_config)
+
+# Agents automatically handle external API authentication
+# using secure secrets management
+```
+
+### Integration with Codex and Inspiration Engine
+
+```python
+# Archive agent-sourced data in Codex
+await codex.archive_contribution(
+    agent_id="GEBCO_BATHYMETRY_AGENT",
+    contribution_type="DATA_QUERY_RESULT",
+    content={
+        "query": "elevation_data",
+        "location": {"lat": 40.7128, "lon": -74.0060},
+        "result": -25.3,
+        "units": "meters"
+    },
+    metadata={
+        "data_source": "GEBCO_2023",
+        "provenance_level": "CANONICAL",
+        "processing_time_ms": 150
+    }
+)
+
+# Use inspiration engine to analyze data patterns
+novelty_analysis = await inspiration.analyze_novelty(
+    data=[bathymetry_data],
+    context={
+        "domain": "oceanography",
+        "location_type": "coastal_city",
+        "analysis_type": "depth_anomaly"
+    }
+)
+```
+
+---
+
+## ⚡ Advanced Agent Operations
+
 ## ⚡ Performance Optimization
 
 ### Connection Pooling
@@ -872,9 +1158,9 @@ async def handle_health_change(agent_id, status, details):
 - [Troubleshooting Guide](docs/troubleshooting.md)
 
 ### Community Resources
-- **Forum**: [Terra Constellata Agent Developers](https://forum.terra-constellata.ai)
-- **GitHub**: [Issues & Feature Requests](https://github.com/a2a-world/terra-constellata/issues)
-- **Discord**: [Real-time Agent Communication](https://discord.gg/terra-constellata)
+- **Forum**: [Terra Constellata Agent Developers](https://forum.a2a-world.ai)
+- **GitHub**: [Issues & Feature Requests](https://github.com/a2aworld/a2a-world/issues)
+- **Discord**: [Real-time Agent Communication](https://discord.gg/a2a-world)
 
 ### Getting Help
 1. Check the troubleshooting guide

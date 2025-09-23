@@ -1,9 +1,9 @@
 # 🌟 Terra Constellata: AI-Human Collaboration in Research
 ## Course Syllabus - Spring 2025
 
-[![Course](https://img.shields.io/badge/Course-CS%20501-blue.svg)](https://github.com/a2a-world/terra-constellata)
-[![Credits](https://img.shields.io/badge/Credits-3-green.svg)](https://github.com/a2a-world/terra-constellata)
-[![Level](https://img.shields.io/badge/Level-Graduate-orange.svg)](https://github.com/a2a-world/terra-constellata)
+[![Course](https://img.shields.io/badge/Course-CS%20501-blue.svg)](https://github.com/a2aworld/a2a-world)
+[![Credits](https://img.shields.io/badge/Credits-3-green.svg)](https://github.com/a2aworld/a2a-world)
+[![Level](https://img.shields.io/badge/Level-Graduate-orange.svg)](https://github.com/a2aworld/a2a-world)
 
 ---
 
@@ -115,59 +115,74 @@ Available as free PDF download from course website
 - Agent design exercise
 - Peer review of agent designs
 
-#### Week 3: A2A Protocol Framework
+#### Week 3: Data Gateway Agents Ecosystem
+**Topics:**
+- Introduction to Data Gateway Agents
+- Agent categories and capabilities
+- Data provenance and security
+- Inter-agent data sharing
+
+**Readings:**
+- Textbook Chapter 3
+- Data Gateway Agent documentation
+
+**Assignments:**
+- Agent capability exploration exercise
+- Data provenance analysis
+
+#### Week 4: A2A Protocol Framework
 **Topics:**
 - JSON-RPC 2.0 fundamentals
 - Message types and schemas
 - Error handling and recovery
 
 **Readings:**
-- Textbook Chapter 3
+- Textbook Chapter 4
 - A2A Protocol specification
 
 **Assignments:**
 - Protocol implementation exercise
-- Quiz 1 (covers Modules 1-3)
+- Quiz 1 (covers Modules 1-4)
 
-### Module 2: Core Technologies (Weeks 4-6)
+### Module 2: Core Technologies (Weeks 5-7)
 
-#### Week 4: Geospatial Intelligence
+#### Week 5: Geospatial Intelligence
 **Topics:**
 - PostGIS fundamentals
 - Spatial analysis techniques
 - Coordinate systems and projections
 
 **Readings:**
-- Textbook Chapter 4
+- Textbook Chapter 5
 - PostGIS documentation
 
 **Lab:** Spatial data analysis workshop
 
-#### Week 5: Knowledge Graphs and ArangoDB
+#### Week 6: Knowledge Graphs and ArangoDB
 **Topics:**
 - Graph database concepts
 - Knowledge representation
 - Query languages and optimization
 
 **Readings:**
-- Textbook Chapter 5
+- Textbook Chapter 6
 - ArangoDB documentation
 
 **Lab:** Knowledge graph construction
 
-#### Week 6: Inspiration Engine
+#### Week 7: Inspiration Engine
 **Topics:**
 - Novelty detection algorithms
 - Creative prompt generation
 - Pattern recognition in data
 
 **Readings:**
-- Textbook Chapter 6
+- Textbook Chapter 7
 - Research papers on novelty detection
 
 **Assignments:**
 - Inspiration algorithm implementation
-- Quiz 2 (covers Modules 4-6)
+- Quiz 2 (covers Modules 5-7)
 
 ### Module 3: Research Methodologies (Weeks 7-9)
 

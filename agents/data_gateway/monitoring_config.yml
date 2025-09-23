@@ -1,0 +1,181 @@
+# Terra Constellata Data Gateway Agents - Monitoring Configuration
+# This configuration sets up monitoring for the 50 data gateway agents
+
+global:
+  scrape_interval: 15s
+  evaluation_interval: 15s
+
+rule_files:
+  - "alert_rules.yml"
+
+alerting:
+  alertmanagers:
+    - static_configs:
+        - targets:
+          - alertmanager:9093
+
+scrape_configs:
+  # A2A Protocol Server
+  - job_name: 'a2a-server'
+    static_configs:
+      - targets: ['a2a-server:8080']
+    metrics_path: '/metrics'
+    scrape_interval: 30s
+
+  # Data Gateway Agents
+  # Note: These targets are dynamically registered when agents start
+  - job_name: 'data-gateway-agents'
+    http_config:
+      basic_auth:
+        username: 'prometheus'
+        password: 'changeme'  # Use environment variable in production
+    file_sd_configs:
+      - files:
+        - '/etc/prometheus/agent_targets.yml'
+    scrape_interval: 30s
+    scrape_timeout: 10s
+
+  # Docker containers
+  - job_name: 'docker'
+    static_configs:
+      - targets: ['docker.for.mac.host.internal:9323']
+    metrics_path: '/metrics'
+    scrape_interval: 30s
+
+# Alert rules for data gateway agents
+alert_rules.yml:
+groups:
+  - name: data_gateway_alerts
+    rules:
+      - alert: DataGatewayAgentDown
+        expr: up{job="data-gateway-agents"} == 0
+        for: 5m
+        labels:
+          severity: critical
+        annotations:
+          summary: "Data Gateway Agent {{ $labels.agent_name }} is down"
+          description: "Data Gateway Agent {{ $labels.agent_name }} has been down for more than 5 minutes."
+
+      - alert: DataGatewayAgentHighErrorRate
+        expr: rate(data_gateway_agent_requests_total{status="error"}[5m]) / rate(data_gateway_agent_requests_total[5m]) > 0.1
+        for: 5m
+        labels:
+          severity: warning
+        annotations:
+          summary: "High error rate on Data Gateway Agent {{ $labels.agent_name }}"
+          description: "Data Gateway Agent {{ $labels.agent_name }} has an error rate > 10% over the last 5 minutes."
+
+      - alert: DataGatewayAgentSlowResponse
+        expr: histogram_quantile(0.95, rate(data_gateway_agent_request_duration_seconds_bucket[5m])) > 30
+        for: 5m
+        labels:
+          severity: warning
+        annotations:
+          summary: "Slow response time on Data Gateway Agent {{ $labels.agent_name }}"
+          description: "95th percentile response time > 30s for Data Gateway Agent {{ $labels.agent_name }}."
+
+      - alert: DataGatewayAgentAPIUnavailable
+        expr: data_gateway_agent_health_status == 0
+        for: 10m
+        labels:
+          severity: critical
+        annotations:
+          summary: "External API unavailable for Data Gateway Agent {{ $labels.agent_name }}"
+          description: "Data Gateway Agent {{ $labels.agent_name }} cannot access its external data source."
+
+# Grafana Dashboard Configuration
+grafana_dashboards:
+  - name: "Terra Constellata Data Gateway Overview"
+    uid: "terra-constellata-data-gateway"
+    panels:
+      - title: "Agent Health Status"
+        type: "stat"
+        targets:
+          - expr: 'sum(data_gateway_agent_health_status) / count(data_gateway_agent_health_status)'
+            legendFormat: "Overall Health Score"
+
+      - title: "Request Rate by Agent"
+        type: "graph"
+        targets:
+          - expr: 'rate(data_gateway_agent_requests_total{status="success"}[5m])'
+            legendFormat: "{{ agent_name }}"
+
+      - title: "Error Rate by Agent"
+        type: "graph"
+        targets:
+          - expr: 'rate(data_gateway_agent_requests_total{status="error"}[5m]) / rate(data_gateway_agent_requests_total[5m])'
+            legendFormat: "{{ agent_name }}"
+
+      - title: "Response Time by Agent"
+        type: "graph"
+        targets:
+          - expr: 'histogram_quantile(0.95, rate(data_gateway_agent_request_duration_seconds_bucket[5m]))'
+            legendFormat: "{{ agent_name }} 95th percentile"
+
+      - title: "API Request Rate"
+        type: "graph"
+        targets:
+          - expr: 'rate(data_gateway_agent_api_requests_total[5m])'
+            legendFormat: "{{ agent_name }} - {{ endpoint }}"
+
+      - title: "Agent Uptime"
+        type: "table"
+        targets:
+          - expr: 'up{job="data-gateway-agents"}'
+            legendFormat: "{{ agent_name }}"
+
+# Agent target discovery file (dynamically generated)
+agent_targets.yml:
+- targets:
+  - 'gebco-bathymetry-agent:8000'
+  - 'nasa-landsat-agent:8001'
+  - 'esa-sentinel-agent:8002'
+  - 'usgs-seismic-agent:8003'
+  - 'noaa-climate-agent:8004'
+  - 'ecmwf-era5-agent:8005'
+  - 'usgs-3dep-agent:8006'
+  - 'aster-gdem-agent:8007'
+  - 'nasa-wmm-agent:8008'
+  - 'ghsl-settlement-agent:8009'
+  - 'dpla-heritage-agent:8010'
+  - 'europeana-heritage-agent:8011'
+  - 'internetarchive-agent:8012'
+  - 'project-gutenberg-agent:8013'
+  - 'loc-chronamerica-agent:8014'
+  - 'opensearch-archaeology-agent:8015'
+  - 'pleiades-places-agent:8016'
+  - 'sacredtexts-agent:8017'
+  - 'sefaria-talmud-agent:8018'
+  - 'glottolog-languages-agent:8019'
+  - 'wordnet-semantics-agent:8020'
+  - 'iconclass-symbols-agent:8021'
+  - 'getty-aat-agent:8022'
+  - 'getty-tgn-agent:8023'
+  - 'getty-ulan-agent:8024'
+  - 'getty-iconography-agent:8025'
+  - 'wiktionary-etymology-agent:8026'
+  - 'clics-colexification-agent:8027'
+  - 'atu-motif-index-agent:8028'
+  - 'nasa-ads-agent:8029'
+  - 'gbif-biodiversity-agent:8030'
+  - 'cdc-healthdata-agent:8031'
+  - 'worldbank-data-agent:8032'
+  - 'pubchem-agent:8033'
+  - 'a2a-registry-agent:8034'
+  - 'a2a-orchestrator-agent:8035'
+  - 'a2a-validator-agent:8036'
+  - 'a2a-reputation-agent:8037'
+  - 'a2a-butler-agent:8038'
+  - 'a2a-ontology-agent:8039'
+  - 'a2a-news-agent:8040'
+  - 'onegeology-agent:8041'
+  - 'openstreetmap-agent:8042'
+  - 'naturalearth-agent:8043'
+  - 'noaa-paleoclimate-agent:8044'
+  - 'wikidata-knowledge-agent:8045'
+  - 'david-rumsey-maps-agent:8046'
+  - 'metmuseum-art-agent:8047'
+  - 'britishmuseum-collections-agent:8048'
+  - 'pali-canon-agent:8049'
+  labels:
+    job: 'data-gateway-agents'

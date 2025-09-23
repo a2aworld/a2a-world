@@ -1,0 +1,43 @@
+{
+  "agentId": "939c240c-56e5-4818-b33a-76785e8e0d2c",
+  "viaStatus": "AUTHENTICATED",
+  "agentName": "OPENCONTEXT_ARCHAEOLOGY_AGENT",
+  "dataSetOwner": {
+    "name": "Alexandria Archive Institute",
+    "ownerType": "Non-Profit",
+    "officialContactUri": "https://opencontext.org/"
+  },
+  "dataDomain": "Archaeology",
+  "a2aEndpoint": "http://localhost:8080/agents/OPENCONTEXT_ARCHAEOLOGY_AGENT",
+  "authenticationMethods": [
+    "api_key"
+  ],
+  "provenanceLevel": "CANONICAL",
+  "version": "1.0.0",
+  "lastAuthenticatedTimestamp": "2025-09-22T22:28:19.471205",
+  "capabilities": [
+    {
+      "capabilityId": "search_projects_by_region",
+      "description": "Execute search_projects_by_region capability for Archaeology data",
+      "queryFormats": [
+        "xml",
+        "json"
+      ]
+    },
+    {
+      "capabilityId": "get_dataset_by_uri",
+      "description": "Execute get_dataset_by_uri capability for Archaeology data",
+      "queryFormats": [
+        "json"
+      ]
+    }
+  ],
+  "terra_constellata": {
+    "agent_type": "data_gateway",
+    "framework_version": "1.0.0",
+    "deployment_status": "ready",
+    "monitoring_enabled": true,
+    "health_check_endpoint": "/agents/OPENCONTEXT_ARCHAEOLOGY_AGENT/health",
+    "registration_timestamp": "2025-09-22T22:28:19.471240"
+  }
+}

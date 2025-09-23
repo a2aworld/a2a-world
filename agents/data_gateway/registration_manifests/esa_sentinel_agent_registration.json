@@ -1,0 +1,46 @@
+{
+  "agentId": "10f225bc-533c-4ffb-85e3-3c1e7c250d67",
+  "viaStatus": "AUTHENTICATED",
+  "agentName": "ESA_SENTINEL_AGENT",
+  "dataSetOwner": {
+    "name": "European Space Agency (ESA)",
+    "ownerType": "Government Agency",
+    "officialContactUri": "https://sentinels.copernicus.eu/"
+  },
+  "dataDomain": "Geospatial",
+  "a2aEndpoint": "http://localhost:8080/agents/ESA_SENTINEL_AGENT",
+  "authenticationMethods": [
+    "api_key"
+  ],
+  "provenanceLevel": "CANONICAL",
+  "version": "1.0.0",
+  "lastAuthenticatedTimestamp": "2025-09-22T22:28:19.448002",
+  "capabilities": [
+    {
+      "capabilityId": "get_imagery_by_date_bbox",
+      "description": "Execute get_imagery_by_date_bbox capability for Geospatial data",
+      "queryFormats": [
+        "geojson",
+        "json",
+        "wkt"
+      ]
+    },
+    {
+      "capabilityId": "get_radar_data",
+      "description": "Execute get_radar_data capability for Geospatial data",
+      "queryFormats": [
+        "geojson",
+        "json",
+        "wkt"
+      ]
+    }
+  ],
+  "terra_constellata": {
+    "agent_type": "data_gateway",
+    "framework_version": "1.0.0",
+    "deployment_status": "ready",
+    "monitoring_enabled": true,
+    "health_check_endpoint": "/agents/ESA_SENTINEL_AGENT/health",
+    "registration_timestamp": "2025-09-22T22:28:19.448021"
+  }
+}

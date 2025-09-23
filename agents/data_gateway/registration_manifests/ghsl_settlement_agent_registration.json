@@ -1,0 +1,46 @@
+{
+  "agentId": "ee359a3f-60da-4053-a083-6959be6faa7d",
+  "viaStatus": "AUTHENTICATED",
+  "agentName": "GHSL_SETTLEMENT_AGENT",
+  "dataSetOwner": {
+    "name": "European Commission, JRC",
+    "ownerType": "Government Agency",
+    "officialContactUri": "https://ghsl.jrc.ec.europa.eu/"
+  },
+  "dataDomain": "Geospatial",
+  "a2aEndpoint": "http://localhost:8080/agents/GHSL_SETTLEMENT_AGENT",
+  "authenticationMethods": [
+    "api_key"
+  ],
+  "provenanceLevel": "CANONICAL",
+  "version": "1.0.0",
+  "lastAuthenticatedTimestamp": "2025-09-22T22:28:19.461020",
+  "capabilities": [
+    {
+      "capabilityId": "get_population_density_grid",
+      "description": "Execute get_population_density_grid capability for Geospatial data",
+      "queryFormats": [
+        "geojson",
+        "json",
+        "wkt"
+      ]
+    },
+    {
+      "capabilityId": "get_built_up_area_by_year",
+      "description": "Execute get_built_up_area_by_year capability for Geospatial data",
+      "queryFormats": [
+        "geojson",
+        "json",
+        "wkt"
+      ]
+    }
+  ],
+  "terra_constellata": {
+    "agent_type": "data_gateway",
+    "framework_version": "1.0.0",
+    "deployment_status": "ready",
+    "monitoring_enabled": true,
+    "health_check_endpoint": "/agents/GHSL_SETTLEMENT_AGENT/health",
+    "registration_timestamp": "2025-09-22T22:28:19.461036"
+  }
+}

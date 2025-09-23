@@ -1,0 +1,43 @@
+{
+  "agentId": "5e9e2cf3-b2ab-4926-aa22-224b6fac51a0",
+  "viaStatus": "AUTHENTICATED",
+  "agentName": "ICONCLASS_SYMBOLS_AGENT",
+  "dataSetOwner": {
+    "name": "Iconclass Foundation",
+    "ownerType": "Non-Profit",
+    "officialContactUri": "https://www.iconclass.org/"
+  },
+  "dataDomain": "Iconography",
+  "a2aEndpoint": "http://localhost:8080/agents/ICONCLASS_SYMBOLS_AGENT",
+  "authenticationMethods": [
+    "api_key"
+  ],
+  "provenanceLevel": "CANONICAL",
+  "version": "1.0.0",
+  "lastAuthenticatedTimestamp": "2025-09-22T22:28:19.481495",
+  "capabilities": [
+    {
+      "capabilityId": "get_classification_by_code",
+      "description": "Execute get_classification_by_code capability for Iconography data",
+      "queryFormats": [
+        "json"
+      ]
+    },
+    {
+      "capabilityId": "search_by_keyword",
+      "description": "Execute search_by_keyword capability for Iconography data",
+      "queryFormats": [
+        "xml",
+        "json"
+      ]
+    }
+  ],
+  "terra_constellata": {
+    "agent_type": "data_gateway",
+    "framework_version": "1.0.0",
+    "deployment_status": "ready",
+    "monitoring_enabled": true,
+    "health_check_endpoint": "/agents/ICONCLASS_SYMBOLS_AGENT/health",
+    "registration_timestamp": "2025-09-22T22:28:19.481508"
+  }
+}

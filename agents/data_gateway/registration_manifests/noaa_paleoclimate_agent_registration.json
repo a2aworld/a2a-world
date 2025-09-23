@@ -1,0 +1,37 @@
+{
+  "agentId": "831dbd89-d831-4c38-aeb7-62a4e12b9d28",
+  "viaStatus": "AUTHENTICATED",
+  "agentName": "NOAA_PALEOCLIMATE_AGENT",
+  "dataSetOwner": {
+    "name": "NOAA NCEI",
+    "ownerType": "Government Agency",
+    "officialContactUri": "https://www.ncdc.noaa.gov/paleo-search/"
+  },
+  "dataDomain": "Climatology",
+  "a2aEndpoint": "http://localhost:8080/agents/NOAA_PALEOCLIMATE_AGENT",
+  "authenticationMethods": [
+    "api_key"
+  ],
+  "provenanceLevel": "CANONICAL",
+  "version": "1.0.0",
+  "lastAuthenticatedTimestamp": "2025-09-22T22:28:19.464284",
+  "capabilities": [
+    {
+      "capabilityId": "get_paleo_proxy_data",
+      "description": "Execute get_paleo_proxy_data capability for Climatology data",
+      "queryFormats": [
+        "netcdf",
+        "json",
+        "csv"
+      ]
+    }
+  ],
+  "terra_constellata": {
+    "agent_type": "data_gateway",
+    "framework_version": "1.0.0",
+    "deployment_status": "ready",
+    "monitoring_enabled": true,
+    "health_check_endpoint": "/agents/NOAA_PALEOCLIMATE_AGENT/health",
+    "registration_timestamp": "2025-09-22T22:28:19.464299"
+  }
+}

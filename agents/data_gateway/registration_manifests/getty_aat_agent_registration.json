@@ -1,0 +1,43 @@
+{
+  "agentId": "78ad00fd-4bca-45dc-925d-6e818cae9cc5",
+  "viaStatus": "AUTHENTICATED",
+  "agentName": "GETTY_AAT_AGENT",
+  "dataSetOwner": {
+    "name": "Getty Research Institute",
+    "ownerType": "Non-Profit",
+    "officialContactUri": "https://www.getty.edu/research/tools/vocabularies/aat/"
+  },
+  "dataDomain": "Thesaurus",
+  "a2aEndpoint": "http://localhost:8080/agents/GETTY_AAT_AGENT",
+  "authenticationMethods": [
+    "api_key"
+  ],
+  "provenanceLevel": "CANONICAL",
+  "version": "1.0.0",
+  "lastAuthenticatedTimestamp": "2025-09-22T22:28:19.482021",
+  "capabilities": [
+    {
+      "capabilityId": "get_term_by_id",
+      "description": "Execute get_term_by_id capability for Thesaurus data",
+      "queryFormats": [
+        "json"
+      ]
+    },
+    {
+      "capabilityId": "search_terms",
+      "description": "Execute search_terms capability for Thesaurus data",
+      "queryFormats": [
+        "xml",
+        "json"
+      ]
+    }
+  ],
+  "terra_constellata": {
+    "agent_type": "data_gateway",
+    "framework_version": "1.0.0",
+    "deployment_status": "ready",
+    "monitoring_enabled": true,
+    "health_check_endpoint": "/agents/GETTY_AAT_AGENT/health",
+    "registration_timestamp": "2025-09-22T22:28:19.482034"
+  }
+}

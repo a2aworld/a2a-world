@@ -1,0 +1,35 @@
+{
+  "agentId": "0c1b5a22-c56e-48fa-9a16-0f79f97daa56",
+  "viaStatus": "AUTHENTICATED",
+  "agentName": "NASA_WMM_AGENT",
+  "dataSetOwner": {
+    "name": "NASA/NCEI",
+    "ownerType": "Government Agency",
+    "officialContactUri": "https://www.ngdc.noaa.gov/geomag/WMM/"
+  },
+  "dataDomain": "Geophysics",
+  "a2aEndpoint": "http://localhost:8080/agents/NASA_WMM_AGENT",
+  "authenticationMethods": [
+    "api_key"
+  ],
+  "provenanceLevel": "CANONICAL",
+  "version": "1.0.0",
+  "lastAuthenticatedTimestamp": "2025-09-22T22:28:19.460076",
+  "capabilities": [
+    {
+      "capabilityId": "get_magnetic_field_at_point",
+      "description": "Execute get_magnetic_field_at_point capability for Geophysics data",
+      "queryFormats": [
+        "json"
+      ]
+    }
+  ],
+  "terra_constellata": {
+    "agent_type": "data_gateway",
+    "framework_version": "1.0.0",
+    "deployment_status": "ready",
+    "monitoring_enabled": true,
+    "health_check_endpoint": "/agents/NASA_WMM_AGENT/health",
+    "registration_timestamp": "2025-09-22T22:28:19.460099"
+  }
+}

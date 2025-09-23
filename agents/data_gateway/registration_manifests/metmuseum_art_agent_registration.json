@@ -1,0 +1,43 @@
+{
+  "agentId": "64205e65-5f6b-46aa-8dd3-9eaffc47bd73",
+  "viaStatus": "AUTHENTICATED",
+  "agentName": "METMUSEUM_ART_AGENT",
+  "dataSetOwner": {
+    "name": "Metropolitan Museum of Art",
+    "ownerType": "Non-Profit",
+    "officialContactUri": "https://www.metmuseum.org/"
+  },
+  "dataDomain": "Art History",
+  "a2aEndpoint": "http://localhost:8080/agents/METMUSEUM_ART_AGENT",
+  "authenticationMethods": [
+    "api_key"
+  ],
+  "provenanceLevel": "CANONICAL",
+  "version": "1.0.0",
+  "lastAuthenticatedTimestamp": "2025-09-22T22:28:19.479107",
+  "capabilities": [
+    {
+      "capabilityId": "get_object_by_id",
+      "description": "Execute get_object_by_id capability for Art History data",
+      "queryFormats": [
+        "json"
+      ]
+    },
+    {
+      "capabilityId": "search_openaccess_art",
+      "description": "Execute search_openaccess_art capability for Art History data",
+      "queryFormats": [
+        "xml",
+        "json"
+      ]
+    }
+  ],
+  "terra_constellata": {
+    "agent_type": "data_gateway",
+    "framework_version": "1.0.0",
+    "deployment_status": "ready",
+    "monitoring_enabled": true,
+    "health_check_endpoint": "/agents/METMUSEUM_ART_AGENT/health",
+    "registration_timestamp": "2025-09-22T22:28:19.479127"
+  }
+}

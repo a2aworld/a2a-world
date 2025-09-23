@@ -1,0 +1,44 @@
+{
+  "agentId": "89dfa620-0c0a-4f4e-876b-afb128a1269e",
+  "viaStatus": "AUTHENTICATED",
+  "agentName": "WORDNET_SEMANTICS_AGENT",
+  "dataSetOwner": {
+    "name": "Princeton University / Open English WordNet",
+    "ownerType": "Academic Institution",
+    "officialContactUri": "https://wordnet.princeton.edu/"
+  },
+  "dataDomain": "Linguistics",
+  "a2aEndpoint": "http://localhost:8080/agents/WORDNET_SEMANTICS_AGENT",
+  "authenticationMethods": [
+    "api_key"
+  ],
+  "provenanceLevel": "CANONICAL",
+  "version": "1.0.0",
+  "lastAuthenticatedTimestamp": "2025-09-22T22:28:19.480930",
+  "capabilities": [
+    {
+      "capabilityId": "get_synset_by_word",
+      "description": "Execute get_synset_by_word capability for Linguistics data",
+      "queryFormats": [
+        "xml",
+        "json"
+      ]
+    },
+    {
+      "capabilityId": "get_semantic_relations",
+      "description": "Execute get_semantic_relations capability for Linguistics data",
+      "queryFormats": [
+        "xml",
+        "json"
+      ]
+    }
+  ],
+  "terra_constellata": {
+    "agent_type": "data_gateway",
+    "framework_version": "1.0.0",
+    "deployment_status": "ready",
+    "monitoring_enabled": true,
+    "health_check_endpoint": "/agents/WORDNET_SEMANTICS_AGENT/health",
+    "registration_timestamp": "2025-09-22T22:28:19.480943"
+  }
+}

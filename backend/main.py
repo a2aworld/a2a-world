@@ -10,6 +10,7 @@ from .api import (
     codex,
     workflow,
     feedback,
+    agents,
 )
 import time
 import uuid
@@ -109,6 +110,7 @@ app.include_router(artworks.router, prefix="/api/artworks", tags=["artworks"])
 app.include_router(codex.router, prefix="/api/codex", tags=["codex"])
 app.include_router(workflow.router, prefix="/api/workflow", tags=["workflow"])
 app.include_router(feedback.router, prefix="/api/feedback", tags=["feedback"])
+app.include_router(agents.router, prefix="/api/agents", tags=["agents"])
 
 
 @app.get("/")
@@ -210,3 +212,14 @@ def initialize_systems():
 
 # Initialize systems on startup
 codex_manager, workflow_tracer, cocreation_workflow = initialize_systems()
+
+
+# Initialize agent health monitoring
+@app.on_event("startup")
+async def startup_event():
+    """Initialize background tasks on startup."""
+    from .api.agents import start_health_monitoring
+    from fastapi import BackgroundTasks
+    background_tasks = BackgroundTasks()
+    start_health_monitoring(background_tasks)
+    app_logger.info("Agent health monitoring initialized")

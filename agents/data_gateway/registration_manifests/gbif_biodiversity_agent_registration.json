@@ -1,0 +1,35 @@
+{
+  "agentId": "15632e51-fbef-4203-b279-0ffbfc7bcaab",
+  "viaStatus": "AUTHENTICATED",
+  "agentName": "GBIF_BIODIVERSITY_AGENT",
+  "dataSetOwner": {
+    "name": "Global Biodiversity Information Facility",
+    "ownerType": "Non-Profit",
+    "officialContactUri": "https://www.gbif.org/"
+  },
+  "dataDomain": "Biology",
+  "a2aEndpoint": "http://localhost:8080/agents/GBIF_BIODIVERSITY_AGENT",
+  "authenticationMethods": [
+    "api_key"
+  ],
+  "provenanceLevel": "CANONICAL",
+  "version": "1.0.0",
+  "lastAuthenticatedTimestamp": "2025-09-22T22:28:19.493751",
+  "capabilities": [
+    {
+      "capabilityId": "get_species_occurrences_by_region",
+      "description": "Execute get_species_occurrences_by_region capability for Biology data",
+      "queryFormats": [
+        "json"
+      ]
+    }
+  ],
+  "terra_constellata": {
+    "agent_type": "data_gateway",
+    "framework_version": "1.0.0",
+    "deployment_status": "ready",
+    "monitoring_enabled": true,
+    "health_check_endpoint": "/agents/GBIF_BIODIVERSITY_AGENT/health",
+    "registration_timestamp": "2025-09-22T22:28:19.493785"
+  }
+}

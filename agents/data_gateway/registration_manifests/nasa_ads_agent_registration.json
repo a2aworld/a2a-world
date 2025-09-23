@@ -1,0 +1,43 @@
+{
+  "agentId": "a935f211-a637-43ed-a7f1-5fe279ecb45f",
+  "viaStatus": "AUTHENTICATED",
+  "agentName": "NASA_ADS_AGENT",
+  "dataSetOwner": {
+    "name": "NASA",
+    "ownerType": "Government Agency",
+    "officialContactUri": "https://ui.adsabs.harvard.edu/"
+  },
+  "dataDomain": "Astrophysics",
+  "a2aEndpoint": "http://localhost:8080/agents/NASA_ADS_AGENT",
+  "authenticationMethods": [
+    "api_key"
+  ],
+  "provenanceLevel": "CANONICAL",
+  "version": "1.0.0",
+  "lastAuthenticatedTimestamp": "2025-09-22T22:28:19.487954",
+  "capabilities": [
+    {
+      "capabilityId": "search_publications",
+      "description": "Execute search_publications capability for Astrophysics data",
+      "queryFormats": [
+        "xml",
+        "json"
+      ]
+    },
+    {
+      "capabilityId": "get_object_data",
+      "description": "Execute get_object_data capability for Astrophysics data",
+      "queryFormats": [
+        "json"
+      ]
+    }
+  ],
+  "terra_constellata": {
+    "agent_type": "data_gateway",
+    "framework_version": "1.0.0",
+    "deployment_status": "ready",
+    "monitoring_enabled": true,
+    "health_check_endpoint": "/agents/NASA_ADS_AGENT/health",
+    "registration_timestamp": "2025-09-22T22:28:19.489585"
+  }
+}

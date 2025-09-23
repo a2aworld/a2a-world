@@ -1,0 +1,35 @@
+{
+  "agentId": "c865e3af-24a2-4dba-8fc2-05cb61508905",
+  "viaStatus": "AUTHENTICATED",
+  "agentName": "CDC_HEALTHDATA_AGENT",
+  "dataSetOwner": {
+    "name": "Centers for Disease Control and Prevention",
+    "ownerType": "Government Agency",
+    "officialContactUri": "https://data.cdc.gov/"
+  },
+  "dataDomain": "Public Health",
+  "a2aEndpoint": "http://localhost:8080/agents/CDC_HEALTHDATA_AGENT",
+  "authenticationMethods": [
+    "api_key"
+  ],
+  "provenanceLevel": "CANONICAL",
+  "version": "1.0.0",
+  "lastAuthenticatedTimestamp": "2025-09-22T22:28:19.495093",
+  "capabilities": [
+    {
+      "capabilityId": "query_public_health_datasets",
+      "description": "Execute query_public_health_datasets capability for Public Health data",
+      "queryFormats": [
+        "json"
+      ]
+    }
+  ],
+  "terra_constellata": {
+    "agent_type": "data_gateway",
+    "framework_version": "1.0.0",
+    "deployment_status": "ready",
+    "monitoring_enabled": true,
+    "health_check_endpoint": "/agents/CDC_HEALTHDATA_AGENT/health",
+    "registration_timestamp": "2025-09-22T22:28:19.495111"
+  }
+}

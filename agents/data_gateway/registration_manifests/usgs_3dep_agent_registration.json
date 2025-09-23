@@ -1,0 +1,46 @@
+{
+  "agentId": "fa5a7207-299a-4cb5-853d-a194b747b79b",
+  "viaStatus": "AUTHENTICATED",
+  "agentName": "USGS_3DEP_AGENT",
+  "dataSetOwner": {
+    "name": "U.S. Geological Survey",
+    "ownerType": "Government Agency",
+    "officialContactUri": "https://www.usgs.gov/3d-elevation-program"
+  },
+  "dataDomain": "Geospatial",
+  "a2aEndpoint": "http://localhost:8080/agents/USGS_3DEP_AGENT",
+  "authenticationMethods": [
+    "api_key"
+  ],
+  "provenanceLevel": "CANONICAL",
+  "version": "1.0.0",
+  "lastAuthenticatedTimestamp": "2025-09-22T22:28:19.454164",
+  "capabilities": [
+    {
+      "capabilityId": "get_lidar_point_cloud",
+      "description": "Execute get_lidar_point_cloud capability for Geospatial data",
+      "queryFormats": [
+        "geojson",
+        "json",
+        "wkt"
+      ]
+    },
+    {
+      "capabilityId": "get_high_res_dem",
+      "description": "Execute get_high_res_dem capability for Geospatial data",
+      "queryFormats": [
+        "geojson",
+        "json",
+        "wkt"
+      ]
+    }
+  ],
+  "terra_constellata": {
+    "agent_type": "data_gateway",
+    "framework_version": "1.0.0",
+    "deployment_status": "ready",
+    "monitoring_enabled": true,
+    "health_check_endpoint": "/agents/USGS_3DEP_AGENT/health",
+    "registration_timestamp": "2025-09-22T22:28:19.454253"
+  }
+}

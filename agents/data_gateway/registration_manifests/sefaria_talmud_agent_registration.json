@@ -1,0 +1,42 @@
+{
+  "agentId": "a822213c-8d37-46fa-a033-e7d6e7e2eb0b",
+  "viaStatus": "AUTHENTICATED",
+  "agentName": "SEFARIA_TALMUD_AGENT",
+  "dataSetOwner": {
+    "name": "Sefaria",
+    "ownerType": "Non-Profit",
+    "officialContactUri": "https://www.sefaria.org/"
+  },
+  "dataDomain": "Religious Texts",
+  "a2aEndpoint": "http://localhost:8080/agents/SEFARIA_TALMUD_AGENT",
+  "authenticationMethods": [
+    "api_key"
+  ],
+  "provenanceLevel": "CANONICAL",
+  "version": "1.0.0",
+  "lastAuthenticatedTimestamp": "2025-09-22T22:28:19.476035",
+  "capabilities": [
+    {
+      "capabilityId": "get_text_by_ref",
+      "description": "Execute get_text_by_ref capability for Religious Texts data",
+      "queryFormats": [
+        "json"
+      ]
+    },
+    {
+      "capabilityId": "get_linked_commentaries",
+      "description": "Execute get_linked_commentaries capability for Religious Texts data",
+      "queryFormats": [
+        "json"
+      ]
+    }
+  ],
+  "terra_constellata": {
+    "agent_type": "data_gateway",
+    "framework_version": "1.0.0",
+    "deployment_status": "ready",
+    "monitoring_enabled": true,
+    "health_check_endpoint": "/agents/SEFARIA_TALMUD_AGENT/health",
+    "registration_timestamp": "2025-09-22T22:28:19.476052"
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "agentId": "1573e87b-9709-4bf8-bc7c-4b6df065b732",
+  "viaStatus": "AUTHENTICATED",
+  "agentName": "INTERNETARCHIVE_AGENT",
+  "dataSetOwner": {
+    "name": "Internet Archive",
+    "ownerType": "Non-Profit",
+    "officialContactUri": "https://archive.org/"
+  },
+  "dataDomain": "Digital Archive",
+  "a2aEndpoint": "http://localhost:8080/agents/INTERNETARCHIVE_AGENT",
+  "authenticationMethods": [
+    "api_key"
+  ],
+  "provenanceLevel": "CANONICAL",
+  "version": "1.0.0",
+  "lastAuthenticatedTimestamp": "2025-09-22T22:28:19.468761",
+  "capabilities": [
+    {
+      "capabilityId": "search_metadata",
+      "description": "Execute search_metadata capability for Digital Archive data",
+      "queryFormats": [
+        "xml",
+        "json"
+      ]
+    },
+    {
+      "capabilityId": "get_item_files",
+      "description": "Execute get_item_files capability for Digital Archive data",
+      "queryFormats": [
+        "json"
+      ]
+    }
+  ],
+  "terra_constellata": {
+    "agent_type": "data_gateway",
+    "framework_version": "1.0.0",
+    "deployment_status": "ready",
+    "monitoring_enabled": true,
+    "health_check_endpoint": "/agents/INTERNETARCHIVE_AGENT/health",
+    "registration_timestamp": "2025-09-22T22:28:19.468774"
+  }
+}

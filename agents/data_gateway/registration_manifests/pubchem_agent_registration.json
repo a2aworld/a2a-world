@@ -1,0 +1,43 @@
+{
+  "agentId": "ed056b8a-6f6b-428c-bd25-fa7e83156296",
+  "viaStatus": "AUTHENTICATED",
+  "agentName": "PUBCHEM_AGENT",
+  "dataSetOwner": {
+    "name": "National Center for Biotechnology Information (NCBI)",
+    "ownerType": "Government Agency",
+    "officialContactUri": "https://pubchem.ncbi.nlm.nih.gov/"
+  },
+  "dataDomain": "Chemistry",
+  "a2aEndpoint": "http://localhost:8080/agents/PUBCHEM_AGENT",
+  "authenticationMethods": [
+    "api_key"
+  ],
+  "provenanceLevel": "CANONICAL",
+  "version": "1.0.0",
+  "lastAuthenticatedTimestamp": "2025-09-22T22:28:19.498011",
+  "capabilities": [
+    {
+      "capabilityId": "get_compound_by_name",
+      "description": "Execute get_compound_by_name capability for Chemistry data",
+      "queryFormats": [
+        "json"
+      ]
+    },
+    {
+      "capabilityId": "search_substances",
+      "description": "Execute search_substances capability for Chemistry data",
+      "queryFormats": [
+        "xml",
+        "json"
+      ]
+    }
+  ],
+  "terra_constellata": {
+    "agent_type": "data_gateway",
+    "framework_version": "1.0.0",
+    "deployment_status": "ready",
+    "monitoring_enabled": true,
+    "health_check_endpoint": "/agents/PUBCHEM_AGENT/health",
+    "registration_timestamp": "2025-09-22T22:28:19.498032"
+  }
+}

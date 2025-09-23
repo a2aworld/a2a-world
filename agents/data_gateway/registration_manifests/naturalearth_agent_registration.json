@@ -1,0 +1,35 @@
+{
+  "agentId": "26493968-e45e-46e3-8240-1a14fe901ad1",
+  "viaStatus": "AUTHENTICATED",
+  "agentName": "NATURALEARTH_AGENT",
+  "dataSetOwner": {
+    "name": "North American Cartographic Information Society",
+    "ownerType": "Community",
+    "officialContactUri": "https://www.naturalearthdata.com/"
+  },
+  "dataDomain": "Cartography",
+  "a2aEndpoint": "http://localhost:8080/agents/NATURALEARTH_AGENT",
+  "authenticationMethods": [
+    "api_key"
+  ],
+  "provenanceLevel": "CANONICAL",
+  "version": "1.0.0",
+  "lastAuthenticatedTimestamp": "2025-09-22T22:28:19.463521",
+  "capabilities": [
+    {
+      "capabilityId": "get_basemap_vectors_by_scale",
+      "description": "Execute get_basemap_vectors_by_scale capability for Cartography data",
+      "queryFormats": [
+        "json"
+      ]
+    }
+  ],
+  "terra_constellata": {
+    "agent_type": "data_gateway",
+    "framework_version": "1.0.0",
+    "deployment_status": "ready",
+    "monitoring_enabled": true,
+    "health_check_endpoint": "/agents/NATURALEARTH_AGENT/health",
+    "registration_timestamp": "2025-09-22T22:28:19.463533"
+  }
+}

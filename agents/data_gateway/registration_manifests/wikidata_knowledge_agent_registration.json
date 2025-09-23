@@ -1,0 +1,42 @@
+{
+  "agentId": "3bf1d2b5-c156-4df4-bf6d-bbe619038f8d",
+  "viaStatus": "AUTHENTICATED",
+  "agentName": "WIKIDATA_KNOWLEDGE_AGENT",
+  "dataSetOwner": {
+    "name": "Wikimedia Foundation",
+    "ownerType": "Non-Profit",
+    "officialContactUri": "https://www.wikidata.org/"
+  },
+  "dataDomain": "Knowledge Graph",
+  "a2aEndpoint": "http://localhost:8080/agents/WIKIDATA_KNOWLEDGE_AGENT",
+  "authenticationMethods": [
+    "api_key"
+  ],
+  "provenanceLevel": "CANONICAL",
+  "version": "1.0.0",
+  "lastAuthenticatedTimestamp": "2025-09-22T22:28:19.465705",
+  "capabilities": [
+    {
+      "capabilityId": "get_entity_by_id",
+      "description": "Execute get_entity_by_id capability for Knowledge Graph data",
+      "queryFormats": [
+        "json"
+      ]
+    },
+    {
+      "capabilityId": "query_sparql",
+      "description": "Execute query_sparql capability for Knowledge Graph data",
+      "queryFormats": [
+        "json"
+      ]
+    }
+  ],
+  "terra_constellata": {
+    "agent_type": "data_gateway",
+    "framework_version": "1.0.0",
+    "deployment_status": "ready",
+    "monitoring_enabled": true,
+    "health_check_endpoint": "/agents/WIKIDATA_KNOWLEDGE_AGENT/health",
+    "registration_timestamp": "2025-09-22T22:28:19.465745"
+  }
+}

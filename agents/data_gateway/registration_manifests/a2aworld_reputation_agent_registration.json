@@ -1,0 +1,42 @@
+{
+  "agentId": "fc6f3f43-65a2-454b-8c2a-909391d72a13",
+  "viaStatus": "AUTHENTICATED",
+  "agentName": "A2AWORLD_REPUTATION_AGENT",
+  "dataSetOwner": {
+    "name": "A2A World Foundation",
+    "ownerType": "Non-Profit",
+    "officialContactUri": "https://a2aworld.ai"
+  },
+  "dataDomain": "Infrastructure",
+  "a2aEndpoint": "http://localhost:8080/agents/A2AWORLD_REPUTATION_AGENT",
+  "authenticationMethods": [
+    "api_key"
+  ],
+  "provenanceLevel": "CANONICAL",
+  "version": "1.0.0",
+  "lastAuthenticatedTimestamp": "2025-09-22T22:28:19.501290",
+  "capabilities": [
+    {
+      "capabilityId": "submit_interaction_rating",
+      "description": "Execute submit_interaction_rating capability for Infrastructure data",
+      "queryFormats": [
+        "json"
+      ]
+    },
+    {
+      "capabilityId": "get_agent_reputation_score",
+      "description": "Execute get_agent_reputation_score capability for Infrastructure data",
+      "queryFormats": [
+        "json"
+      ]
+    }
+  ],
+  "terra_constellata": {
+    "agent_type": "data_gateway",
+    "framework_version": "1.0.0",
+    "deployment_status": "ready",
+    "monitoring_enabled": true,
+    "health_check_endpoint": "/agents/A2AWORLD_REPUTATION_AGENT/health",
+    "registration_timestamp": "2025-09-22T22:28:19.501303"
+  }
+}

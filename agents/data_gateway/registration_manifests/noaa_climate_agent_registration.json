@@ -1,0 +1,46 @@
+{
+  "agentId": "230fa6b6-521c-40ec-9eef-a417b02c3a0c",
+  "viaStatus": "AUTHENTICATED",
+  "agentName": "NOAA_CLIMATE_AGENT",
+  "dataSetOwner": {
+    "name": "National Oceanic and Atmospheric Administration",
+    "ownerType": "Government Agency",
+    "officialContactUri": "https://www.noaa.gov/"
+  },
+  "dataDomain": "Climatology",
+  "a2aEndpoint": "http://localhost:8080/agents/NOAA_CLIMATE_AGENT",
+  "authenticationMethods": [
+    "api_key"
+  ],
+  "provenanceLevel": "CANONICAL",
+  "version": "1.0.0",
+  "lastAuthenticatedTimestamp": "2025-09-22T22:28:19.449970",
+  "capabilities": [
+    {
+      "capabilityId": "get_station_historical_data",
+      "description": "Execute get_station_historical_data capability for Climatology data",
+      "queryFormats": [
+        "netcdf",
+        "json",
+        "csv"
+      ]
+    },
+    {
+      "capabilityId": "query_climate_normals",
+      "description": "Execute query_climate_normals capability for Climatology data",
+      "queryFormats": [
+        "netcdf",
+        "json",
+        "csv"
+      ]
+    }
+  ],
+  "terra_constellata": {
+    "agent_type": "data_gateway",
+    "framework_version": "1.0.0",
+    "deployment_status": "ready",
+    "monitoring_enabled": true,
+    "health_check_endpoint": "/agents/NOAA_CLIMATE_AGENT/health",
+    "registration_timestamp": "2025-09-22T22:28:19.449989"
+  }
+}

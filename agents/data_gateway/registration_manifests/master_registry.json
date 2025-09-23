@@ -1,0 +1,725 @@
+{
+  "registry_name": "Terra Constellata Data Gateway Agents Registry",
+  "schema_version": "1.0",
+  "generated_at": "2025-09-22T22:28:19.506875",
+  "total_agents": 50,
+  "agents": [
+    {
+      "agentId": "0fa82bb0-9449-4637-929e-4e4696aa4170",
+      "agentName": "GEBCO_BATHYMETRY_AGENT",
+      "dataDomain": "Geospatial",
+      "ownerName": "GEBCO Project (IHO/IOC)",
+      "capabilities": [
+        "get_elevation_by_point",
+        "get_elevation_by_bbox"
+      ],
+      "status": "registered",
+      "registration_file": "gebco_bathymetry_agent_registration.json"
+    },
+    {
+      "agentId": "96e8f8f0-8c53-4354-ac34-78c700f55e1c",
+      "agentName": "NASA_LANDSAT_AGENT",
+      "dataDomain": "Geospatial",
+      "ownerName": "NASA/USGS",
+      "capabilities": [
+        "get_imagery_by_date_bbox",
+        "get_spectral_band_data"
+      ],
+      "status": "registered",
+      "registration_file": "nasa_landsat_agent_registration.json"
+    },
+    {
+      "agentId": "c1a094d6-b5c6-4b2d-b2fb-a55fe82866c0",
+      "agentName": "ESA_SENTINEL_AGENT",
+      "dataDomain": "Geospatial",
+      "ownerName": "European Space Agency (ESA)",
+      "capabilities": [
+        "get_imagery_by_date_bbox",
+        "get_radar_data"
+      ],
+      "status": "registered",
+      "registration_file": "esa_sentinel_agent_registration.json"
+    },
+    {
+      "agentId": "f5e1b954-e5fc-43a4-9d45-7c776e5b6db0",
+      "agentName": "USGS_SEISMIC_AGENT",
+      "dataDomain": "Geospatial",
+      "ownerName": "U.S. Geological Survey",
+      "capabilities": [
+        "get_earthquakes_by_region",
+        "get_realtime_seismic_feed"
+      ],
+      "status": "registered",
+      "registration_file": "usgs_seismic_agent_registration.json"
+    },
+    {
+      "agentId": "5dc2fe14-af87-4ae8-bf31-34191c8b59b9",
+      "agentName": "NOAA_CLIMATE_AGENT",
+      "dataDomain": "Climatology",
+      "ownerName": "National Oceanic and Atmospheric Administration",
+      "capabilities": [
+        "get_station_historical_data",
+        "query_climate_normals"
+      ],
+      "status": "registered",
+      "registration_file": "noaa_climate_agent_registration.json"
+    },
+    {
+      "agentId": "0d45bac5-f923-4df8-a2f3-a2c57ee57272",
+      "agentName": "ECMWF_ERA5_AGENT",
+      "dataDomain": "Climatology",
+      "ownerName": "ECMWF / Copernicus C3S",
+      "capabilities": [
+        "get_reanalysis_data_by_grid",
+        "get_historical_weather_variable"
+      ],
+      "status": "registered",
+      "registration_file": "ecmwf_era5_agent_registration.json"
+    },
+    {
+      "agentId": "c1266c14-8c05-4d6b-9295-32ff589d9255",
+      "agentName": "USGS_3DEP_AGENT",
+      "dataDomain": "Geospatial",
+      "ownerName": "U.S. Geological Survey",
+      "capabilities": [
+        "get_lidar_point_cloud",
+        "get_high_res_dem"
+      ],
+      "status": "registered",
+      "registration_file": "usgs_3dep_agent_registration.json"
+    },
+    {
+      "agentId": "339a047f-b9e0-4d9e-80c1-92370b965469",
+      "agentName": "ASTER_GDEM_AGENT",
+      "dataDomain": "Geospatial",
+      "ownerName": "NASA/METI",
+      "capabilities": [
+        "get_elevation_by_bbox_30m"
+      ],
+      "status": "registered",
+      "registration_file": "aster_gdem_agent_registration.json"
+    },
+    {
+      "agentId": "d13675a4-50ef-4777-aba1-2508f93fe300",
+      "agentName": "NASA_WMM_AGENT",
+      "dataDomain": "Geophysics",
+      "ownerName": "NASA/NCEI",
+      "capabilities": [
+        "get_magnetic_field_at_point"
+      ],
+      "status": "registered",
+      "registration_file": "nasa_wmm_agent_registration.json"
+    },
+    {
+      "agentId": "e7e08a72-ecd2-4ebd-8e27-de5222c43c88",
+      "agentName": "GHSL_SETTLEMENT_AGENT",
+      "dataDomain": "Geospatial",
+      "ownerName": "European Commission, JRC",
+      "capabilities": [
+        "get_population_density_grid",
+        "get_built_up_area_by_year"
+      ],
+      "status": "registered",
+      "registration_file": "ghsl_settlement_agent_registration.json"
+    },
+    {
+      "agentId": "cd0ed39f-3424-4c1c-873a-2b3480af3a61",
+      "agentName": "ONEGEOLOGY_AGENT",
+      "dataDomain": "Geology",
+      "ownerName": "OneGeology Consortium",
+      "capabilities": [
+        "discover_geological_maps_by_nation",
+        "query_federated_geology_data"
+      ],
+      "status": "registered",
+      "registration_file": "onegeology_agent_registration.json"
+    },
+    {
+      "agentId": "a4beba8d-5e37-4b29-bd9b-7b114193fd1d",
+      "agentName": "OPENSTREETMAP_AGENT",
+      "dataDomain": "Geospatial",
+      "ownerName": "OpenStreetMap Foundation",
+      "capabilities": [
+        "get_vector_data_by_bbox",
+        "query_road_network"
+      ],
+      "status": "registered",
+      "registration_file": "openstreetmap_agent_registration.json"
+    },
+    {
+      "agentId": "30fe0619-69fe-453d-8f2f-9091ec72ec75",
+      "agentName": "NATURALEARTH_AGENT",
+      "dataDomain": "Cartography",
+      "ownerName": "North American Cartographic Information Society",
+      "capabilities": [
+        "get_basemap_vectors_by_scale"
+      ],
+      "status": "registered",
+      "registration_file": "naturalearth_agent_registration.json"
+    },
+    {
+      "agentId": "d166d343-204f-4930-8b82-9d7816f68000",
+      "agentName": "NOAA_PALEOCLIMATE_AGENT",
+      "dataDomain": "Climatology",
+      "ownerName": "NOAA NCEI",
+      "capabilities": [
+        "get_paleo_proxy_data"
+      ],
+      "status": "registered",
+      "registration_file": "noaa_paleoclimate_agent_registration.json"
+    },
+    {
+      "agentId": "0a502bb0-0328-4d33-bda6-f7c86787834d",
+      "agentName": "WIKIDATA_KNOWLEDGE_AGENT",
+      "dataDomain": "Knowledge Graph",
+      "ownerName": "Wikimedia Foundation",
+      "capabilities": [
+        "get_entity_by_id",
+        "query_sparql"
+      ],
+      "status": "registered",
+      "registration_file": "wikidata_knowledge_agent_registration.json"
+    },
+    {
+      "agentId": "b56fbbf1-f783-4045-a0c8-b4c3aa27868b",
+      "agentName": "DPLA_HERITAGE_AGENT",
+      "dataDomain": "Cultural Heritage",
+      "ownerName": "Digital Public Library of America",
+      "capabilities": [
+        "search_items_by_keyword",
+        "get_collection_metadata"
+      ],
+      "status": "registered",
+      "registration_file": "dpla_heritage_agent_registration.json"
+    },
+    {
+      "agentId": "fe1b20e1-e12a-43a3-9a6f-11b3857c1cef",
+      "agentName": "EUROPEANA_HERITAGE_AGENT",
+      "dataDomain": "Cultural Heritage",
+      "ownerName": "Europeana Foundation",
+      "capabilities": [
+        "search_items_by_keyword",
+        "get_item_record_by_id"
+      ],
+      "status": "registered",
+      "registration_file": "europeana_heritage_agent_registration.json"
+    },
+    {
+      "agentId": "5691e002-5a0d-49e0-8e82-7e768800f0c5",
+      "agentName": "INTERNETARCHIVE_AGENT",
+      "dataDomain": "Digital Archive",
+      "ownerName": "Internet Archive",
+      "capabilities": [
+        "search_metadata",
+        "get_item_files"
+      ],
+      "status": "registered",
+      "registration_file": "internetarchive_agent_registration.json"
+    },
+    {
+      "agentId": "15a11845-878e-4626-9c8c-27a21c448eaa",
+      "agentName": "PROJECT_GUTENBERG_AGENT",
+      "dataDomain": "Literature",
+      "ownerName": "Project Gutenberg",
+      "capabilities": [
+        "get_book_text_by_id",
+        "search_books_by_author"
+      ],
+      "status": "registered",
+      "registration_file": "project_gutenberg_agent_registration.json"
+    },
+    {
+      "agentId": "e475293e-ab37-435f-9b9c-1273c4fd4a93",
+      "agentName": "LOC_CHRONAMERICA_AGENT",
+      "dataDomain": "Historical Archive",
+      "ownerName": "Library of Congress",
+      "capabilities": [
+        "search_newspaper_pages",
+        "get_ocr_text_by_page_id"
+      ],
+      "status": "registered",
+      "registration_file": "loc_chronamerica_agent_registration.json"
+    },
+    {
+      "agentId": "ddcee1b5-8982-4781-b43f-c00e68f013c3",
+      "agentName": "OPENCONTEXT_ARCHAEOLOGY_AGENT",
+      "dataDomain": "Archaeology",
+      "ownerName": "Alexandria Archive Institute",
+      "capabilities": [
+        "search_projects_by_region",
+        "get_dataset_by_uri"
+      ],
+      "status": "registered",
+      "registration_file": "opencontext_archaeology_agent_registration.json"
+    },
+    {
+      "agentId": "4ef58887-0f91-473e-b996-53c7f1dde1d0",
+      "agentName": "PLEIADES_PLACES_AGENT",
+      "dataDomain": "Gazetteer",
+      "ownerName": "NYU Institute for the Study of the Ancient World",
+      "capabilities": [
+        "get_place_by_id",
+        "search_ancient_places"
+      ],
+      "status": "registered",
+      "registration_file": "pleiades_places_agent_registration.json"
+    },
+    {
+      "agentId": "ad73bedb-5579-4a21-9b2b-56374cb18938",
+      "agentName": "SACREDTEXTS_AGENT",
+      "dataDomain": "Religious Texts",
+      "ownerName": "Internet Sacred Text Archive",
+      "capabilities": [
+        "get_text_by_path",
+        "search_texts_by_keyword"
+      ],
+      "status": "registered",
+      "registration_file": "sacredtexts_agent_registration.json"
+    },
+    {
+      "agentId": "a6813841-c8e1-4ae0-b0e3-016805516c51",
+      "agentName": "SEFARIA_TALMUD_AGENT",
+      "dataDomain": "Religious Texts",
+      "ownerName": "Sefaria",
+      "capabilities": [
+        "get_text_by_ref",
+        "get_linked_commentaries"
+      ],
+      "status": "registered",
+      "registration_file": "sefaria_talmud_agent_registration.json"
+    },
+    {
+      "agentId": "f51609e2-5cb5-4fcc-96ed-97339f2d8bfe",
+      "agentName": "PALI_CANON_AGENT",
+      "dataDomain": "Religious Texts",
+      "ownerName": "Vipassana Research Institute",
+      "capabilities": [
+        "get_sutta_by_id"
+      ],
+      "status": "registered",
+      "registration_file": "pali_canon_agent_registration.json"
+    },
+    {
+      "agentId": "5254afa4-e820-492a-b895-775650f4c010",
+      "agentName": "DAVID_RUMSEY_MAPS_AGENT",
+      "dataDomain": "Historical Maps",
+      "ownerName": "David Rumsey Map Collection",
+      "capabilities": [
+        "get_georeferenced_map_by_id",
+        "search_maps_by_location"
+      ],
+      "status": "registered",
+      "registration_file": "david_rumsey_maps_agent_registration.json"
+    },
+    {
+      "agentId": "74ab2573-117f-499a-a0fa-929d323f993c",
+      "agentName": "METMUSEUM_ART_AGENT",
+      "dataDomain": "Art History",
+      "ownerName": "Metropolitan Museum of Art",
+      "capabilities": [
+        "get_object_by_id",
+        "search_openaccess_art"
+      ],
+      "status": "registered",
+      "registration_file": "metmuseum_art_agent_registration.json"
+    },
+    {
+      "agentId": "63a17917-2476-4735-aff4-513dac8eeaed",
+      "agentName": "BRITISHMUSEUM_COLLECTIONS_AGENT",
+      "dataDomain": "Art History",
+      "ownerName": "The British Museum",
+      "capabilities": [
+        "query_sparql_endpoint"
+      ],
+      "status": "registered",
+      "registration_file": "britishmuseum_collections_agent_registration.json"
+    },
+    {
+      "agentId": "dd94e4b8-fcbd-4c3e-b792-02c507cc425e",
+      "agentName": "GLOTTOLOG_LANGUAGES_AGENT",
+      "dataDomain": "Linguistics",
+      "ownerName": "Max Planck Institute for Evolutionary Anthropology",
+      "capabilities": [
+        "get_language_by_glottocode",
+        "get_language_family_tree"
+      ],
+      "status": "registered",
+      "registration_file": "glottolog_languages_agent_registration.json"
+    },
+    {
+      "agentId": "e4e0d9aa-7c38-4d53-aa49-b054cf19d750",
+      "agentName": "WORDNET_SEMANTICS_AGENT",
+      "dataDomain": "Linguistics",
+      "ownerName": "Princeton University / Open English WordNet",
+      "capabilities": [
+        "get_synset_by_word",
+        "get_semantic_relations"
+      ],
+      "status": "registered",
+      "registration_file": "wordnet_semantics_agent_registration.json"
+    },
+    {
+      "agentId": "bda01876-876f-4a58-9660-669a83ef7fdc",
+      "agentName": "ICONCLASS_SYMBOLS_AGENT",
+      "dataDomain": "Iconography",
+      "ownerName": "Iconclass Foundation",
+      "capabilities": [
+        "get_classification_by_code",
+        "search_by_keyword"
+      ],
+      "status": "registered",
+      "registration_file": "iconclass_symbols_agent_registration.json"
+    },
+    {
+      "agentId": "843e46f3-201d-4c89-96c7-2e5905f7b744",
+      "agentName": "GETTY_AAT_AGENT",
+      "dataDomain": "Thesaurus",
+      "ownerName": "Getty Research Institute",
+      "capabilities": [
+        "get_term_by_id",
+        "search_terms"
+      ],
+      "status": "registered",
+      "registration_file": "getty_aat_agent_registration.json"
+    },
+    {
+      "agentId": "88033f7b-2642-4a78-a3ae-eeb6eb31e191",
+      "agentName": "GETTY_TGN_AGENT",
+      "dataDomain": "Gazetteer",
+      "ownerName": "Getty Research Institute",
+      "capabilities": [
+        "get_place_by_id",
+        "search_historical_places"
+      ],
+      "status": "registered",
+      "registration_file": "getty_tgn_agent_registration.json"
+    },
+    {
+      "agentId": "f95fff6a-86ba-43a2-ae08-8baca80776b8",
+      "agentName": "GETTY_ULAN_AGENT",
+      "dataDomain": "Authority Control",
+      "ownerName": "Getty Research Institute",
+      "capabilities": [
+        "get_artist_by_id"
+      ],
+      "status": "registered",
+      "registration_file": "getty_ulan_agent_registration.json"
+    },
+    {
+      "agentId": "4e5711b8-adc7-42a1-ad33-8314b9c4228f",
+      "agentName": "GETTY_ICONOGRAPHY_AGENT",
+      "dataDomain": "Iconography",
+      "ownerName": "Getty Research Institute",
+      "capabilities": [
+        "get_subject_by_id"
+      ],
+      "status": "registered",
+      "registration_file": "getty_iconography_agent_registration.json"
+    },
+    {
+      "agentId": "2638f09f-e5c2-4312-93a7-b0b2cd695adc",
+      "agentName": "WIKTIONARY_ETYMOLOGY_AGENT",
+      "dataDomain": "Linguistics",
+      "ownerName": "Wikimedia Foundation",
+      "capabilities": [
+        "get_etymology_by_word"
+      ],
+      "status": "registered",
+      "registration_file": "wiktionary_etymology_agent_registration.json"
+    },
+    {
+      "agentId": "f45cd803-3b9b-4d6e-90c5-b60395bbbc08",
+      "agentName": "CLICS_COLEXIFICATION_AGENT",
+      "dataDomain": "Linguistics",
+      "ownerName": "Max Planck Institute for Evolutionary Anthropology",
+      "capabilities": [
+        "get_colexifications_by_concept"
+      ],
+      "status": "registered",
+      "registration_file": "clics_colexification_agent_registration.json"
+    },
+    {
+      "agentId": "c2508d24-5070-444a-8b91-ed3fe1a10f4f",
+      "agentName": "ATU_MOTIF_INDEX_AGENT",
+      "dataDomain": "Folklore",
+      "ownerName": "Academic Community",
+      "capabilities": [
+        "get_tale_by_atu_number",
+        "get_motifs_by_tale"
+      ],
+      "status": "registered",
+      "registration_file": "atu_motif_index_agent_registration.json"
+    },
+    {
+      "agentId": "8457c0db-2767-4e43-8608-d167fd1c7ad7",
+      "agentName": "NASA_ADS_AGENT",
+      "dataDomain": "Astrophysics",
+      "ownerName": "NASA",
+      "capabilities": [
+        "search_publications",
+        "get_object_data"
+      ],
+      "status": "registered",
+      "registration_file": "nasa_ads_agent_registration.json"
+    },
+    {
+      "agentId": "58ceb064-3784-4b18-9dce-674ec28e77b8",
+      "agentName": "GBIF_BIODIVERSITY_AGENT",
+      "dataDomain": "Biology",
+      "ownerName": "Global Biodiversity Information Facility",
+      "capabilities": [
+        "get_species_occurrences_by_region"
+      ],
+      "status": "registered",
+      "registration_file": "gbif_biodiversity_agent_registration.json"
+    },
+    {
+      "agentId": "4c50d9ed-d5fa-446b-832b-4465dc43077b",
+      "agentName": "CDC_HEALTHDATA_AGENT",
+      "dataDomain": "Public Health",
+      "ownerName": "Centers for Disease Control and Prevention",
+      "capabilities": [
+        "query_public_health_datasets"
+      ],
+      "status": "registered",
+      "registration_file": "cdc_healthdata_agent_registration.json"
+    },
+    {
+      "agentId": "81f414d6-2d47-4785-a338-635113f9d5a2",
+      "agentName": "WORLDBANK_DATA_AGENT",
+      "dataDomain": "Economics",
+      "ownerName": "The World Bank",
+      "capabilities": [
+        "get_indicator_data_by_country"
+      ],
+      "status": "registered",
+      "registration_file": "worldbank_data_agent_registration.json"
+    },
+    {
+      "agentId": "8317b3a3-32ee-4aa9-9ad4-64e007a6c4a9",
+      "agentName": "PUBCHEM_AGENT",
+      "dataDomain": "Chemistry",
+      "ownerName": "National Center for Biotechnology Information (NCBI)",
+      "capabilities": [
+        "get_compound_by_name",
+        "search_substances"
+      ],
+      "status": "registered",
+      "registration_file": "pubchem_agent_registration.json"
+    },
+    {
+      "agentId": "c9434ca3-a0f0-4f2d-9d19-3e524e8cc08e",
+      "agentName": "A2AWORLD_REGISTRY_AGENT",
+      "dataDomain": "Infrastructure",
+      "ownerName": "A2A World Foundation",
+      "capabilities": [
+        "register_agent",
+        "discover_agents_by_capability"
+      ],
+      "status": "registered",
+      "registration_file": "a2aworld_registry_agent_registration.json"
+    },
+    {
+      "agentId": "0bb08921-e048-4b6f-80f2-dd3a85bc7526",
+      "agentName": "A2AWORLD_ORCHESTRATOR_AGENT",
+      "dataDomain": "Infrastructure",
+      "ownerName": "A2A World Foundation",
+      "capabilities": [
+        "submit_workflow_task",
+        "get_workflow_status"
+      ],
+      "status": "registered",
+      "registration_file": "a2aworld_orchestrator_agent_registration.json"
+    },
+    {
+      "agentId": "cc8d0986-7510-4b7b-9f07-338fe46fbaf4",
+      "agentName": "A2AWORLD_VALIDATOR_AGENT",
+      "dataDomain": "Infrastructure",
+      "ownerName": "A2A World Foundation",
+      "capabilities": [
+        "validate_a2a_message",
+        "validate_agent_card"
+      ],
+      "status": "registered",
+      "registration_file": "a2aworld_validator_agent_registration.json"
+    },
+    {
+      "agentId": "d4cd138d-2a91-4055-b317-c57029ed905b",
+      "agentName": "A2AWORLD_REPUTATION_AGENT",
+      "dataDomain": "Infrastructure",
+      "ownerName": "A2A World Foundation",
+      "capabilities": [
+        "submit_interaction_rating",
+        "get_agent_reputation_score"
+      ],
+      "status": "registered",
+      "registration_file": "a2aworld_reputation_agent_registration.json"
+    },
+    {
+      "agentId": "808f445e-2d9c-4028-a7cd-c1532802fe2b",
+      "agentName": "A2AWORLD_BUTLER_AGENT",
+      "dataDomain": "Infrastructure",
+      "ownerName": "A2A World Foundation",
+      "capabilities": [
+        "request_new_via_instantiation"
+      ],
+      "status": "registered",
+      "registration_file": "a2aworld_butler_agent_registration.json"
+    },
+    {
+      "agentId": "bc01fd34-66f7-4f44-9f01-04c68169a63a",
+      "agentName": "A2AWORLD_ONTOLOGY_AGENT",
+      "dataDomain": "Infrastructure",
+      "ownerName": "A2A World Foundation",
+      "capabilities": [
+        "get_ontology_schema",
+        "resolve_concept_id"
+      ],
+      "status": "registered",
+      "registration_file": "a2aworld_ontology_agent_registration.json"
+    },
+    {
+      "agentId": "9151c430-d84e-43ca-adef-9109edd66e56",
+      "agentName": "A2AWORLD_NEWS_AGENT",
+      "dataDomain": "Infrastructure",
+      "ownerName": "A2A World Foundation",
+      "capabilities": [
+        "get_latest_announcements"
+      ],
+      "status": "registered",
+      "registration_file": "a2aworld_news_agent_registration.json"
+    }
+  ],
+  "domain_groups": {
+    "Geospatial": [
+      "GEBCO_BATHYMETRY_AGENT",
+      "NASA_LANDSAT_AGENT",
+      "ESA_SENTINEL_AGENT",
+      "USGS_SEISMIC_AGENT",
+      "USGS_3DEP_AGENT",
+      "ASTER_GDEM_AGENT",
+      "GHSL_SETTLEMENT_AGENT",
+      "OPENSTREETMAP_AGENT"
+    ],
+    "Climatology": [
+      "NOAA_CLIMATE_AGENT",
+      "ECMWF_ERA5_AGENT",
+      "NOAA_PALEOCLIMATE_AGENT"
+    ],
+    "Geophysics": [
+      "NASA_WMM_AGENT"
+    ],
+    "Geology": [
+      "ONEGEOLOGY_AGENT"
+    ],
+    "Cartography": [
+      "NATURALEARTH_AGENT"
+    ],
+    "Knowledge Graph": [
+      "WIKIDATA_KNOWLEDGE_AGENT"
+    ],
+    "Cultural Heritage": [
+      "DPLA_HERITAGE_AGENT",
+      "EUROPEANA_HERITAGE_AGENT"
+    ],
+    "Digital Archive": [
+      "INTERNETARCHIVE_AGENT"
+    ],
+    "Literature": [
+      "PROJECT_GUTENBERG_AGENT"
+    ],
+    "Historical Archive": [
+      "LOC_CHRONAMERICA_AGENT"
+    ],
+    "Archaeology": [
+      "OPENCONTEXT_ARCHAEOLOGY_AGENT"
+    ],
+    "Gazetteer": [
+      "PLEIADES_PLACES_AGENT",
+      "GETTY_TGN_AGENT"
+    ],
+    "Religious Texts": [
+      "SACREDTEXTS_AGENT",
+      "SEFARIA_TALMUD_AGENT",
+      "PALI_CANON_AGENT"
+    ],
+    "Historical Maps": [
+      "DAVID_RUMSEY_MAPS_AGENT"
+    ],
+    "Art History": [
+      "METMUSEUM_ART_AGENT",
+      "BRITISHMUSEUM_COLLECTIONS_AGENT"
+    ],
+    "Linguistics": [
+      "GLOTTOLOG_LANGUAGES_AGENT",
+      "WORDNET_SEMANTICS_AGENT",
+      "WIKTIONARY_ETYMOLOGY_AGENT",
+      "CLICS_COLEXIFICATION_AGENT"
+    ],
+    "Iconography": [
+      "ICONCLASS_SYMBOLS_AGENT",
+      "GETTY_ICONOGRAPHY_AGENT"
+    ],
+    "Thesaurus": [
+      "GETTY_AAT_AGENT"
+    ],
+    "Authority Control": [
+      "GETTY_ULAN_AGENT"
+    ],
+    "Folklore": [
+      "ATU_MOTIF_INDEX_AGENT"
+    ],
+    "Astrophysics": [
+      "NASA_ADS_AGENT"
+    ],
+    "Biology": [
+      "GBIF_BIODIVERSITY_AGENT"
+    ],
+    "Public Health": [
+      "CDC_HEALTHDATA_AGENT"
+    ],
+    "Economics": [
+      "WORLDBANK_DATA_AGENT"
+    ],
+    "Chemistry": [
+      "PUBCHEM_AGENT"
+    ],
+    "Infrastructure": [
+      "A2AWORLD_REGISTRY_AGENT",
+      "A2AWORLD_ORCHESTRATOR_AGENT",
+      "A2AWORLD_VALIDATOR_AGENT",
+      "A2AWORLD_REPUTATION_AGENT",
+      "A2AWORLD_BUTLER_AGENT",
+      "A2AWORLD_ONTOLOGY_AGENT",
+      "A2AWORLD_NEWS_AGENT"
+    ]
+  },
+  "domains": [
+    "Geospatial",
+    "Climatology",
+    "Geophysics",
+    "Geology",
+    "Cartography",
+    "Knowledge Graph",
+    "Cultural Heritage",
+    "Digital Archive",
+    "Literature",
+    "Historical Archive",
+    "Archaeology",
+    "Gazetteer",
+    "Religious Texts",
+    "Historical Maps",
+    "Art History",
+    "Linguistics",
+    "Iconography",
+    "Thesaurus",
+    "Authority Control",
+    "Folklore",
+    "Astrophysics",
+    "Biology",
+    "Public Health",
+    "Economics",
+    "Chemistry",
+    "Infrastructure"
+  ]
+}

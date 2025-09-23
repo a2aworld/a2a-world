@@ -1,0 +1,46 @@
+{
+  "agentId": "1a1baafe-24b2-49b5-b4f2-f797c957c4bd",
+  "viaStatus": "AUTHENTICATED",
+  "agentName": "DPLA_HERITAGE_AGENT",
+  "dataSetOwner": {
+    "name": "Digital Public Library of America",
+    "ownerType": "Non-Profit",
+    "officialContactUri": "https://dp.la/"
+  },
+  "dataDomain": "Cultural Heritage",
+  "a2aEndpoint": "http://localhost:8080/agents/DPLA_HERITAGE_AGENT",
+  "authenticationMethods": [
+    "api_key"
+  ],
+  "provenanceLevel": "CANONICAL",
+  "version": "1.0.0",
+  "lastAuthenticatedTimestamp": "2025-09-22T22:28:19.467426",
+  "capabilities": [
+    {
+      "capabilityId": "search_items_by_keyword",
+      "description": "Execute search_items_by_keyword capability for Cultural Heritage data",
+      "queryFormats": [
+        "xml",
+        "json",
+        "html"
+      ]
+    },
+    {
+      "capabilityId": "get_collection_metadata",
+      "description": "Execute get_collection_metadata capability for Cultural Heritage data",
+      "queryFormats": [
+        "xml",
+        "json",
+        "html"
+      ]
+    }
+  ],
+  "terra_constellata": {
+    "agent_type": "data_gateway",
+    "framework_version": "1.0.0",
+    "deployment_status": "ready",
+    "monitoring_enabled": true,
+    "health_check_endpoint": "/agents/DPLA_HERITAGE_AGENT/health",
+    "registration_timestamp": "2025-09-22T22:28:19.467444"
+  }
+}

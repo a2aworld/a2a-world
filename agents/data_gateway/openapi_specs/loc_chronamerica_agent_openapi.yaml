@@ -1,0 +1,300 @@
+components:
+  schemas:
+    Error:
+      properties:
+        code:
+          description: Error code
+          type: integer
+        error:
+          description: Error message
+          type: string
+        timestamp:
+          format: date-time
+          type: string
+      type: object
+    HealthCheck:
+      properties:
+        a2a_connected:
+          description: A2A protocol connection status
+          type: boolean
+        agent_id:
+          description: Unique agent identifier
+          type: string
+        agent_name:
+          description: Agent name
+          type: string
+        api_accessible:
+          description: External API accessibility
+          type: boolean
+        capabilities:
+          description: Available capabilities
+          items:
+            type: string
+          type: array
+        data_domain:
+          description: Data domain
+          type: string
+        health_score:
+          description: Health score (0.0-1.0)
+          maximum: 1.0
+          minimum: 0.0
+          type: number
+        performance_metrics:
+          properties:
+            avg_response_time:
+              description: Average response time in seconds
+              type: number
+            error_count:
+              description: Total errors
+              type: integer
+            error_rate:
+              description: Error rate (0.0-1.0)
+              type: number
+            total_requests:
+              description: Total requests processed
+              type: integer
+          type: object
+        status:
+          description: Overall health status
+          enum:
+          - healthy
+          - unhealthy
+          - a2a_healthy_api_unhealthy
+          type: string
+      type: object
+  securitySchemes:
+    ApiKeyAuth:
+      in: header
+      name: X-API-Key
+      type: apiKey
+    BearerAuth:
+      scheme: bearer
+      type: http
+info:
+  contact:
+    name: Terra Constellata Development Team
+    url: https://terra-constellata.ai
+  description: Authenticated access to Historical Archive data through the LOC_CHRONAMERICA_AGENT
+    agent. Part of the Terra Constellata 'Library of Alexandria for AI Wisdom' ecosystem.
+  license:
+    name: MIT
+    url: https://opensource.org/licenses/MIT
+  title: Terra Constellata LOC_CHRONAMERICA_AGENT Data Gateway Agent API
+  version: 1.0.0
+openapi: 3.0.3
+paths:
+  /execute/get_ocr_text_by_page_id:
+    post:
+      description: Execute the get_ocr_text_by_page_id capability to retrieve historical
+        archive data from external sources.
+      operationId: executeGetocrtextbypageid
+      parameters: []
+      requestBody: null
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                properties:
+                  metadata:
+                    properties:
+                      data_source:
+                        type: string
+                      processing_time:
+                        type: number
+                      provenance_level:
+                        type: string
+                      timestamp:
+                        format: date-time
+                        type: string
+                    type: object
+                  result:
+                    description: get_ocr_text_by_page_id result data
+                    type: object
+                type: object
+          description: get_ocr_text_by_page_id executed successfully
+        '400':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: Invalid request parameters
+        '401':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: Authentication required
+        '403':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: Access forbidden
+        '429':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: Rate limit exceeded
+        '500':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: Internal server error
+        '503':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: External data source unavailable
+      summary: Execute get_ocr_text_by_page_id capability
+      tags:
+      - HistoricalArchive
+  /execute/search_newspaper_pages:
+    post:
+      description: Execute the search_newspaper_pages capability to retrieve historical
+        archive data from external sources.
+      operationId: executeSearchnewspaperpages
+      parameters:
+      - description: Search query or keywords
+        in: query
+        name: query
+        required: true
+        schema:
+          type: string
+      - description: Maximum number of results
+        in: query
+        name: limit
+        required: false
+        schema:
+          default: 10
+          maximum: 100
+          minimum: 1
+          type: integer
+      requestBody: null
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                properties:
+                  metadata:
+                    properties:
+                      data_source:
+                        type: string
+                      processing_time:
+                        type: number
+                      provenance_level:
+                        type: string
+                      timestamp:
+                        format: date-time
+                        type: string
+                    type: object
+                  result:
+                    description: search_newspaper_pages result data
+                    type: object
+                type: object
+          description: search_newspaper_pages executed successfully
+        '400':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: Invalid request parameters
+        '401':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: Authentication required
+        '403':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: Access forbidden
+        '429':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: Rate limit exceeded
+        '500':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: Internal server error
+        '503':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: External data source unavailable
+      summary: Execute search_newspaper_pages capability
+      tags:
+      - HistoricalArchive
+  /health:
+    get:
+      description: Retrieve comprehensive health information for the LOC_CHRONAMERICA_AGENT
+        agent, including connection status, performance metrics, and external API
+        accessibility.
+      operationId: getHealth
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HealthCheck'
+          description: Health check successful
+        '503':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: Service unavailable
+      summary: Get LOC_CHRONAMERICA_AGENT health status
+      tags:
+      - Health
+  /metrics:
+    get:
+      description: Retrieve Prometheus-formatted metrics for monitoring the LOC_CHRONAMERICA_AGENT
+        agent performance and health.
+      operationId: getMetrics
+      responses:
+        '200':
+          content:
+            text/plain:
+              schema:
+                description: Prometheus metrics in text format
+                type: string
+          description: Metrics retrieved successfully
+      summary: Get LOC_CHRONAMERICA_AGENT Prometheus metrics
+      tags:
+      - Monitoring
+  /schema:
+    get:
+      description: Retrieve the complete agent schema and configuration information
+        for LOC_CHRONAMERICA_AGENT.
+      operationId: getSchema
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                description: Agent schema information
+                type: object
+          description: Schema retrieved successfully
+      summary: Get LOC_CHRONAMERICA_AGENT agent schema
+      tags:
+      - Metadata
+security:
+- ApiKeyAuth: []
+- BearerAuth: []
+servers:
+- description: Production server
+  url: https://api.terra-constellata.ai/agents/LOC_CHRONAMERICA_AGENT
+- description: Local development server
+  url: http://localhost:8080/agents/{agent_name}

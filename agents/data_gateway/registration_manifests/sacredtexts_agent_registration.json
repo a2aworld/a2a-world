@@ -1,0 +1,43 @@
+{
+  "agentId": "79eff3ab-df53-4841-b54d-f3c22b4f0a91",
+  "viaStatus": "AUTHENTICATED",
+  "agentName": "SACREDTEXTS_AGENT",
+  "dataSetOwner": {
+    "name": "Internet Sacred Text Archive",
+    "ownerType": "Individual",
+    "officialContactUri": "https://www.sacred-texts.com/"
+  },
+  "dataDomain": "Religious Texts",
+  "a2aEndpoint": "http://localhost:8080/agents/SACREDTEXTS_AGENT",
+  "authenticationMethods": [
+    "api_key"
+  ],
+  "provenanceLevel": "CANONICAL",
+  "version": "1.0.0",
+  "lastAuthenticatedTimestamp": "2025-09-22T22:28:19.475279",
+  "capabilities": [
+    {
+      "capabilityId": "get_text_by_path",
+      "description": "Execute get_text_by_path capability for Religious Texts data",
+      "queryFormats": [
+        "json"
+      ]
+    },
+    {
+      "capabilityId": "search_texts_by_keyword",
+      "description": "Execute search_texts_by_keyword capability for Religious Texts data",
+      "queryFormats": [
+        "xml",
+        "json"
+      ]
+    }
+  ],
+  "terra_constellata": {
+    "agent_type": "data_gateway",
+    "framework_version": "1.0.0",
+    "deployment_status": "ready",
+    "monitoring_enabled": true,
+    "health_check_endpoint": "/agents/SACREDTEXTS_AGENT/health",
+    "registration_timestamp": "2025-09-22T22:28:19.475297"
+  }
+}

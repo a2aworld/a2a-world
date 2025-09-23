@@ -1,0 +1,46 @@
+{
+  "agentId": "ded9f659-793a-4987-8345-a392a02c14e3",
+  "viaStatus": "AUTHENTICATED",
+  "agentName": "OPENSTREETMAP_AGENT",
+  "dataSetOwner": {
+    "name": "OpenStreetMap Foundation",
+    "ownerType": "Community",
+    "officialContactUri": "https://www.openstreetmap.org/"
+  },
+  "dataDomain": "Geospatial",
+  "a2aEndpoint": "http://localhost:8080/agents/OPENSTREETMAP_AGENT",
+  "authenticationMethods": [
+    "api_key"
+  ],
+  "provenanceLevel": "CANONICAL",
+  "version": "1.0.0",
+  "lastAuthenticatedTimestamp": "2025-09-22T22:28:19.462894",
+  "capabilities": [
+    {
+      "capabilityId": "get_vector_data_by_bbox",
+      "description": "Execute get_vector_data_by_bbox capability for Geospatial data",
+      "queryFormats": [
+        "geojson",
+        "json",
+        "wkt"
+      ]
+    },
+    {
+      "capabilityId": "query_road_network",
+      "description": "Execute query_road_network capability for Geospatial data",
+      "queryFormats": [
+        "geojson",
+        "json",
+        "wkt"
+      ]
+    }
+  ],
+  "terra_constellata": {
+    "agent_type": "data_gateway",
+    "framework_version": "1.0.0",
+    "deployment_status": "ready",
+    "monitoring_enabled": true,
+    "health_check_endpoint": "/agents/OPENSTREETMAP_AGENT/health",
+    "registration_timestamp": "2025-09-22T22:28:19.462908"
+  }
+}

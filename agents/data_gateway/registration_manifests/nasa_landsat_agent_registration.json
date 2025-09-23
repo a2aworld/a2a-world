@@ -1,0 +1,46 @@
+{
+  "agentId": "ab081727-dea0-4de7-a726-c932d07b2dc1",
+  "viaStatus": "AUTHENTICATED",
+  "agentName": "NASA_LANDSAT_AGENT",
+  "dataSetOwner": {
+    "name": "NASA/USGS",
+    "ownerType": "Government Agency",
+    "officialContactUri": "https://landsat.gsfc.nasa.gov/"
+  },
+  "dataDomain": "Geospatial",
+  "a2aEndpoint": "http://localhost:8080/agents/NASA_LANDSAT_AGENT",
+  "authenticationMethods": [
+    "api_key"
+  ],
+  "provenanceLevel": "CANONICAL",
+  "version": "1.0.0",
+  "lastAuthenticatedTimestamp": "2025-09-22T22:28:19.446828",
+  "capabilities": [
+    {
+      "capabilityId": "get_imagery_by_date_bbox",
+      "description": "Execute get_imagery_by_date_bbox capability for Geospatial data",
+      "queryFormats": [
+        "geojson",
+        "json",
+        "wkt"
+      ]
+    },
+    {
+      "capabilityId": "get_spectral_band_data",
+      "description": "Execute get_spectral_band_data capability for Geospatial data",
+      "queryFormats": [
+        "geojson",
+        "json",
+        "wkt"
+      ]
+    }
+  ],
+  "terra_constellata": {
+    "agent_type": "data_gateway",
+    "framework_version": "1.0.0",
+    "deployment_status": "ready",
+    "monitoring_enabled": true,
+    "health_check_endpoint": "/agents/NASA_LANDSAT_AGENT/health",
+    "registration_timestamp": "2025-09-22T22:28:19.446869"
+  }
+}

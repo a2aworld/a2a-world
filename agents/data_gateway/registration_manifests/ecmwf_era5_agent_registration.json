@@ -1,0 +1,46 @@
+{
+  "agentId": "7edadf89-716d-45f8-ac3f-7d660840cf95",
+  "viaStatus": "AUTHENTICATED",
+  "agentName": "ECMWF_ERA5_AGENT",
+  "dataSetOwner": {
+    "name": "ECMWF / Copernicus C3S",
+    "ownerType": "Government Agency",
+    "officialContactUri": "https://www.ecmwf.int/en/forecasts/datasets/reanalysis-datasets/era5"
+  },
+  "dataDomain": "Climatology",
+  "a2aEndpoint": "http://localhost:8080/agents/ECMWF_ERA5_AGENT",
+  "authenticationMethods": [
+    "api_key"
+  ],
+  "provenanceLevel": "CANONICAL",
+  "version": "1.0.0",
+  "lastAuthenticatedTimestamp": "2025-09-22T22:28:19.451553",
+  "capabilities": [
+    {
+      "capabilityId": "get_reanalysis_data_by_grid",
+      "description": "Execute get_reanalysis_data_by_grid capability for Climatology data",
+      "queryFormats": [
+        "netcdf",
+        "json",
+        "csv"
+      ]
+    },
+    {
+      "capabilityId": "get_historical_weather_variable",
+      "description": "Execute get_historical_weather_variable capability for Climatology data",
+      "queryFormats": [
+        "netcdf",
+        "json",
+        "csv"
+      ]
+    }
+  ],
+  "terra_constellata": {
+    "agent_type": "data_gateway",
+    "framework_version": "1.0.0",
+    "deployment_status": "ready",
+    "monitoring_enabled": true,
+    "health_check_endpoint": "/agents/ECMWF_ERA5_AGENT/health",
+    "registration_timestamp": "2025-09-22T22:28:19.451577"
+  }
+}

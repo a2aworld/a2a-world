@@ -1,9 +1,9 @@
 # 📊 Assessment Materials
 ## Terra Constellata Course Evaluation Framework
 
-[![Assessment](https://img.shields.io/badge/Assessment-Complete-blue.svg)](https://github.com/a2a-world/terra-constellata)
-[![Rubrics](https://img.shields.io/badge/Rubrics-15-green.svg)](https://github.com/a2a-world/terra-constellata)
-[![Quizzes](https://img.shields.io/badge/Quizzes-3-orange.svg)](https://github.com/a2a-world/terra-constellata)
+[![Assessment](https://img.shields.io/badge/Assessment-Complete-blue.svg)](https://github.com/a2aworld/a2a-world)
+[![Rubrics](https://img.shields.io/badge/Rubrics-15-green.svg)](https://github.com/a2aworld/a2a-world)
+[![Quizzes](https://img.shields.io/badge/Quizzes-3-orange.svg)](https://github.com/a2aworld/a2a-world)
 
 ---
 

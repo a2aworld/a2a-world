@@ -1,0 +1,43 @@
+{
+  "agentId": "d99f2e34-930a-4fbf-bebc-3b1199da4788",
+  "viaStatus": "AUTHENTICATED",
+  "agentName": "GETTY_TGN_AGENT",
+  "dataSetOwner": {
+    "name": "Getty Research Institute",
+    "ownerType": "Non-Profit",
+    "officialContactUri": "https://www.getty.edu/research/tools/vocabularies/tgn/"
+  },
+  "dataDomain": "Gazetteer",
+  "a2aEndpoint": "http://localhost:8080/agents/GETTY_TGN_AGENT",
+  "authenticationMethods": [
+    "api_key"
+  ],
+  "provenanceLevel": "CANONICAL",
+  "version": "1.0.0",
+  "lastAuthenticatedTimestamp": "2025-09-22T22:28:19.482612",
+  "capabilities": [
+    {
+      "capabilityId": "get_place_by_id",
+      "description": "Execute get_place_by_id capability for Gazetteer data",
+      "queryFormats": [
+        "json"
+      ]
+    },
+    {
+      "capabilityId": "search_historical_places",
+      "description": "Execute search_historical_places capability for Gazetteer data",
+      "queryFormats": [
+        "xml",
+        "json"
+      ]
+    }
+  ],
+  "terra_constellata": {
+    "agent_type": "data_gateway",
+    "framework_version": "1.0.0",
+    "deployment_status": "ready",
+    "monitoring_enabled": true,
+    "health_check_endpoint": "/agents/GETTY_TGN_AGENT/health",
+    "registration_timestamp": "2025-09-22T22:28:19.482625"
+  }
+}

@@ -1,0 +1,97 @@
+# Docker Compose template for Terra Constellata Data Gateway Agents
+# Copy this file and customize for specific agent deployments
+
+version: '3.8'
+
+services:
+  # A2A Protocol Server (required dependency)
+  a2a-server:
+    image: terraconstellata/a2a-server:latest
+    ports:
+      - "8080:8080"
+    environment:
+      - A2A_SERVER_HOST=0.0.0.0
+      - A2A_SERVER_PORT=8080
+    networks:
+      - terraconstellata-network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8080/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+  # Template for individual agent services
+  # Copy and customize this block for each agent
+  # Replace {{AGENT_NAME}} with actual agent name (e.g., gebco-bathymetry)
+  # agent-template:
+  #   build:
+  #     context: ..
+  #     dockerfile: agents/data_gateway/Dockerfile.agent_template
+  #   container_name: tc-agent-agent-template
+  #   environment:
+  #     - A2A_SERVER_URL=http://a2a-server:8080
+  #     - AGENT_NAME=AGENT_TEMPLATE_AGENT
+  #     - TC_AGENT_TEMPLATE_AGENT_API_KEY=${AGENT_API_KEY:-demo_key}
+  #     - AGENT_BASE_URL=https://api.example.com/
+  #     - AGENT_TIMEOUT=30
+  #     - AGENT_RETRY_ATTEMPTS=3
+  #   depends_on:
+  #     a2a-server:
+  #       condition: service_healthy
+  #   networks:
+  #     - terraconstellata-network
+  #   restart: unless-stopped
+  #   healthcheck:
+  #     test: ["CMD", "python", "-c", "import requests; requests.get('http://localhost:8000/health')"]
+  #     interval: 60s
+  #     timeout: 10s
+  #     retries: 3
+  #     start_period: 30s
+
+  # Example: GEBCO Bathymetry Agent
+  gebco-bathymetry:
+    build:
+      context: ..
+      dockerfile: agents/data_gateway/Dockerfile.gebco_bathymetry
+    container_name: tc-agent-gebco-bathymetry
+    environment:
+      - A2A_SERVER_URL=http://a2a-server:8080
+      - AGENT_NAME=GEBCO_BATHYMETRY_AGENT
+      - TC_GEBCO_BATHYMETRY_AGENT_API_KEY=${GEBCO_API_KEY:-demo_key}
+      - AGENT_BASE_URL=https://www.gebco.net/
+      - AGENT_TIMEOUT=30
+    depends_on:
+      a2a-server:
+        condition: service_healthy
+    networks:
+      - terraconstellata-network
+    restart: unless-stopped
+
+  # Example: NASA ADS Agent
+  nasa-ads:
+    build:
+      context: ..
+      dockerfile: agents/data_gateway/Dockerfile.nasa_ads
+    container_name: tc-agent-nasa-ads
+    environment:
+      - A2A_SERVER_URL=http://a2a-server:8080
+      - AGENT_NAME=NASA_ADS_AGENT
+      - TC_NASA_ADS_AGENT_API_KEY=${NASA_ADS_API_KEY:-demo_key}
+      - AGENT_BASE_URL=https://api.adsabs.harvard.edu/
+      - AGENT_TIMEOUT=30
+    depends_on:
+      a2a-server:
+        condition: service_healthy
+    networks:
+      - terraconstellata-network
+    restart: unless-stopped
+
+networks:
+  terraconstellata-network:
+    driver: bridge
+    name: terraconstellata-agents
+
+# Volumes for persistent secrets (optional)
+volumes:
+  agent-secrets:
+    driver: local

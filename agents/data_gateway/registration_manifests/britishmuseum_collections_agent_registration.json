@@ -1,0 +1,35 @@
+{
+  "agentId": "9a828009-b3dc-43e2-8ff3-badc75d1aba2",
+  "viaStatus": "AUTHENTICATED",
+  "agentName": "BRITISHMUSEUM_COLLECTIONS_AGENT",
+  "dataSetOwner": {
+    "name": "The British Museum",
+    "ownerType": "Government Agency",
+    "officialContactUri": "https://www.britishmuseum.org/"
+  },
+  "dataDomain": "Art History",
+  "a2aEndpoint": "http://localhost:8080/agents/BRITISHMUSEUM_COLLECTIONS_AGENT",
+  "authenticationMethods": [
+    "api_key"
+  ],
+  "provenanceLevel": "CANONICAL",
+  "version": "1.0.0",
+  "lastAuthenticatedTimestamp": "2025-09-22T22:28:19.479744",
+  "capabilities": [
+    {
+      "capabilityId": "query_sparql_endpoint",
+      "description": "Execute query_sparql_endpoint capability for Art History data",
+      "queryFormats": [
+        "json"
+      ]
+    }
+  ],
+  "terra_constellata": {
+    "agent_type": "data_gateway",
+    "framework_version": "1.0.0",
+    "deployment_status": "ready",
+    "monitoring_enabled": true,
+    "health_check_endpoint": "/agents/BRITISHMUSEUM_COLLECTIONS_AGENT/health",
+    "registration_timestamp": "2025-09-22T22:28:19.479756"
+  }
+}

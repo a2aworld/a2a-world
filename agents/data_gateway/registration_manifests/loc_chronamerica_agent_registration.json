@@ -1,0 +1,43 @@
+{
+  "agentId": "890b2969-08ea-40f0-ab1e-f5bcd72784ee",
+  "viaStatus": "AUTHENTICATED",
+  "agentName": "LOC_CHRONAMERICA_AGENT",
+  "dataSetOwner": {
+    "name": "Library of Congress",
+    "ownerType": "Government Agency",
+    "officialContactUri": "https://chroniclingamerica.loc.gov/"
+  },
+  "dataDomain": "Historical Archive",
+  "a2aEndpoint": "http://localhost:8080/agents/LOC_CHRONAMERICA_AGENT",
+  "authenticationMethods": [
+    "api_key"
+  ],
+  "provenanceLevel": "CANONICAL",
+  "version": "1.0.0",
+  "lastAuthenticatedTimestamp": "2025-09-22T22:28:19.470252",
+  "capabilities": [
+    {
+      "capabilityId": "search_newspaper_pages",
+      "description": "Execute search_newspaper_pages capability for Historical Archive data",
+      "queryFormats": [
+        "xml",
+        "json"
+      ]
+    },
+    {
+      "capabilityId": "get_ocr_text_by_page_id",
+      "description": "Execute get_ocr_text_by_page_id capability for Historical Archive data",
+      "queryFormats": [
+        "json"
+      ]
+    }
+  ],
+  "terra_constellata": {
+    "agent_type": "data_gateway",
+    "framework_version": "1.0.0",
+    "deployment_status": "ready",
+    "monitoring_enabled": true,
+    "health_check_endpoint": "/agents/LOC_CHRONAMERICA_AGENT/health",
+    "registration_timestamp": "2025-09-22T22:28:19.470276"
+  }
+}

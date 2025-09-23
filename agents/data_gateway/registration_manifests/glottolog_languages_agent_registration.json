@@ -1,0 +1,44 @@
+{
+  "agentId": "85710a3f-b6d9-410a-8f0c-621a7efec4ee",
+  "viaStatus": "AUTHENTICATED",
+  "agentName": "GLOTTOLOG_LANGUAGES_AGENT",
+  "dataSetOwner": {
+    "name": "Max Planck Institute for Evolutionary Anthropology",
+    "ownerType": "Academic Institution",
+    "officialContactUri": "https://glottolog.org/"
+  },
+  "dataDomain": "Linguistics",
+  "a2aEndpoint": "http://localhost:8080/agents/GLOTTOLOG_LANGUAGES_AGENT",
+  "authenticationMethods": [
+    "api_key"
+  ],
+  "provenanceLevel": "CANONICAL",
+  "version": "1.0.0",
+  "lastAuthenticatedTimestamp": "2025-09-22T22:28:19.480366",
+  "capabilities": [
+    {
+      "capabilityId": "get_language_by_glottocode",
+      "description": "Execute get_language_by_glottocode capability for Linguistics data",
+      "queryFormats": [
+        "xml",
+        "json"
+      ]
+    },
+    {
+      "capabilityId": "get_language_family_tree",
+      "description": "Execute get_language_family_tree capability for Linguistics data",
+      "queryFormats": [
+        "xml",
+        "json"
+      ]
+    }
+  ],
+  "terra_constellata": {
+    "agent_type": "data_gateway",
+    "framework_version": "1.0.0",
+    "deployment_status": "ready",
+    "monitoring_enabled": true,
+    "health_check_endpoint": "/agents/GLOTTOLOG_LANGUAGES_AGENT/health",
+    "registration_timestamp": "2025-09-22T22:28:19.480387"
+  }
+}

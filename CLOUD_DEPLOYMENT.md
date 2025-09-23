@@ -42,8 +42,8 @@ sudo usermod -aG docker $USER
 
 ```bash
 # Clone the repository
-git clone https://github.com/your-repo/terra-constellata.git
-cd terra-constellata
+git clone https://github.com/a2aworld/a2a-world.git
+cd a2a-world
 
 # Copy environment file
 cp .env.example .env
@@ -150,8 +150,8 @@ curl https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3 | bash
 
 ```bash
 # Clone repository
-git clone https://github.com/your-repo/terra-constellata.git
-cd terra-constellata
+git clone https://github.com/a2aworld/a2a-world.git
+cd a2a-world
 
 # Apply Kubernetes manifests
 kubectl apply -f k8s/

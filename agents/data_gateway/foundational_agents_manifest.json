@@ -1,0 +1,403 @@
+[
+  {
+    "agentName": "GEBCO_BATHYMETRY_AGENT",
+    "dataDomain": "Geospatial",
+    "ownerName": "GEBCO Project (IHO/IOC)",
+    "ownerType": "Non-Profit",
+    "contactUri": "https://www.gebco.net/",
+    "capabilities": ["get_elevation_by_point", "get_elevation_by_bbox"]
+  },
+  {
+    "agentName": "NASA_LANDSAT_AGENT",
+    "dataDomain": "Geospatial",
+    "ownerName": "NASA/USGS",
+    "ownerType": "Government Agency",
+    "contactUri": "https://landsat.gsfc.nasa.gov/",
+    "capabilities": ["get_imagery_by_date_bbox", "get_spectral_band_data"]
+  },
+  {
+    "agentName": "ESA_SENTINEL_AGENT",
+    "dataDomain": "Geospatial",
+    "ownerName": "European Space Agency (ESA)",
+    "ownerType": "Government Agency",
+    "contactUri": "https://sentinels.copernicus.eu/",
+    "capabilities": ["get_imagery_by_date_bbox", "get_radar_data"]
+  },
+  {
+    "agentName": "USGS_SEISMIC_AGENT",
+    "dataDomain": "Geospatial",
+    "ownerName": "U.S. Geological Survey",
+    "ownerType": "Government Agency",
+    "contactUri": "https://earthquake.usgs.gov/",
+    "capabilities": ["get_earthquakes_by_region", "get_realtime_seismic_feed"]
+  },
+  {
+    "agentName": "NOAA_CLIMATE_AGENT",
+    "dataDomain": "Climatology",
+    "ownerName": "National Oceanic and Atmospheric Administration",
+    "ownerType": "Government Agency",
+    "contactUri": "https://www.noaa.gov/",
+    "capabilities": ["get_station_historical_data", "query_climate_normals"]
+  },
+  {
+    "agentName": "ECMWF_ERA5_AGENT",
+    "dataDomain": "Climatology",
+    "ownerName": "ECMWF / Copernicus C3S",
+    "ownerType": "Government Agency",
+    "contactUri": "https://www.ecmwf.int/en/forecasts/datasets/reanalysis-datasets/era5",
+    "capabilities": ["get_reanalysis_data_by_grid", "get_historical_weather_variable"]
+  },
+  {
+    "agentName": "USGS_3DEP_AGENT",
+    "dataDomain": "Geospatial",
+    "ownerName": "U.S. Geological Survey",
+    "ownerType": "Government Agency",
+    "contactUri": "https://www.usgs.gov/3d-elevation-program",
+    "capabilities": ["get_lidar_point_cloud", "get_high_res_dem"]
+  },
+  {
+    "agentName": "ASTER_GDEM_AGENT",
+    "dataDomain": "Geospatial",
+    "ownerName": "NASA/METI",
+    "ownerType": "Government Agency",
+    "contactUri": "https://lpdaac.usgs.gov/products/astgtmv003/",
+    "capabilities": ["get_elevation_by_bbox_30m"]
+  },
+  {
+    "agentName": "NASA_WMM_AGENT",
+    "dataDomain": "Geophysics",
+    "ownerName": "NASA/NCEI",
+    "ownerType": "Government Agency",
+    "contactUri": "https://www.ngdc.noaa.gov/geomag/WMM/",
+    "capabilities": ["get_magnetic_field_at_point"]
+  },
+  {
+    "agentName": "GHSL_SETTLEMENT_AGENT",
+    "dataDomain": "Geospatial",
+    "ownerName": "European Commission, JRC",
+    "ownerType": "Government Agency",
+    "contactUri": "https://ghsl.jrc.ec.europa.eu/",
+    "capabilities": ["get_population_density_grid", "get_built_up_area_by_year"]
+  },
+  {
+    "agentName": "ONEGEOLOGY_AGENT",
+    "dataDomain": "Geology",
+    "ownerName": "OneGeology Consortium",
+    "ownerType": "Non-Profit",
+    "contactUri": "https://www.onegeology.org/",
+    "capabilities": ["discover_geological_maps_by_nation", "query_federated_geology_data"]
+  },
+  {
+    "agentName": "OPENSTREETMAP_AGENT",
+    "dataDomain": "Geospatial",
+    "ownerName": "OpenStreetMap Foundation",
+    "ownerType": "Community",
+    "contactUri": "https://www.openstreetmap.org/",
+    "capabilities": ["get_vector_data_by_bbox", "query_road_network"]
+  },
+  {
+    "agentName": "NATURALEARTH_AGENT",
+    "dataDomain": "Cartography",
+    "ownerName": "North American Cartographic Information Society",
+    "ownerType": "Community",
+    "contactUri": "https://www.naturalearthdata.com/",
+    "capabilities": ["get_basemap_vectors_by_scale"]
+  },
+  {
+    "agentName": "NOAA_PALEOCLIMATE_AGENT",
+    "dataDomain": "Climatology",
+    "ownerName": "NOAA NCEI",
+    "ownerType": "Government Agency",
+    "contactUri": "https://www.ncdc.noaa.gov/paleo-search/",
+    "capabilities": ["get_paleo_proxy_data"]
+  },
+  {
+    "agentName": "WIKIDATA_KNOWLEDGE_AGENT",
+    "dataDomain": "Knowledge Graph",
+    "ownerName": "Wikimedia Foundation",
+    "ownerType": "Non-Profit",
+    "contactUri": "https://www.wikidata.org/",
+    "capabilities": ["get_entity_by_id", "query_sparql"]
+  },
+  {
+    "agentName": "DPLA_HERITAGE_AGENT",
+    "dataDomain": "Cultural Heritage",
+    "ownerName": "Digital Public Library of America",
+    "ownerType": "Non-Profit",
+    "contactUri": "https://dp.la/",
+    "capabilities": ["search_items_by_keyword", "get_collection_metadata"]
+  },
+  {
+    "agentName": "EUROPEANA_HERITAGE_AGENT",
+    "dataDomain": "Cultural Heritage",
+    "ownerName": "Europeana Foundation",
+    "ownerType": "Non-Profit",
+    "contactUri": "https://www.europeana.eu/",
+    "capabilities": ["search_items_by_keyword", "get_item_record_by_id"]
+  },
+  {
+    "agentName": "INTERNETARCHIVE_AGENT",
+    "dataDomain": "Digital Archive",
+    "ownerName": "Internet Archive",
+    "ownerType": "Non-Profit",
+    "contactUri": "https://archive.org/",
+    "capabilities": ["search_metadata", "get_item_files"]
+  },
+  {
+    "agentName": "PROJECT_GUTENBERG_AGENT",
+    "dataDomain": "Literature",
+    "ownerName": "Project Gutenberg",
+    "ownerType": "Non-Profit",
+    "contactUri": "https://www.gutenberg.org/",
+    "capabilities": ["get_book_text_by_id", "search_books_by_author"]
+  },
+  {
+    "agentName": "LOC_CHRONAMERICA_AGENT",
+    "dataDomain": "Historical Archive",
+    "ownerName": "Library of Congress",
+    "ownerType": "Government Agency",
+    "contactUri": "https://chroniclingamerica.loc.gov/",
+    "capabilities": ["search_newspaper_pages", "get_ocr_text_by_page_id"]
+  },
+  {
+    "agentName": "OPENCONTEXT_ARCHAEOLOGY_AGENT",
+    "dataDomain": "Archaeology",
+    "ownerName": "Alexandria Archive Institute",
+    "ownerType": "Non-Profit",
+    "contactUri": "https://opencontext.org/",
+    "capabilities": ["search_projects_by_region", "get_dataset_by_uri"]
+  },
+  {
+    "agentName": "PLEIADES_PLACES_AGENT",
+    "dataDomain": "Gazetteer",
+    "ownerName": "NYU Institute for the Study of the Ancient World",
+    "ownerType": "Academic Institution",
+    "contactUri": "https://pleiades.stoa.org/",
+    "capabilities": ["get_place_by_id", "search_ancient_places"]
+  },
+  {
+    "agentName": "SACREDTEXTS_AGENT",
+    "dataDomain": "Religious Texts",
+    "ownerName": "Internet Sacred Text Archive",
+    "ownerType": "Individual",
+    "contactUri": "https://www.sacred-texts.com/",
+    "capabilities": ["get_text_by_path", "search_texts_by_keyword"]
+  },
+  {
+    "agentName": "SEFARIA_TALMUD_AGENT",
+    "dataDomain": "Religious Texts",
+    "ownerName": "Sefaria",
+    "ownerType": "Non-Profit",
+    "contactUri": "https://www.sefaria.org/",
+    "capabilities": ["get_text_by_ref", "get_linked_commentaries"]
+  },
+  {
+    "agentName": "PALI_CANON_AGENT",
+    "dataDomain": "Religious Texts",
+    "ownerName": "Vipassana Research Institute",
+    "ownerType": "Non-Profit",
+    "contactUri": "https://www.tipitaka.org/",
+    "capabilities": ["get_sutta_by_id"]
+  },
+  {
+    "agentName": "DAVID_RUMSEY_MAPS_AGENT",
+    "dataDomain": "Historical Maps",
+    "ownerName": "David Rumsey Map Collection",
+    "ownerType": "Academic Institution",
+    "contactUri": "https://www.davidrumsey.com/",
+    "capabilities": ["get_georeferenced_map_by_id", "search_maps_by_location"]
+  },
+  {
+    "agentName": "METMUSEUM_ART_AGENT",
+    "dataDomain": "Art History",
+    "ownerName": "Metropolitan Museum of Art",
+    "ownerType": "Non-Profit",
+    "contactUri": "https://www.metmuseum.org/",
+    "capabilities": ["get_object_by_id", "search_openaccess_art"]
+  },
+  {
+    "agentName": "BRITISHMUSEUM_COLLECTIONS_AGENT",
+    "dataDomain": "Art History",
+    "ownerName": "The British Museum",
+    "ownerType": "Government Agency",
+    "contactUri": "https://www.britishmuseum.org/",
+    "capabilities": ["query_sparql_endpoint"]
+  },
+  {
+    "agentName": "GLOTTOLOG_LANGUAGES_AGENT",
+    "dataDomain": "Linguistics",
+    "ownerName": "Max Planck Institute for Evolutionary Anthropology",
+    "ownerType": "Academic Institution",
+    "contactUri": "https://glottolog.org/",
+    "capabilities": ["get_language_by_glottocode", "get_language_family_tree"]
+  },
+  {
+    "agentName": "WORDNET_SEMANTICS_AGENT",
+    "dataDomain": "Linguistics",
+    "ownerName": "Princeton University / Open English WordNet",
+    "ownerType": "Academic Institution",
+    "contactUri": "https://wordnet.princeton.edu/",
+    "capabilities": ["get_synset_by_word", "get_semantic_relations"]
+  },
+  {
+    "agentName": "ICONCLASS_SYMBOLS_AGENT",
+    "dataDomain": "Iconography",
+    "ownerName": "Iconclass Foundation",
+    "ownerType": "Non-Profit",
+    "contactUri": "https://www.iconclass.org/",
+    "capabilities": ["get_classification_by_code", "search_by_keyword"]
+  },
+  {
+    "agentName": "GETTY_AAT_AGENT",
+    "dataDomain": "Thesaurus",
+    "ownerName": "Getty Research Institute",
+    "ownerType": "Non-Profit",
+    "contactUri": "https://www.getty.edu/research/tools/vocabularies/aat/",
+    "capabilities": ["get_term_by_id", "search_terms"]
+  },
+  {
+    "agentName": "GETTY_TGN_AGENT",
+    "dataDomain": "Gazetteer",
+    "ownerName": "Getty Research Institute",
+    "ownerType": "Non-Profit",
+    "contactUri": "https://www.getty.edu/research/tools/vocabularies/tgn/",
+    "capabilities": ["get_place_by_id", "search_historical_places"]
+  },
+  {
+    "agentName": "GETTY_ULAN_AGENT",
+    "dataDomain": "Authority Control",
+    "ownerName": "Getty Research Institute",
+    "ownerType": "Non-Profit",
+    "contactUri": "https://www.getty.edu/research/tools/vocabularies/ulan/",
+    "capabilities": ["get_artist_by_id"]
+  },
+  {
+    "agentName": "GETTY_ICONOGRAPHY_AGENT",
+    "dataDomain": "Iconography",
+    "ownerName": "Getty Research Institute",
+    "ownerType": "Non-Profit",
+    "contactUri": "https://www.getty.edu/research/tools/vocabularies/ia/",
+    "capabilities": ["get_subject_by_id"]
+  },
+  {
+    "agentName": "WIKTIONARY_ETYMOLOGY_AGENT",
+    "dataDomain": "Linguistics",
+    "ownerName": "Wikimedia Foundation",
+    "ownerType": "Community",
+    "contactUri": "https://en.wiktionary.org/",
+    "capabilities": ["get_etymology_by_word"],
+    "provenanceLevel": "BEST_EFFORT"
+  },
+  {
+    "agentName": "CLICS_COLEXIFICATION_AGENT",
+    "dataDomain": "Linguistics",
+    "ownerName": "Max Planck Institute for Evolutionary Anthropology",
+    "ownerType": "Academic Institution",
+    "contactUri": "https://clics.clld.org/",
+    "capabilities": ["get_colexifications_by_concept"]
+  },
+  {
+    "agentName": "ATU_MOTIF_INDEX_AGENT",
+    "dataDomain": "Folklore",
+    "ownerName": "Academic Community",
+    "ownerType": "Community",
+    "contactUri": "https://www.mftd.org/",
+    "capabilities": ["get_tale_by_atu_number", "get_motifs_by_tale"]
+  },
+  {
+    "agentName": "NASA_ADS_AGENT",
+    "dataDomain": "Astrophysics",
+    "ownerName": "NASA",
+    "ownerType": "Government Agency",
+    "contactUri": "https://ui.adsabs.harvard.edu/",
+    "capabilities": ["search_publications", "get_object_data"]
+  },
+  {
+    "agentName": "GBIF_BIODIVERSITY_AGENT",
+    "dataDomain": "Biology",
+    "ownerName": "Global Biodiversity Information Facility",
+    "ownerType": "Non-Profit",
+    "contactUri": "https://www.gbif.org/",
+    "capabilities": ["get_species_occurrences_by_region"]
+  },
+  {
+    "agentName": "CDC_HEALTHDATA_AGENT",
+    "dataDomain": "Public Health",
+    "ownerName": "Centers for Disease Control and Prevention",
+    "ownerType": "Government Agency",
+    "contactUri": "https://data.cdc.gov/",
+    "capabilities": ["query_public_health_datasets"]
+  },
+  {
+    "agentName": "WORLDBANK_DATA_AGENT",
+    "dataDomain": "Economics",
+    "ownerName": "The World Bank",
+    "ownerType": "Non-Profit",
+    "contactUri": "https://data.worldbank.org/",
+    "capabilities": ["get_indicator_data_by_country"]
+  },
+  {
+    "agentName": "PUBCHEM_AGENT",
+    "dataDomain": "Chemistry",
+    "ownerName": "National Center for Biotechnology Information (NCBI)",
+    "ownerType": "Government Agency",
+    "contactUri": "https://pubchem.ncbi.nlm.nih.gov/",
+    "capabilities": ["get_compound_by_name", "search_substances"]
+  },
+  {
+    "agentName": "A2AWORLD_REGISTRY_AGENT",
+    "dataDomain": "Infrastructure",
+    "ownerName": "A2A World Foundation",
+    "ownerType": "Non-Profit",
+    "contactUri": "https://a2aworld.ai",
+    "capabilities": ["register_agent", "discover_agents_by_capability"]
+  },
+  {
+    "agentName": "A2AWORLD_ORCHESTRATOR_AGENT",
+    "dataDomain": "Infrastructure",
+    "ownerName": "A2A World Foundation",
+    "ownerType": "Non-Profit",
+    "contactUri": "https://a2aworld.ai",
+    "capabilities": ["submit_workflow_task", "get_workflow_status"]
+  },
+  {
+    "agentName": "A2AWORLD_VALIDATOR_AGENT",
+    "dataDomain": "Infrastructure",
+    "ownerName": "A2A World Foundation",
+    "ownerType": "Non-Profit",
+    "contactUri": "https://a2aworld.ai",
+    "capabilities": ["validate_a2a_message", "validate_agent_card"]
+  },
+  {
+    "agentName": "A2AWORLD_REPUTATION_AGENT",
+    "dataDomain": "Infrastructure",
+    "ownerName": "A2A World Foundation",
+    "ownerType": "Non-Profit",
+    "contactUri": "https://a2aworld.ai",
+    "capabilities": ["submit_interaction_rating", "get_agent_reputation_score"]
+  },
+  {
+    "agentName": "A2AWORLD_BUTLER_AGENT",
+    "dataDomain": "Infrastructure",
+    "ownerName": "A2A World Foundation",
+    "ownerType": "Non-Profit",
+    "contactUri": "https://a2aworld.ai",
+    "capabilities": ["request_new_via_instantiation"]
+  },
+  {
+    "agentName": "A2AWORLD_ONTOLOGY_AGENT",
+    "dataDomain": "Infrastructure",
+    "ownerName": "A2A World Foundation",
+    "ownerType": "Non-Profit",
+    "contactUri": "https://a2aworld.ai",
+    "capabilities": ["get_ontology_schema", "resolve_concept_id"]
+  },
+  {
+    "agentName": "A2AWORLD_NEWS_AGENT",
+    "dataDomain": "Infrastructure",
+    "ownerName": "A2A World Foundation",
+    "ownerType": "Non-Profit",
+    "contactUri": "https://a2aworld.ai",
+    "capabilities": ["get_latest_announcements"]
+  }
+]

@@ -3,8 +3,8 @@
 
 > *Unlocking the cosmos of knowledge through collaborative AI-human research*
 
-[![User Friendly](https://img.shields.io/badge/User%20Friendly-⭐⭐⭐⭐⭐-green.svg)](https://github.com/a2a-world/terra-constellata)
-[![Research Ready](https://img.shields.io/badge/Research%20Ready-blue.svg)](https://github.com/a2a-world/terra-constellata)
+[![User Friendly](https://img.shields.io/badge/User%20Friendly-⭐⭐⭐⭐⭐-green.svg)](https://github.com/a2aworld/a2a-world)
+[![Research Ready](https://img.shields.io/badge/Research%20Ready-blue.svg)](https://github.com/a2aworld/a2a-world)
 [![License](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
 ---
@@ -55,8 +55,8 @@ This manual is designed for:
 
 ```bash
 # 1. Clone the repository
-git clone https://github.com/a2a-world/terra-constellata.git
-cd terra-constellata
+git clone https://github.com/a2aworld/a2a-world.git
+cd a2a-world
 
 # 2. Start the system
 ./start.sh

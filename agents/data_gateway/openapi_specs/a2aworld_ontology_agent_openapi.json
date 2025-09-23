@@ -1,0 +1,430 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "Terra Constellata A2AWORLD_ONTOLOGY_AGENT Data Gateway Agent API",
+    "description": "Authenticated access to Infrastructure data through the A2AWORLD_ONTOLOGY_AGENT agent. Part of the Terra Constellata 'Library of Alexandria for AI Wisdom' ecosystem.",
+    "version": "1.0.0",
+    "contact": {
+      "name": "Terra Constellata Development Team",
+      "url": "https://terra-constellata.ai"
+    },
+    "license": {
+      "name": "MIT",
+      "url": "https://opensource.org/licenses/MIT"
+    }
+  },
+  "servers": [
+    {
+      "url": "https://api.terra-constellata.ai/agents/A2AWORLD_ONTOLOGY_AGENT",
+      "description": "Production server"
+    },
+    {
+      "url": "http://localhost:8080/agents/{agent_name}",
+      "description": "Local development server"
+    }
+  ],
+  "security": [
+    {
+      "ApiKeyAuth": []
+    },
+    {
+      "BearerAuth": []
+    }
+  ],
+  "paths": {
+    "/execute/get_ontology_schema": {
+      "post": {
+        "summary": "Execute get_ontology_schema capability",
+        "description": "Execute the get_ontology_schema capability to retrieve infrastructure data from external sources.",
+        "operationId": "executeGetontologyschema",
+        "tags": [
+          "Infrastructure"
+        ],
+        "parameters": [],
+        "requestBody": null,
+        "responses": {
+          "200": {
+            "description": "get_ontology_schema executed successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "result": {
+                      "type": "object",
+                      "description": "get_ontology_schema result data"
+                    },
+                    "metadata": {
+                      "type": "object",
+                      "properties": {
+                        "timestamp": {
+                          "type": "string",
+                          "format": "date-time"
+                        },
+                        "processing_time": {
+                          "type": "number"
+                        },
+                        "data_source": {
+                          "type": "string"
+                        },
+                        "provenance_level": {
+                          "type": "string"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid request parameters",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Authentication required",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Access forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Rate limit exceeded",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "External data source unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/execute/resolve_concept_id": {
+      "post": {
+        "summary": "Execute resolve_concept_id capability",
+        "description": "Execute the resolve_concept_id capability to retrieve infrastructure data from external sources.",
+        "operationId": "executeResolveconceptid",
+        "tags": [
+          "Infrastructure"
+        ],
+        "parameters": [],
+        "requestBody": null,
+        "responses": {
+          "200": {
+            "description": "resolve_concept_id executed successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "result": {
+                      "type": "object",
+                      "description": "resolve_concept_id result data"
+                    },
+                    "metadata": {
+                      "type": "object",
+                      "properties": {
+                        "timestamp": {
+                          "type": "string",
+                          "format": "date-time"
+                        },
+                        "processing_time": {
+                          "type": "number"
+                        },
+                        "data_source": {
+                          "type": "string"
+                        },
+                        "provenance_level": {
+                          "type": "string"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid request parameters",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Authentication required",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Access forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Rate limit exceeded",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "External data source unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/health": {
+      "get": {
+        "summary": "Get A2AWORLD_ONTOLOGY_AGENT health status",
+        "description": "Retrieve comprehensive health information for the A2AWORLD_ONTOLOGY_AGENT agent, including connection status, performance metrics, and external API accessibility.",
+        "operationId": "getHealth",
+        "tags": [
+          "Health"
+        ],
+        "responses": {
+          "200": {
+            "description": "Health check successful",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HealthCheck"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Service unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/metrics": {
+      "get": {
+        "summary": "Get A2AWORLD_ONTOLOGY_AGENT Prometheus metrics",
+        "description": "Retrieve Prometheus-formatted metrics for monitoring the A2AWORLD_ONTOLOGY_AGENT agent performance and health.",
+        "operationId": "getMetrics",
+        "tags": [
+          "Monitoring"
+        ],
+        "responses": {
+          "200": {
+            "description": "Metrics retrieved successfully",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string",
+                  "description": "Prometheus metrics in text format"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/schema": {
+      "get": {
+        "summary": "Get A2AWORLD_ONTOLOGY_AGENT agent schema",
+        "description": "Retrieve the complete agent schema and configuration information for A2AWORLD_ONTOLOGY_AGENT.",
+        "operationId": "getSchema",
+        "tags": [
+          "Metadata"
+        ],
+        "responses": {
+          "200": {
+            "description": "Schema retrieved successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "description": "Agent schema information"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "securitySchemes": {
+      "ApiKeyAuth": {
+        "type": "apiKey",
+        "in": "header",
+        "name": "X-API-Key"
+      },
+      "BearerAuth": {
+        "type": "http",
+        "scheme": "bearer"
+      }
+    },
+    "schemas": {
+      "Error": {
+        "type": "object",
+        "properties": {
+          "error": {
+            "type": "string",
+            "description": "Error message"
+          },
+          "code": {
+            "type": "integer",
+            "description": "Error code"
+          },
+          "timestamp": {
+            "type": "string",
+            "format": "date-time"
+          }
+        }
+      },
+      "HealthCheck": {
+        "type": "object",
+        "properties": {
+          "agent_id": {
+            "type": "string",
+            "description": "Unique agent identifier"
+          },
+          "agent_name": {
+            "type": "string",
+            "description": "Agent name"
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "healthy",
+              "unhealthy",
+              "a2a_healthy_api_unhealthy"
+            ],
+            "description": "Overall health status"
+          },
+          "health_score": {
+            "type": "number",
+            "minimum": 0.0,
+            "maximum": 1.0,
+            "description": "Health score (0.0-1.0)"
+          },
+          "a2a_connected": {
+            "type": "boolean",
+            "description": "A2A protocol connection status"
+          },
+          "api_accessible": {
+            "type": "boolean",
+            "description": "External API accessibility"
+          },
+          "data_domain": {
+            "type": "string",
+            "description": "Data domain"
+          },
+          "capabilities": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Available capabilities"
+          },
+          "performance_metrics": {
+            "type": "object",
+            "properties": {
+              "total_requests": {
+                "type": "integer",
+                "description": "Total requests processed"
+              },
+              "error_count": {
+                "type": "integer",
+                "description": "Total errors"
+              },
+              "error_rate": {
+                "type": "number",
+                "description": "Error rate (0.0-1.0)"
+              },
+              "avg_response_time": {
+                "type": "number",
+                "description": "Average response time in seconds"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

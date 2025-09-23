@@ -1,0 +1,36 @@
+{
+  "agentId": "8abf8b5b-f20e-4932-9bcb-7dd91b2725dc",
+  "viaStatus": "AUTHENTICATED",
+  "agentName": "WIKTIONARY_ETYMOLOGY_AGENT",
+  "dataSetOwner": {
+    "name": "Wikimedia Foundation",
+    "ownerType": "Community",
+    "officialContactUri": "https://en.wiktionary.org/"
+  },
+  "dataDomain": "Linguistics",
+  "a2aEndpoint": "http://localhost:8080/agents/WIKTIONARY_ETYMOLOGY_AGENT",
+  "authenticationMethods": [
+    "api_key"
+  ],
+  "provenanceLevel": "BEST_EFFORT",
+  "version": "1.0.0",
+  "lastAuthenticatedTimestamp": "2025-09-22T22:28:19.484720",
+  "capabilities": [
+    {
+      "capabilityId": "get_etymology_by_word",
+      "description": "Execute get_etymology_by_word capability for Linguistics data",
+      "queryFormats": [
+        "xml",
+        "json"
+      ]
+    }
+  ],
+  "terra_constellata": {
+    "agent_type": "data_gateway",
+    "framework_version": "1.0.0",
+    "deployment_status": "ready",
+    "monitoring_enabled": true,
+    "health_check_endpoint": "/agents/WIKTIONARY_ETYMOLOGY_AGENT/health",
+    "registration_timestamp": "2025-09-22T22:28:19.484735"
+  }
+}

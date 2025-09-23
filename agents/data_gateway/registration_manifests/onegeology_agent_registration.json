@@ -1,0 +1,46 @@
+{
+  "agentId": "cb1c8bf5-35f7-42f5-b9de-da35d8063029",
+  "viaStatus": "AUTHENTICATED",
+  "agentName": "ONEGEOLOGY_AGENT",
+  "dataSetOwner": {
+    "name": "OneGeology Consortium",
+    "ownerType": "Non-Profit",
+    "officialContactUri": "https://www.onegeology.org/"
+  },
+  "dataDomain": "Geology",
+  "a2aEndpoint": "http://localhost:8080/agents/ONEGEOLOGY_AGENT",
+  "authenticationMethods": [
+    "api_key"
+  ],
+  "provenanceLevel": "CANONICAL",
+  "version": "1.0.0",
+  "lastAuthenticatedTimestamp": "2025-09-22T22:28:19.461920",
+  "capabilities": [
+    {
+      "capabilityId": "discover_geological_maps_by_nation",
+      "description": "Execute discover_geological_maps_by_nation capability for Geology data",
+      "queryFormats": [
+        "geojson",
+        "json",
+        "wkt"
+      ]
+    },
+    {
+      "capabilityId": "query_federated_geology_data",
+      "description": "Execute query_federated_geology_data capability for Geology data",
+      "queryFormats": [
+        "geojson",
+        "json",
+        "wkt"
+      ]
+    }
+  ],
+  "terra_constellata": {
+    "agent_type": "data_gateway",
+    "framework_version": "1.0.0",
+    "deployment_status": "ready",
+    "monitoring_enabled": true,
+    "health_check_endpoint": "/agents/ONEGEOLOGY_AGENT/health",
+    "registration_timestamp": "2025-09-22T22:28:19.461937"
+  }
+}

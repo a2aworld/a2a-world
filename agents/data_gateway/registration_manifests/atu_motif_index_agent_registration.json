@@ -1,0 +1,42 @@
+{
+  "agentId": "9790f83f-4e04-48e9-8af0-fc6426e0195f",
+  "viaStatus": "AUTHENTICATED",
+  "agentName": "ATU_MOTIF_INDEX_AGENT",
+  "dataSetOwner": {
+    "name": "Academic Community",
+    "ownerType": "Community",
+    "officialContactUri": "https://www.mftd.org/"
+  },
+  "dataDomain": "Folklore",
+  "a2aEndpoint": "http://localhost:8080/agents/ATU_MOTIF_INDEX_AGENT",
+  "authenticationMethods": [
+    "api_key"
+  ],
+  "provenanceLevel": "CANONICAL",
+  "version": "1.0.0",
+  "lastAuthenticatedTimestamp": "2025-09-22T22:28:19.486246",
+  "capabilities": [
+    {
+      "capabilityId": "get_tale_by_atu_number",
+      "description": "Execute get_tale_by_atu_number capability for Folklore data",
+      "queryFormats": [
+        "json"
+      ]
+    },
+    {
+      "capabilityId": "get_motifs_by_tale",
+      "description": "Execute get_motifs_by_tale capability for Folklore data",
+      "queryFormats": [
+        "json"
+      ]
+    }
+  ],
+  "terra_constellata": {
+    "agent_type": "data_gateway",
+    "framework_version": "1.0.0",
+    "deployment_status": "ready",
+    "monitoring_enabled": true,
+    "health_check_endpoint": "/agents/ATU_MOTIF_INDEX_AGENT/health",
+    "registration_timestamp": "2025-09-22T22:28:19.486261"
+  }
+}

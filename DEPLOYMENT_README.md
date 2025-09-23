@@ -14,8 +14,8 @@ This document provides comprehensive instructions for deploying the Terra Conste
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/your-repo/terra-constellata.git
-   cd terra-constellata
+   git clone https://github.com/a2aworld/a2a-world.git
+   cd a2a-world
    ```
 
 2. **Configure environment**

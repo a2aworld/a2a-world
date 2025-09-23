@@ -1,0 +1,45 @@
+{
+  "agentId": "ba89700c-45cb-44d6-8609-dd45ef9cd469",
+  "viaStatus": "AUTHENTICATED",
+  "agentName": "DAVID_RUMSEY_MAPS_AGENT",
+  "dataSetOwner": {
+    "name": "David Rumsey Map Collection",
+    "ownerType": "Academic Institution",
+    "officialContactUri": "https://www.davidrumsey.com/"
+  },
+  "dataDomain": "Historical Maps",
+  "a2aEndpoint": "http://localhost:8080/agents/DAVID_RUMSEY_MAPS_AGENT",
+  "authenticationMethods": [
+    "api_key"
+  ],
+  "provenanceLevel": "CANONICAL",
+  "version": "1.0.0",
+  "lastAuthenticatedTimestamp": "2025-09-22T22:28:19.477741",
+  "capabilities": [
+    {
+      "capabilityId": "get_georeferenced_map_by_id",
+      "description": "Execute get_georeferenced_map_by_id capability for Historical Maps data",
+      "queryFormats": [
+        "geojson",
+        "json",
+        "wkt"
+      ]
+    },
+    {
+      "capabilityId": "search_maps_by_location",
+      "description": "Execute search_maps_by_location capability for Historical Maps data",
+      "queryFormats": [
+        "xml",
+        "json"
+      ]
+    }
+  ],
+  "terra_constellata": {
+    "agent_type": "data_gateway",
+    "framework_version": "1.0.0",
+    "deployment_status": "ready",
+    "monitoring_enabled": true,
+    "health_check_endpoint": "/agents/DAVID_RUMSEY_MAPS_AGENT/health",
+    "registration_timestamp": "2025-09-22T22:28:19.477761"
+  }
+}
