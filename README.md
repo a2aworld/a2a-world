@@ -26,7 +26,7 @@ This project is fully containerized using Docker and Docker Compose.
 1. **Clone the repository:**
 
 ```
-[git clone <your-repo-url>](https://github.com/a2aworld/a2a-world.git)
+git clone https://github.com/a2aworld/a2a-world.git
 cd a2a-world
 ```
 
